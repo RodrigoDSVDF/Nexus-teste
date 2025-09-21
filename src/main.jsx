@@ -6,7 +6,8 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    {/* A única mudança é adicionar a propriedade 'basename' aqui */}
+    <BrowserRouter basename="/Nexus-teste">
       <App />
     </BrowserRouter>
   </StrictMode>,
