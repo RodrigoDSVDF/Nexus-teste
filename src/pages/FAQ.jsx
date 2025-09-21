@@ -229,7 +229,8 @@ function FAQ() {
           </p>
           
           <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-900 px-8 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-cyan-400/30 transition-all duration-300 transform hover:scale-105 border-2 border-cyan-300/50">
+            {/* BOTÃO ATUALIZADO AQUI */}
+            <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-105 border-2 border-orange-400/50 animate-pulse">
               <BookOpen className="w-6 h-6 mr-3" />
               Quero o Manual NEXUS Agora
             </Button>
@@ -245,4 +246,3 @@ function FAQ() {
 }
 
 export default FAQ
-
