@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button.jsx'
 import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X } from 'lucide-react'
+import QuemSomos from './pages/QuemSomos.jsx'
 import ProductDetails from './pages/ProductDetails.jsx'
 import FAQ from './pages/FAQ.jsx'
 import './App.css'
@@ -27,6 +28,7 @@ import redeNeuralAbstrataImg from './assets/rede-neural-abstrata.jpg';
 import xadrezStrategiaImg from './assets/xadrez-estrategia.jpg';
 import orgImg from './assets/org.jpg';
 import garantiaImg from './assets/7-dias-garantido1.jpg';
+import novaImagemLogo from './assets/1000393277.png';
 
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -47,19 +49,21 @@ function HomePage() {
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <img src={nexusLogoImg} alt="NEXUS Logo" className="w-10 h-10" />
+              <img src={novaImagemLogo} alt="NEXUS Logo" className="w-10 h-10 rounded-full" />
               <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
                 NEXUS
               </span>
             </div>
             
-            {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               <Link to="/detalhes" className="text-gray-300 hover:text-cyan-400 transition-colors">
                 Detalhes do Manual
               </Link>
               <Link to="/faq" className="text-gray-300 hover:text-cyan-400 transition-colors">
                 FAQ
+              </Link>
+              <Link to="/quem-somos" className="text-gray-300 hover:text-cyan-400 transition-colors">
+                Quem Somos
               </Link>
               <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
                 <Button size="sm" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-900 font-semibold">
@@ -68,7 +72,6 @@ function HomePage() {
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden text-white"
@@ -77,7 +80,6 @@ function HomePage() {
             </button>
           </div>
 
-          {/* Mobile Menu */}
           {mobileMenuOpen && (
             <div className="md:hidden mt-4 pb-4 border-t border-blue-500/20">
               <div className="flex flex-col space-y-4 pt-4">
@@ -95,6 +97,13 @@ function HomePage() {
                 >
                   FAQ
                 </Link>
+                <Link 
+                  to="/quem-somos" 
+                  className="text-gray-300 hover:text-cyan-400 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Quem Somos
+                </Link>
                 <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
                   <Button size="sm" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-900 font-semibold w-full">
                     Comprar Agora
@@ -108,11 +117,9 @@ function HomePage() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
-        {/* Background Effects */}
         <div className="hidden md:block absolute top-20 left-20 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="hidden md:block absolute bottom-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         
-        {/* Background Image */}
         <div className="absolute inset-0 opacity-10">
           <img src={brainNetworkImg} alt="Neural Network Background" className="w-full h-full object-cover" />
         </div>
@@ -124,7 +131,6 @@ function HomePage() {
               Nova Era Informacional
             </div>
             
-            {/* Logo NEXUS */}
             <div className="mb-8">
               <img src={nexusLogoImg} alt="NEXUS Logo" className="w-56 h-auto mx-auto mb-6" />
             </div>
@@ -153,7 +159,7 @@ function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-900 px-6 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-cyan-400/30 transition-all duration-300 transform hover:scale-105 border-2 border-cyan-300/50">
+                <Button size="md" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-900 px-6 py-3 text-base font-bold rounded-xl shadow-2xl hover:shadow-cyan-400/30 transition-all duration-300 transform hover:scale-105 border-2 border-cyan-300/50">
                   <BookOpen className="w-5 h-5 mr-2" />
                   Quero meu Manual de Alta Performance
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -323,6 +329,60 @@ function HomePage() {
         </div>
       </section>
 
+      {/* ======================================================================= */}
+      {/* ======================= SEÇÃO DE PROVA SOCIAL ========================= */}
+      {/* ======================================================================= */}
+      <section id="depoimentos" className="py-32 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+              Transformações <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">Reais</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Veja o que profissionais como você estão dizendo sobre o Manual NEXUS.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Depoimento 1 */}
+            <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center">
+              <img src={testimonial1Img} alt="Depoimento de Aluno 1" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
+              <p className="text-gray-300 italic mb-6">
+                "O NEXUS mudou completamente meu workflow. A clareza que ganhei sobre IA e produtividade me fez economizar horas todos os dias. É um divisor de águas."
+              </p>
+              <div className="mt-auto">
+                <h4 className="font-bold text-white text-lg">Mariana Silva</h4>
+                <p className="text-gray-400">Gerente de Projetos</p>
+              </div>
+            </div>
+
+            {/* Depoimento 2 */}
+            <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center">
+              <img src={testimonial2Img} alt="Depoimento de Aluno 2" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
+              <p className="text-gray-300 italic mb-6">
+                "Eu achava que entendia de organização, mas o módulo sobre 'Second Brain' e a forma de estruturar projetos me levaram a outro nível. Indispensável para quem busca alta performance."
+              </p>
+              <div className="mt-auto">
+                <h4 className="font-bold text-white text-lg">Lucas Costa</h4>
+                <p className="text-gray-400">Desenvolvedor Sênior</p>
+              </div>
+            </div>
+
+            {/* Depoimento 3 */}
+            <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center">
+              <img src={testimonial3Img} alt="Depoimento de Aluno 3" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
+              <p className="text-gray-300 italic mb-6">
+                "Como empreendedor, tomar decisões rápidas e estratégicas é crucial. Os frameworks do Módulo 5 são ouro puro. O retorno sobre o investimento foi imediato."
+              </p>
+              <div className="mt-auto">
+                <h4 className="font-bold text-white text-lg">Juliana Pereira</h4>
+                <p className="text-gray-400">CEO & Fundadora</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-32 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -335,17 +395,11 @@ function HomePage() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-900 px-8 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-cyan-400/30 transition-all duration-300 transform hover:scale-105 border-2 border-cyan-300/50">
+              <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-105 border-2 border-orange-400/50 animate-pulse">
                 <BookOpen className="w-6 h-6 mr-3" />
                 Quero o Manual NEXUS Agora
               </Button>
             </a>
-            
-            <Link to="/faq">
-              <Button variant="outline" size="lg" className="border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 px-8 py-4 text-lg font-semibold rounded-xl">
-                Tenho Dúvidas
-              </Button>
-            </Link>
           </div>
           
           <p className="text-gray-400 text-sm mt-6">
@@ -360,7 +414,7 @@ function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <img src={nexusLogoImg} alt="NEXUS Logo" className="w-10 h-10" />
+                <img src={novaImagemLogo} alt="NEXUS Logo" className="w-10 h-10 rounded-full" />
                 <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
                   NEXUS
                 </span>
@@ -378,6 +432,9 @@ function HomePage() {
                 </Link>
                 <Link to="/faq" className="block text-gray-400 hover:text-cyan-400 transition-colors">
                   Perguntas Frequentes
+                </Link>
+                <Link to="/quem-somos" className="block text-gray-400 hover:text-cyan-400 transition-colors">
+                  Quem Somos
                 </Link>
               </div>
             </div>
@@ -407,9 +464,9 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/detalhes" element={<ProductDetails />} />
       <Route path="/faq" element={<FAQ />} />
+      <Route path="/quem-somos" element={<QuemSomos />} />
     </Routes>
   )
 }
 
 export default App
-
