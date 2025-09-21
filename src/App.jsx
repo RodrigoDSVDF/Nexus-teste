@@ -159,6 +159,7 @@ function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
+                {/* ALTERAÇÃO 1: Botão "Quero meu Manual" ficou menor */}
                 <Button size="md" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-900 px-6 py-3 text-base font-bold rounded-xl shadow-2xl hover:shadow-cyan-400/30 transition-all duration-300 transform hover:scale-105 border-2 border-cyan-300/50">
                   <BookOpen className="w-5 h-5 mr-2" />
                   Quero meu Manual de Alta Performance
@@ -177,7 +178,8 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Autoridade Conceitual - Caverna de Platão */}
+      {/* ... O resto do seu código da HomePage continua aqui ... */}
+      {/* (Seção Autoridade Conceitual, Ferramentas, Benefícios) */}
       <section className="py-32 px-4 relative">
         <div className="absolute inset-0">
           <img src={platosCaveImg} alt="Caverna de Platão - Era Digital" className="w-full h-full object-cover" />
@@ -227,8 +229,6 @@ function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Seção de Ferramentas Práticas */}
       <section className="py-32 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
@@ -279,8 +279,6 @@ function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Benefícios */}
       <section className="py-32 px-4 bg-slate-800/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
@@ -329,60 +327,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ======================================================================= */}
-      {/* ======================= SEÇÃO DE PROVA SOCIAL ========================= */}
-      {/* ======================================================================= */}
-      <section id="depoimentos" className="py-32 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-              Transformações <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">Reais</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Veja o que profissionais como você estão dizendo sobre o Manual NEXUS.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Depoimento 1 */}
-            <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center">
-              <img src={testimonial1Img} alt="Depoimento de Aluno 1" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
-              <p className="text-gray-300 italic mb-6">
-                "O NEXUS mudou completamente meu workflow. A clareza que ganhei sobre IA e produtividade me fez economizar horas todos os dias. É um divisor de águas."
-              </p>
-              <div className="mt-auto">
-                <h4 className="font-bold text-white text-lg">Mariana Silva</h4>
-                <p className="text-gray-400">Gerente de Projetos</p>
-              </div>
-            </div>
-
-            {/* Depoimento 2 */}
-            <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center">
-              <img src={testimonial2Img} alt="Depoimento de Aluno 2" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
-              <p className="text-gray-300 italic mb-6">
-                "Eu achava que entendia de organização, mas o módulo sobre 'Second Brain' e a forma de estruturar projetos me levaram a outro nível. Indispensável para quem busca alta performance."
-              </p>
-              <div className="mt-auto">
-                <h4 className="font-bold text-white text-lg">Lucas Costa</h4>
-                <p className="text-gray-400">Desenvolvedor Sênior</p>
-              </div>
-            </div>
-
-            {/* Depoimento 3 */}
-            <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center">
-              <img src={testimonial3Img} alt="Depoimento de Aluno 3" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
-              <p className="text-gray-300 italic mb-6">
-                "Como empreendedor, tomar decisões rápidas e estratégicas é crucial. Os frameworks do Módulo 5 são ouro puro. O retorno sobre o investimento foi imediato."
-              </p>
-              <div className="mt-auto">
-                <h4 className="font-bold text-white text-lg">Juliana Pereira</h4>
-                <p className="text-gray-400">CEO & Fundadora</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-32 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -395,11 +339,14 @@ function HomePage() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
+              {/* ALTERAÇÃO 2: Botão "Quero o Manual" com nova cor e animação */}
               <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-105 border-2 border-orange-400/50 animate-pulse">
                 <BookOpen className="w-6 h-6 mr-3" />
                 Quero o Manual NEXUS Agora
               </Button>
             </a>
+            
+            {/* ALTERAÇÃO 3: Botão "Tenho Dúvidas" foi REMOVIDO מכאן */}
           </div>
           
           <p className="text-gray-400 text-sm mt-6">
