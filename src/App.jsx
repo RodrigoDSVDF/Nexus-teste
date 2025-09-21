@@ -189,7 +189,7 @@ function HomePage() {
               Por que o <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Nexus</span> é diferente?
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Muitas pessoas acham que sabem usar inteligência artificial, mas não atingem alto rendimento porque não conseguem extrair dela o seu verdadeiro potencial
+              Acesso À IA tornou-se um recurso comum. A habilidade de comandála-la é o novo e raro monopólio do talento.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -348,7 +348,7 @@ function HomePage() {
             <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center">
               <img src={testimonial1Img} alt="Depoimento de Aluno 1" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
               <p className="text-gray-300 italic mb-6">
-                "O NEXUS mudou completamente meu workflow. A clareza que ganhei sobre IA e produtividade me fez economizar horas todos os dias. É um divisor de águas."
+                "O NEXUS mudou completamente minha forma de pensar sobre a tecnologia. Ganhei clareza e voltei me dedicar ao estudos. É um divisor de águas."
               </p>
               <div className="mt-auto">
                 <h4 className="font-bold text-white text-lg">Mariana Silva</h4>
