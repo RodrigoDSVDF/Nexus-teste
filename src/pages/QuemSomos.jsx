@@ -31,7 +31,7 @@ function QuemSomos() {
             </h2>
 
             <p className="text-gray-300 leading-relaxed mb-6">
-              Na internet de hoje, a inteligência artificial virou commodity. Todo mundo anuncia “a ferramenta revolucionária”, o “prompt que vai mudar tudo” ou o “curso definitivo”. São offers, downloads e listas intermináveis de recursos… mas cadê a conexão? Cadê a transformação real?
+              Na internet de hoje, a inteligência artificial virou commodity. Todo mundo anuncia a ferramenta revolucionária, o prompt que vai mudar tudo ou o curso definitivo. São ofertas, downloads e listas intermináveis de recursos… mas cadê a conexão? Cadê a verdadeira transformação?
             </p>
 
             <p className="text-gray-300 leading-relaxed mb-6">
