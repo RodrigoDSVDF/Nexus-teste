@@ -140,7 +140,7 @@ function HomePage() {
             </h1>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-lg mb-4">
-               Guia de Performance 
+              Guia de Performance 
             </h2>
             
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold drop-shadow-lg">
@@ -159,7 +159,8 @@ function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
-                <Button size="md" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-900 px-6 py-3 text-base font-bold rounded-xl shadow-2xl hover:shadow-cyan-400/30 transition-all duration-300 transform hover:scale-105 border-2 border-cyan-300/50">
+                {/* BOTÃO ALTERADO AQUI 👇 */}
+                <Button size="md" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-900 px-4 py-2 text-sm font-bold rounded-xl shadow-2xl hover:shadow-cyan-400/30 transition-all duration-300 transform hover:scale-105 border-2 border-cyan-300/50">
                   <BookOpen className="w-5 h-5 mr-2" />
                   Quero meu Manual de Alta Performance
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -449,7 +450,7 @@ function HomePage() {
           
           <div className="border-t border-blue-500/20 mt-8 pt-8 text-center">
             <p className="text-gray-400 text-sm">
-              © 2024 NEXUS. Todos os direitos reservados.
+              © 2025 NEXUS. Todos os direitos reservados.
             </p>
           </div>
         </div>
