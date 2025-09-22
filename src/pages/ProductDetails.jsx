@@ -9,7 +9,7 @@ function ProductDetails() {
   const modules = [
     {
       title: "Módulo 1: Fundamentos da Era Informacional",
-      duration: "2 horas",
+      duration: "leitura prática",
       lessons: 8,
       description: "Compreenda os pilares do modelo econômico informacional e como se posicionar estrategicamente nesta nova era.",
       topics: [
@@ -25,7 +25,7 @@ function ProductDetails() {
     },
     {
       title: "Módulo 2: Inteligência Artificial na Prática",
-      duration: "3 horas",
+      duration: "ferramentas e aplicação",
       lessons: 12,
       description: "Domine as principais ferramentas de IA e aprenda a aplicá-las para maximizar sua produtividade e resultados.",
       topics: [
@@ -45,7 +45,7 @@ function ProductDetails() {
     },
     {
       title: "Módulo 3: Produtividade Exponencial",
-      duration: "2.5 horas",
+      duration: "leitura prática e aplicação com ferramentas",
       lessons: 10,
       description: "Desenvolva sistemas e metodologias para alcançar níveis extraordinários de produtividade e eficiência.",
       topics: [
@@ -79,7 +79,7 @@ function ProductDetails() {
     },
     {
       title: "Módulo 5: Estratégia e Tomada de Decisão",
-      duration: "2.5 horas",
+      duration: "leitura prática com mais exercícios",
       lessons: 9,
       description: "Desenvolva frameworks mentais para tomar decisões estratégicas precisas e construir vantagem competitiva.",
       topics: [
@@ -96,7 +96,7 @@ function ProductDetails() {
     },
     {
       title: "Módulo 6: Implementação e Resultados",
-      duration: "1.5 horas",
+      duration: "ferramentas e estudo",
       lessons: 6,
       description: "Coloque tudo em prática com um plano de implementação estruturado e métricas de acompanhamento.",
       topics: [
@@ -191,7 +191,7 @@ function ProductDetails() {
               <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">6 Módulos Completos</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Mais de 12 horas de conteúdo estruturado, com 53 lições práticas e aplicáveis
+              Ferramentas práticas e conteúdo estruturado, com 53 lições aplicáveis
             </p>
           </div>
 
@@ -270,7 +270,7 @@ function ProductDetails() {
             Pronto para transformar sua <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">performance</span>?
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Mais de 12 horas de conteúdo prático, 53 lições estruturadas e acesso vitalício
+            Mais de 30 conteúdos práticos, 53 lições estruturadas e acesso vitalício
           </p>
           
           <div className="bg-gradient-to-r from-blue-900/30 to-emerald-900/30 p-8 rounded-3xl border border-blue-500/20 mb-8">
@@ -303,7 +303,8 @@ function ProductDetails() {
           </a>
           
           <p className="text-gray-400 text-sm mt-4">
-            🛡️ Garantia de 7 dias - Satisfação garantida ou seu dinheiro de volta
+            🛡️ Garantia de 7 dias - Experimente o Nexus sem risco. Se em 7 dias você não perceber uma mudança fundamental na forma como você interage com a tecnologia e amplifica seus resultados, 
+            devolvemos seu investimentos - sem perguntas.
           </p>
         </div>
       </section>
