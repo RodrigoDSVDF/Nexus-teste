@@ -22,7 +22,7 @@ function FAQ() {
       questions: [
         {
           question: "O que é exatamente o Manual NEXUS?",
-          answer: "O Manual NEXUS é um guia completo de alta performance que combina metodologias comprovadas de produtividade com o poder da Inteligência Artificial. São 6 módulos estruturados, com mais de 12 horas de conteúdo prático, 53 lições e ferramentas para transformar sua performance pessoal e profissional na era informacional."
+          answer: "O Manual NEXUS é um guia completo de alta performance que combina metodologias comprovadas de produtividade com o poder da Inteligência Artificial. São 6 módulos estruturados, com mais de 30 ferramentas práticas, 53 lições e framework para transformar sua performance pessoal e profissional na era informacional."
         },
         {
           question: "Para quem é indicado o Manual NEXUS?",
@@ -47,7 +47,7 @@ function FAQ() {
         },
         {
           question: "Quanto tempo leva para completar todo o Manual?",
-          answer: "O Manual contém mais de 12 horas de conteúdo. Recomendamos dedicar 1-2 horas por semana para absorver e aplicar o conhecimento adequadamente. Assim, você completa todo o conteúdo em 6-12 semanas, com tempo para implementar as técnicas."
+          answer: "O Manual contém leitura ativa com ferramentas que você poderá acesssar imediatamente. Recomendamos dedicar 1-2 horas por semana para absorver e aplicar o conhecimento adequadamente. Assim, você completa todo o conteúdo em 6-12 semanas, com tempo para implementar as técnicas."
         }
       ]
     },
