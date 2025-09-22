@@ -351,7 +351,7 @@ function HomePage() {
                 "O NEXUS mudou completamente minha forma de pensar sobre a tecnologia. Ganhei clareza e voltei me dedicar ao estudos. É um divisor de águas."
               </p>
               <div className="mt-auto">
-                <h4 className="font-bold text-white text-lg">Mariana Silva</h4>
+                <h4 className="font-bold text-white text-lg">José Diego</h4>
                 <p className="text-gray-400">Gerente de Projetos</p>
               </div>
             </div>
