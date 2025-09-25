@@ -159,7 +159,6 @@ function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
-                {/* BOTÃO ALTERADO AQUI 👇 */}
                 <Button size="md" className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-900 px-4 py-2 text-sm font-bold rounded-xl shadow-2xl hover:shadow-cyan-400/30 transition-all duration-300 transform hover:scale-105 border-2 border-cyan-300/50">
                   <BookOpen className="w-5 h-5 mr-2" />
                   Quero meu Manual de Alta Performance
@@ -330,6 +329,36 @@ function HomePage() {
         </div>
       </section>
 
+      {/* ======================================================================= */}
+      {/* ============ NOVA SEÇÃO DE PORTFÓLIO ADICIONADA AQUI 👇 ============== */}
+      {/* ======================================================================= */}
+      <section id="portfolio" className="py-32 px-4 bg-slate-900/50">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="inline-flex items-center px-6 py-3 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 text-sm font-medium mb-8">
+            <Sparkles className="w-4 h-4 mr-2" />
+            Resultados Comprovados
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+            Conheça Nosso <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Trabalho na Prática</span>
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
+            Explore nosso portfólio e veja como aplicamos os conceitos do Manual NEXUS para gerar resultados reais em projetos inovadores.
+          </p>
+          
+          <a 
+            href="/portfolio-nexus.pdf"
+            download="Portfolio-NEXUS-Alta-Performance.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button size="lg" className="bg-gradient-to-r from-emerald-500 to-cyan-600 hover:from-emerald-400 hover:to-cyan-500 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-emerald-500/40 transition-all duration-300 transform hover:scale-105 border-2 border-emerald-400/50">
+              <BookOpen className="w-6 h-6 mr-3" />
+              Baixar Portfólio Completo
+            </Button>
+          </a>
+        </div>
+      </section>
+      
       {/* ======================================================================= */}
       {/* ======================= SEÇÃO DE PROVA SOCIAL ========================= */}
       {/* ======================================================================= */}
