@@ -346,8 +346,9 @@ function HomePage() {
           </p>
           
           <a 
+  <a 
   href="/portfolio-nexus.pdf"
-  target="_blank" 
+  target="_blank"
   rel="noopener noreferrer"
 >
   <Button size="lg" ...>
