@@ -347,8 +347,7 @@ function HomePage() {
           
           <a 
   href="/portfolio-nexus.pdf"
-  // O atributo "download" foi removido daqui
-  target="_blank" // <-- Este atributo agora é extra importante!
+  target="_blank" 
   rel="noopener noreferrer"
 >
   <Button size="lg" ...>
