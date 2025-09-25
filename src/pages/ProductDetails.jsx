@@ -275,7 +275,7 @@ function ProductDetails() {
           
           <div className="bg-gradient-to-r from-blue-900/30 to-emerald-900/30 p-8 rounded-3xl border border-blue-500/20 mb-8">
             <div className="text-center mb-6">
-              <span className="text-4xl font-bold text-white">R$ 97</span>
+              <span className="text-4xl font-bold text-white">R$ 47</span>
               <span className="text-gray-400 ml-2">pagamento único</span>
             </div>
             <div className="flex items-center justify-center space-x-6 text-gray-300 mb-6">
