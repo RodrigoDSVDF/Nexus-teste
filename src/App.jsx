@@ -346,7 +346,7 @@ function HomePage() {
           </p>
           
           <a 
-            href="/Nexus-teste/portfolio-nexus.pdf"
+            href="/portfolio-nexus.pdf"
             download="Portfolio-NEXUS-Alta-Performance.pdf"
             target="_blank"
             rel="noopener noreferrer"
