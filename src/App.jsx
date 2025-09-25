@@ -346,11 +346,16 @@ function HomePage() {
           </p>
           
           <a 
-            href="/portfolio-nexus.pdf"
-            download="Portfolio-NEXUS-Alta-Performance.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  href="/portfolio-nexus.pdf"
+  // O atributo "download" foi removido daqui
+  target="_blank" // <-- Este atributo agora é extra importante!
+  rel="noopener noreferrer"
+>
+  <Button size="lg" ...>
+    Visualizar Portfólio
+  </Button>
+</a>
+
             <Button size="lg" className="bg-gradient-to-r from-emerald-500 to-cyan-600 hover:from-emerald-400 hover:to-cyan-500 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-emerald-500/40 transition-all duration-300 transform hover:scale-105 border-2 border-emerald-400/50">
               <BookOpen className="w-6 h-6 mr-3" />
               Baixar Portfólio Completo
