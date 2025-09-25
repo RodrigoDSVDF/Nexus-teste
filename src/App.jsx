@@ -329,9 +329,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ======================================================================= */}
-      {/* ============ NOVA SEÇÃO DE PORTFÓLIO ADICIONADA AQUI 👇 ============== */}
-      {/* ======================================================================= */}
+      {/* SEÇÃO DO PORTFÓLIO CORRIGIDA ABAIXO */}
       <section id="portfolio" className="py-32 px-4 bg-slate-900/50">
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center px-6 py-3 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 text-sm font-medium mb-8">
@@ -344,19 +342,15 @@ function HomePage() {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
             Explore nosso portfólio e veja como aplicamos os conceitos do Manual NEXUS para gerar resultados reais em projetos inovadores.
           </p>
-  <a 
-  href="/portfolio-nexus.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <Button size="lg" ...>
-    Visualizar Portfólio
-  </Button>
-</a>
-
+          
+          <a 
+            href="/portfolio-nexus.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button size="lg" className="bg-gradient-to-r from-emerald-500 to-cyan-600 hover:from-emerald-400 hover:to-cyan-500 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-emerald-500/40 transition-all duration-300 transform hover:scale-105 border-2 border-emerald-400/50">
               <BookOpen className="w-6 h-6 mr-3" />
-              Baixar Portfólio Completo
+              Visualizar Portfólio
             </Button>
           </a>
         </div>
