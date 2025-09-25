@@ -344,8 +344,6 @@ function HomePage() {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
             Explore nosso portfólio e veja como aplicamos os conceitos do Manual NEXUS para gerar resultados reais em projetos inovadores.
           </p>
-          
-          <a 
   <a 
   href="/portfolio-nexus.pdf"
   target="_blank"
