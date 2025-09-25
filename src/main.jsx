@@ -1,14 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+// O CÓDIGO DEVE FICAR ASSIM (CORRETO)
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
-import './index.css'
 import App from './App.jsx'
+import './index.css'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    {/* A única mudança é adicionar a propriedade 'basename' aqui */}
-    <BrowserRouter basename="/Nexus-teste">
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter> {/* <--- REMOVA O BASENAME DAQUI */}
       <App />
     </BrowserRouter>
-  </StrictMode>,
+  </React.StrictMode>,
 )
