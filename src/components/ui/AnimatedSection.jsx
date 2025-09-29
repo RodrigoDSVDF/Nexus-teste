@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion';
 
-// Este é o nosso componente reutilizável
 const AnimatedSection = ({ children, delay = 0.2 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }} // A animação ocorre apenas uma vez
+      initial={{ opacity: 0, scale: 0.9 }} // Começa um pouco menor
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
       transition={{ 
-        duration: 0.8, 
-        ease: 'easeOut', 
-        delay: delay // Usamos o delay que passamos como propriedade
+        type: "spring",
+        stiffness: 120,
+        damping: 25,
+        delay: delay 
       }}
     >
       {children}
