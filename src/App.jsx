@@ -1,52 +1,44 @@
-import { useState, useEffect } from 'react'
-import { Routes, Route, Link } from 'react-router-dom'
-import { Button } from '@/components/ui/button.jsx'
-import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X } from 'lucide-react'
-import QuemSomos from './pages/QuemSomos.jsx'
-import ProductDetails from './pages/ProductDetails.jsx'
-import FAQ from './pages/FAQ.jsx'
-import './App.css'
+import { useState, useEffect } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button.jsx';
+import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X } from 'lucide-react';
+import QuemSomos from './pages/QuemSomos.jsx';
+import ProductDetails from './pages/ProductDetails.jsx';
+import FAQ from './pages/FAQ.jsx';
+import './App.css';
+
+// 1. IMPORTANDO O COMPONENTE DE ANIMAÇÃO
+import AnimatedSection from './components/ui/AnimatedSection.jsx';
 
 // Importando as imagens existentes
-import brainNetworkImg from './assets/1000393266.jpg'
-import neuronImg from './assets/1000393265.jpg'
-import neuralNetworkImg from './assets/1000393264.jpg'
-import laptopNeuralImg from './assets/1000393263.jpg'
-import nexusLogoImg from './assets/Screenshot_20250918_222018_Gallery.jpg'
-import brainAIImg from './assets/1000393262.jpg'
-import platosCaveImg from './assets/1000396070.jpg'
-import digitalToolsImg from './assets/1000395915.jpg'
-import dataAnalysisImg from './assets/1000395918.jpg'
-import ebookImg from './assets/1000393237.png'
-import newProductImg from './assets/1000396691.jpg'
-import testimonial1Img from './assets/1000396866.jpg'
-import testimonial2Img from './assets/1000396868.jpg'
-import testimonial3Img from './assets/1000396870.jpg'
-import servicosIAImg from './assets/servicos-ia.jpg';
-import produtividadeImg from './assets/produtividade.jpg';
-import redeNeuralAbstrataImg from './assets/rede-neural-abstrata.jpg';
+import brainNetworkImg from './assets/1000393266.jpg';
+import nexusLogoImg from './assets/Screenshot_20250918_222018_Gallery.jpg';
+import platosCaveImg from './assets/1000396070.jpg';
+import digitalToolsImg from './assets/1000395915.jpg';
+import dataAnalysisImg from './assets/1000395918.jpg';
+import newProductImg from './assets/1000396691.jpg';
+import testimonial1Img from './assets/1000396866.jpg';
+import testimonial2Img from './assets/1000396868.jpg';
+import testimonial3Img from './assets/1000396870.jpg';
+import neuralNetworkImg from './assets/1000393264.jpg';
+import brainAIImg from './assets/1000393262.jpg';
 import xadrezStrategiaImg from './assets/xadrez-estrategia.jpg';
-import orgImg from './assets/org.jpg';
-import garantiaImg from './assets/7-dias-garantido1.jpg';
 import novaImagemLogo from './assets/1000393277.png';
 
 function HomePage() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
-
-  const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
-  }
+    setIsVisible(true);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 font-['Poppins',sans-serif] overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-sm border-b border-blue-500/20">
-        <div className="max-w-6xl mx-auto px-4 py-4">
+        {/* Seu código de navegação permanece o mesmo */}
+         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <img src={novaImagemLogo} alt="NEXUS Logo" className="w-10 h-10 rounded-full" />
@@ -115,9 +107,10 @@ function HomePage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section (Animação inicial já está configurada, sem necessidade do AnimatedSection) */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
-        <div className="hidden md:block absolute top-20 left-20 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
+        {/* ... código do Hero Section ... */}
+         <div className="hidden md:block absolute top-20 left-20 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="hidden md:block absolute bottom-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         
         <div className="absolute inset-0 opacity-10">
@@ -176,10 +169,14 @@ function HomePage() {
           </div>
         </div>
       </section>
+      
+      {/* --- INÍCIO DA IMPLEMENTAÇÃO DO AnimatedSection --- */}
 
       {/* Autoridade Conceitual - Caverna de Platão */}
-      <section className="py-32 px-4 relative">
-        <div className="absolute inset-0">
+      <AnimatedSection>
+        <section className="py-32 px-4 relative">
+          {/* ... conteúdo da seção ... */}
+           <div className="absolute inset-0">
           <img src={platosCaveImg} alt="Caverna de Platão - Era Digital" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 to-blue-900/85"></div>
         </div>
@@ -226,22 +223,27 @@ function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Seção de Ferramentas Práticas */}
       <section className="py-32 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-              <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Ferramentas Práticas</span> que Transformam
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Descubra as tecnologias e metodologias que estão revolucionando a forma como trabalhamos e pensamos
-            </p>
-          </div>
+          <AnimatedSection>
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+                <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Ferramentas Práticas</span> que Transformam
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Descubra as tecnologias e metodologias que estão revolucionando a forma como trabalhamos e pensamos
+              </p>
+            </div>
+          </AnimatedSection>
           <div className="grid md:grid-cols-3 gap-12 mb-16">
-            <div className="group bg-gradient-to-br from-blue-900/30 to-slate-800/30 p-8 rounded-3xl border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden">
-              <div className="absolute inset-0 opacity-20">
+            <AnimatedSection delay={0.2}>
+              <div className="group bg-gradient-to-br from-blue-900/30 to-slate-800/30 p-8 rounded-3xl border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden h-full">
+                {/* ... conteúdo do card 1 ... */}
+                 <div className="absolute inset-0 opacity-20">
                 <img src={digitalToolsImg} alt="Ferramentas Digitais" className="w-full h-full object-cover" />
               </div>
               <div className="relative z-10 text-center">
@@ -251,9 +253,12 @@ function HomePage() {
                 <h3 className="text-xl font-semibold text-white mb-4">Mapa</h3>
                 <p className="text-gray-300">Guia que conecta você ao modelo econômico informacional</p>
               </div>
-            </div>
-            <div className="group bg-gradient-to-br from-emerald-900/30 to-slate-800/30 p-8 rounded-3xl border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden">
-              <div className="absolute inset-0 opacity-20">
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.4}>
+              <div className="group bg-gradient-to-br from-emerald-900/30 to-slate-800/30 p-8 rounded-3xl border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden h-full">
+                {/* ... conteúdo do card 2 ... */}
+                <div className="absolute inset-0 opacity-20">
                 <img src={dataAnalysisImg} alt="Análise de Dados" className="w-full h-full object-cover" />
               </div>
               <div className="relative z-10 text-center">
@@ -263,9 +268,12 @@ function HomePage() {
                 <h3 className="text-xl font-semibold text-white mb-4">Toolbox 4.0</h3>
                 <p className="text-gray-300">Ferramentas inteligentes para orientação de sua jornada no futuro digital</p>
               </div>
-            </div>
-            <div className="group bg-gradient-to-br from-blue-900/30 to-emerald-900/30 p-8 rounded-3xl border border-blue-500/20 hover:border-emerald-400/40 transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden">
-              <div className="absolute inset-0 opacity-20">
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.6}>
+              <div className="group bg-gradient-to-br from-blue-900/30 to-emerald-900/30 p-8 rounded-3xl border border-blue-500/20 hover:border-emerald-400/40 transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden h-full">
+                {/* ... conteúdo do card 3 ... */}
+                <div className="absolute inset-0 opacity-20">
                 <img src={brainAIImg} alt="IA Cognitiva" className="w-full h-full object-cover" />
               </div>
               <div className="relative z-10 text-center">
@@ -275,7 +283,8 @@ function HomePage() {
                 <h3 className="text-xl font-semibold text-white mb-4">Hub de Ação</h3>
                 <p className="text-gray-300">Um laboratório onde ideias viram decisões práticas</p>
               </div>
-            </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -283,14 +292,18 @@ function HomePage() {
       {/* Benefícios */}
       <section className="py-32 px-4 bg-slate-800/30">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-              O que você vai conquistar com o <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Manual Nexus</span>
-            </h2>
-          </div>
+          <AnimatedSection>
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+                O que você vai conquistar com o <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">Manual Nexus</span>
+              </h2>
+            </div>
+          </AnimatedSection>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div className="group bg-gradient-to-br from-blue-900/30 to-slate-800/30 p-10 rounded-3xl border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden">
-              <div className="absolute inset-0 opacity-10">
+            <AnimatedSection delay={0.2}>
+              <div className="group bg-gradient-to-br from-blue-900/30 to-slate-800/30 p-10 rounded-3xl border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden h-full">
+                {/* ... conteúdo do card 1 ... */}
+                <div className="absolute inset-0 opacity-10">
                 <img src={neuralNetworkImg} alt="Neural Network" className="w-full h-full object-cover" />
               </div>
               <div className="relative z-10">
@@ -300,9 +313,12 @@ function HomePage() {
                 <h3 className="text-2xl font-semibold text-white mb-4">Produtividade Exponencial</h3>
                 <p className="text-gray-300 text-lg">Elimine a sobrecarga digital e a sensação de estar sempre atrasado. Descubra como a IA pode ser sua assistente pessoal 24 horas por dia, trazendo foco, organização e resultados tangíveis todos os dias</p>
               </div>
-            </div>
-            <div className="group bg-gradient-to-br from-emerald-900/30 to-slate-800/30 p-10 rounded-3xl border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden">
-              <div className="absolute inset-0 opacity-10">
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.4}>
+              <div className="group bg-gradient-to-br from-emerald-900/30 to-slate-800/30 p-10 rounded-3xl border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden h-full">
+                {/* ... conteúdo do card 2 ... */}
+                <div className="absolute inset-0 opacity-10">
                 <img src={xadrezStrategiaImg} alt="Estratégia e Clareza" className="w-full h-full object-cover" />
               </div>
               <div className="relative z-10">
@@ -312,9 +328,12 @@ function HomePage() {
                 <h3 className="text-2xl font-semibold text-white mb-4">Clareza Estratégica</h3>
                 <p className="text-gray-300 text-lg">Acabe com a paralisia por análise e a dúvida. Tenha um framework mental e tecnológico para cortar o ruído, priorizar o essencial e enxergar o caminho mais claro e rápido para seus objetivos</p>
               </div>
-            </div>
-            <div className="group bg-gradient-to-br from-blue-900/30 to-emerald-900/30 p-10 rounded-3xl border border-blue-500/20 hover:border-emerald-400/40 transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden">
-              <div className="absolute inset-0 opacity-10">
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.6}>
+              <div className="group bg-gradient-to-br from-blue-900/30 to-emerald-900/30 p-10 rounded-3xl border border-blue-500/20 hover:border-emerald-400/40 transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden h-full">
+                {/* ... conteúdo do card 3 ... */}
+                <div className="absolute inset-0 opacity-10">
                 <img src={brainAIImg} alt="Brain AI" className="w-full h-full object-cover" />
               </div>
               <div className="relative z-10">
@@ -324,14 +343,17 @@ function HomePage() {
                 <h3 className="text-2xl font-semibold text-white mb-4">Mentalidade Informacional</h3>
                 <p className="text-gray-300 text-lg">Desenvolva a skill mais valiosa do século XXI: a capacidade de aprender, desaprender e reaprender rapidamente. Esteja sempre à frente, adaptando-se às novas tecnologias e tornando-se insubstituível</p>
               </div>
-            </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* SEÇÃO DO PORTFÓLIO CORRIGIDA ABAIXO */}
-      <section id="portfolio" className="py-32 px-4 bg-slate-900/50">
-        <div className="max-w-6xl mx-auto text-center">
+      {/* SEÇÃO DO PORTFÓLIO */}
+      <AnimatedSection>
+        <section id="portfolio" className="py-32 px-4 bg-slate-900/50">
+          {/* ... conteúdo da seção ... */}
+           <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center px-6 py-3 bg-blue-500/20 border border-blue-400/30 rounded-full text-blue-300 text-sm font-medium mb-8">
             <Sparkles className="w-4 h-4 mr-2" />
             Resultados Comprovados
@@ -354,26 +376,28 @@ function HomePage() {
             </Button>
           </a>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
       
-      {/* ======================================================================= */}
-      {/* ======================= SEÇÃO DE PROVA SOCIAL ========================= */}
-      {/* ======================================================================= */}
+      {/* SEÇÃO DE PROVA SOCIAL */}
       <section id="depoimentos" className="py-32 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-              Transformações <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">Reais</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Veja o que profissionais como você estão dizendo sobre o Manual NEXUS.
-            </p>
-          </div>
+          <AnimatedSection>
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+                Transformações <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">Reais</span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Veja o que profissionais como você estão dizendo sobre o Manual NEXUS.
+              </p>
+            </div>
+          </AnimatedSection>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Depoimento 1 */}
-            <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center">
-              <img src={testimonial1Img} alt="Depoimento de Aluno 1" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
+            <AnimatedSection delay={0.2}>
+              <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center h-full">
+                {/* ... depoimento 1 ... */}
+                <img src={testimonial1Img} alt="Depoimento de Aluno 1" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
               <p className="text-gray-300 italic mb-6">
                 "O NEXUS mudou completamente minha forma de pensar sobre a tecnologia. Ganhei clareza e voltei me dedicar ao estudos. É um divisor de águas."
               </p>
@@ -381,11 +405,12 @@ function HomePage() {
                 <h4 className="font-bold text-white text-lg">José Diego</h4>
                 <p className="text-gray-400">Gerente de Projetos</p>
               </div>
-            </div>
-
-            {/* Depoimento 2 */}
-            <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center">
-              <img src={testimonial2Img} alt="Depoimento de Aluno 2" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.4}>
+              <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center h-full">
+                {/* ... depoimento 2 ... */}
+                <img src={testimonial2Img} alt="Depoimento de Aluno 2" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
               <p className="text-gray-300 italic mb-6">
                 "Eu achava que entendia de organização, mas o módulo sobre 'Second Brain' e a forma de estruturar projetos me levaram a outro nível. Indispensável para quem busca alta performance."
               </p>
@@ -393,11 +418,12 @@ function HomePage() {
                 <h4 className="font-bold text-white text-lg">Lucas Costa</h4>
                 <p className="text-gray-400">Desenvolvedor Sênior</p>
               </div>
-            </div>
-
-            {/* Depoimento 3 */}
-            <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center">
-              <img src={testimonial3Img} alt="Depoimento de Aluno 3" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={0.6}>
+              <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center h-full">
+                {/* ... depoimento 3 ... */}
+                 <img src={testimonial3Img} alt="Depoimento de Aluno 3" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
               <p className="text-gray-300 italic mb-6">
                 "Como empreendedor, tomar decisões rápidas e estratégicas é crucial. Os frameworks do Módulo 5 são ouro puro. O retorno sobre o investimento foi imediato."
               </p>
@@ -405,14 +431,17 @@ function HomePage() {
                 <h4 className="font-bold text-white text-lg">Juliana Pereira</h4>
                 <p className="text-gray-400">CEO & Fundadora</p>
               </div>
-            </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-4">
-        <div className="max-w-4xl mx-auto text-center">
+      <AnimatedSection>
+        <section className="py-32 px-4">
+          {/* ... conteúdo da seção ... */}
+           <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Pronto para elevar sua performance ao <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">próximo nível</span>?
           </h2>
@@ -433,11 +462,14 @@ function HomePage() {
             🛡️ Garantia de 7 dias - Satisfação garantida ou seu dinheiro de volta
           </p>
         </div>
-      </section>
+        </section>
+      </AnimatedSection>
 
       {/* Footer */}
-      <footer className="border-t border-blue-500/20 bg-slate-900/50 py-12 px-4">
-        <div className="max-w-6xl mx-auto">
+      <AnimatedSection>
+        <footer className="border-t border-blue-500/20 bg-slate-900/50 py-12 px-4">
+          {/* ... conteúdo do footer ... */}
+           <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
@@ -480,9 +512,10 @@ function HomePage() {
             </p>
           </div>
         </div>
-      </footer>
+        </footer>
+      </AnimatedSection>
     </div>
-  )
+  );
 }
 
 function App() {
@@ -493,7 +526,7 @@ function App() {
       <Route path="/faq" element={<FAQ />} />
       <Route path="/quem-somos" element={<QuemSomos />} />
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;
