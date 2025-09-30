@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button.jsx';
-import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X, Instagram } from 'lucide-react'; // Ícone do Instagram adicionado
+import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X, Instagram } from 'lucide-react';
 import QuemSomos from './pages/QuemSomos.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
 import FAQ from './pages/FAQ.jsx';
@@ -26,7 +26,6 @@ import neuralNetworkImg from './assets/1000393264.jpg';
 import brainAIImg from './assets/1000393262.jpg';
 import xadrezStrategiaImg from './assets/xadrez-estrategia.jpg';
 import novaImagemLogo from './assets/1000393277.png';
-
 
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -374,7 +373,7 @@ function HomePage() {
         </section>
       </AnimatedSection>
       
-      {/* SEÇÃO DE PROVA SOCIAL */}
+      {/* SEÇÃO DE PROVA SOCIAL - NOVA DINÂMICA HORIZONTAL */}
       <section id="depoimentos" className="py-32 px-4">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
@@ -389,7 +388,7 @@ function HomePage() {
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <AnimatedSection delay={0.2}>
+            <AnimatedFromLeft delay={0.2}>
               <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center h-full">
                 <img src={testimonial1Img} alt="Depoimento de Aluno 1" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
                 <p className="text-gray-300 italic mb-6">
@@ -400,7 +399,7 @@ function HomePage() {
                   <p className="text-gray-400">Gerente de Projetos</p>
                 </div>
               </div>
-            </AnimatedSection>
+            </AnimatedFromLeft>
             <AnimatedSection delay={0.4}>
               <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center h-full">
                 <img src={testimonial2Img} alt="Depoimento de Aluno 2" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
@@ -413,7 +412,7 @@ function HomePage() {
                 </div>
               </div>
             </AnimatedSection>
-            <AnimatedSection delay={0.6}>
+            <AnimatedFromRight delay={0.6}>
               <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center h-full">
                  <img src={testimonial3Img} alt="Depoimento de Aluno 3" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
                 <p className="text-gray-300 italic mb-6">
@@ -424,7 +423,7 @@ function HomePage() {
                   <p className="text-gray-400">CEO & Fundadora</p>
                 </div>
               </div>
-            </AnimatedSection>
+            </AnimatedFromRight>
           </div>
         </div>
       </section>
@@ -491,7 +490,7 @@ function HomePage() {
               <div>
                 <h4 className="text-white font-semibold mb-4">Suporte e Social</h4>
                 <p className="text-gray-400 text-sm mb-4">
-                  Dúvidas? Entre em contato conosco.
+                  Dúvidas? Entre em contato ou siga-nos.
                 </p>
                 <a href="https://www.instagram.com/nexus0rigin" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-gray-400 hover:text-cyan-400 transition-colors">
                   <Instagram className="w-5 h-5 mr-2" />
