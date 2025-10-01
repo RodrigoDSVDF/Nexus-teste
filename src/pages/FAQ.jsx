@@ -109,17 +109,18 @@ function FAQ() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 font-['Poppins',sans-serif]">
-      {/* Header */}
-      <header className="border-b border-blue-500/20 bg-slate-900/50 backdrop-blur-sm">
+    // FUNDO PRINCIPAL APLICADO
+    <div className="min-h-screen bg-[#0B1016] font-['Poppins',sans-serif]">
+      {/* Header com a nova paleta */}
+      <header className="border-b border-[#1C2A35] bg-[#0B1016]/50 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center space-x-3 text-white hover:text-cyan-400 transition-colors">
+            <Link to="/" className="flex items-center space-x-3 text-white hover:text-[#5EEAD4] transition-colors">
               <ArrowLeft className="w-5 h-5" />
               <span className="text-lg font-medium">Voltar para Home</span>
             </Link>
             <div className="text-right">
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">
                 NEXUS
               </h1>
               <p className="text-gray-400 text-sm">Manual de Alta Performance</p>
@@ -128,16 +129,16 @@ function FAQ() {
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* Hero Section com a nova paleta */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center px-6 py-3 bg-emerald-500/20 border border-emerald-400/30 rounded-full text-emerald-300 text-sm font-medium mb-8">
+          <div className="inline-flex items-center px-6 py-3 bg-[#2DD4BF]/20 border border-[#2DD4BF]/30 rounded-full text-[#5EEAD4] text-sm font-medium mb-8">
             <HelpCircle className="w-4 h-4 mr-2" />
             Perguntas Frequentes
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Tire suas <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">dúvidas</span>
+            Tire suas <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">dúvidas</span>
           </h1>
           
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
@@ -146,13 +147,13 @@ function FAQ() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ Section com a nova paleta */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           {faqData.map((category, categoryIndex) => (
             <div key={categoryIndex} className="mb-12">
               <h2 className="text-2xl font-bold text-white mb-8 flex items-center">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-lg flex items-center justify-center mr-3">
+                <div className="w-8 h-8 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-lg flex items-center justify-center mr-3">
                   <span className="text-white font-bold">{categoryIndex + 1}</span>
                 </div>
                 {category.category}
@@ -166,17 +167,17 @@ function FAQ() {
                   return (
                     <div
                       key={questionIndex}
-                      className="bg-slate-800/50 rounded-2xl border border-slate-700/50 overflow-hidden"
+                      className="bg-[#14222E]/50 rounded-2xl border border-[#1C2A35] overflow-hidden"
                     >
                       <button
                         onClick={() => toggleItem(globalIndex)}
-                        className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-slate-700/30 transition-colors"
+                        className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-[#1C2A35]/30 transition-colors"
                       >
                         <h3 className="text-lg font-semibold text-white pr-4">
                           {item.question}
                         </h3>
                         {isOpen ? (
-                          <ChevronUp className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                          <ChevronUp className="w-5 h-5 text-[#5EEAD4] flex-shrink-0" />
                         ) : (
                           <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
                         )}
@@ -184,7 +185,7 @@ function FAQ() {
                       
                       {isOpen && (
                         <div className="px-6 pb-6">
-                          <div className="border-t border-slate-700/50 pt-4">
+                          <div className="border-t border-[#1C2A35] pt-4">
                             <p className="text-gray-300 leading-relaxed">
                               {item.answer}
                             </p>
@@ -200,37 +201,36 @@ function FAQ() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-20 px-4 bg-slate-800/30">
+      {/* Contact Section com a nova paleta */}
+      <section className="py-20 px-4 bg-[#14222E]/30">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-blue-900/30 to-emerald-900/30 p-8 rounded-3xl border border-blue-500/20">
-            <MessageCircle className="w-12 h-12 text-cyan-400 mx-auto mb-6" />
+          <div className="bg-gradient-to-br from-[#14222E]/30 to-[#0B1016]/30 p-8 rounded-3xl border border-[#1C2A35]">
+            <MessageCircle className="w-12 h-12 text-[#5EEAD4] mx-auto mb-6" />
             <h2 className="text-2xl font-bold text-white mb-4">
               Não encontrou sua resposta?
             </h2>
             <p className="text-gray-300 mb-6">
               Nossa equipe está pronta para esclarecer qualquer dúvida sobre o Manual NEXUS
             </p>
-            <Button className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-900 px-6 py-3 font-semibold rounded-xl">
+            <Button className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] hover:from-[#5EEAD4]/90 hover:to-[#2DD4BF]/90 text-[#0B1016] px-6 py-3 font-semibold rounded-xl">
               Entrar em Contato
             </Button>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section com a nova paleta */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Pronto para começar sua <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent">transformação</span>?
+            Pronto para começar sua <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">transformação</span>?
           </h2>
           <p className="text-xl text-gray-300 mb-8">
             Junte-se a milhares de profissionais que já transformaram sua performance
           </p>
           
           <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
-            {/* BOTÃO ATUALIZADO AQUI */}
-            <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-105 border-2 border-orange-400/50 animate-pulse">
+            <Button size="lg" className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse">
               <BookOpen className="w-6 h-6 mr-3" />
               Quero o Manual NEXUS Agora
             </Button>
