@@ -350,7 +350,7 @@ function HomePage() {
         <ScrollingBanner speed={40}>
           <div className="flex items-center text-xl font-bold text-gray-300">
             <Brain className="w-7 h-7 mx-6 text-cyan-400" />
-            <span>ENGENHARIA DE PROMPTS</span>
+            <span>ORQUESTRAÇÃO COGNITIVA</span>
             <Sparkles className="w-7 h-7 mx-6 text-emerald-400" />
             <span>ALTA PERFORMANCE</span>
             <Target className="w-7 h-7 mx-6 text-blue-400" />
