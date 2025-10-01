@@ -1,110 +1,135 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button.jsx'
-import { ArrowLeft, ChevronDown, ChevronUp, HelpCircle, BookOpen, MessageCircle } from 'lucide-react'
+import { ArrowLeft, BookOpen, CheckCircle, Clock, Users, Star, Target, Brain, Zap } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-function FAQ() {
-  const [openItems, setOpenItems] = useState(new Set([0])) // Primeiro item aberto por padrão
+function ProductDetails() {
+  const [activeModule, setActiveModule] = useState(0)
 
-  const toggleItem = (index) => {
-    const newOpenItems = new Set(openItems)
-    if (newOpenItems.has(index)) {
-      newOpenItems.delete(index)
-    } else {
-      newOpenItems.add(index)
+  const modules = [
+    {
+      title: "Módulo 1: Fundamentos da Era Informacional",
+      duration: "leitura prática",
+      lessons: 8,
+      description: "Compreenda os pilares do modelo econômico informacional e como se posicionar estrategicamente nesta nova era.",
+      topics: [
+        "O que é a Era Informacional",
+        "Diferenças entre Era Industrial e Informacional",
+        "Como a informação se tornou o novo capital",
+        "Identificando oportunidades no mercado digital",
+        "Mindset para a transformação digital",
+        "Casos de sucesso na economia informacional",
+        "Preparando-se para o futuro do trabalho",
+        "Exercícios práticos de aplicação"
+      ]
+    },
+    {
+      title: "Módulo 2: Inteligência Artificial na Prática",
+      duration: "ferramentas e aplicação",
+      lessons: 12,
+      description: "Domine as principais ferramentas de IA e aprenda a aplicá-las para maximizar sua produtividade e resultados.",
+      topics: [
+        "Introdução às principais IAs do mercado",
+        "ChatGPT: técnicas avançadas de prompt",
+        "Claude: análise e síntese de documentos",
+        "Midjourney: criação de imagens profissionais",
+        "Notion AI: organização inteligente",
+        "Automações com IA para tarefas repetitivas",
+        "Integração de múltiplas IAs em workflows",
+        "Ética e limitações da IA",
+        "Criando seu assistente pessoal com IA",
+        "Análise de dados com IA",
+        "IA para tomada de decisões",
+        "Projeto prático: implementando IA no seu trabalho"
+      ]
+    },
+    {
+      title: "Módulo 3: Produtividade Exponencial",
+      duration: "leitura prática e aplicação com ferramentas",
+      lessons: 10,
+      description: "Desenvolva sistemas e metodologias para alcançar níveis extraordinários de produtividade e eficiência.",
+      topics: [
+        "Princípios da produtividade exponencial",
+        "Método GTD adaptado para a era digital",
+        "Time blocking e gestão de energia",
+        "Eliminando distrações digitais",
+        "Técnicas de foco profundo",
+        "Automação de processos pessoais",
+        "Criando rotinas de alta performance",
+        "Medindo e otimizando resultados",
+        "Batching: agrupamento de tarefas similares",
+        "Sistema de revisão e melhoria contínua"
+      ]
+    },
+    {
+      title: "Módulo 4: Organização de Alta Performance",
+      duration: "2 horas",
+      lessons: 8,
+      description: "Estruture seus materiais, projetos e conhecimento de forma sistemática para máxima eficiência.",
+      topics: [
+        "Arquitetura de informação pessoal",
+        "Sistema de arquivos e pastas otimizado",
+        "Gestão de conhecimento com Second Brain",
+        "Ferramentas de captura e organização",
+        "Criando templates reutilizáveis",
+        "Backup e sincronização de dados",
+        "Organização de projetos complexos",
+        "Mantendo a organização a longo prazo"
+      ]
+    },
+    {
+      title: "Módulo 5: Estratégia e Tomada de Decisão",
+      duration: "leitura prática com mais exercícios",
+      lessons: 9,
+      description: "Desenvolva frameworks mentais para tomar decisões estratégicas precisas e construir vantagem competitiva.",
+      topics: [
+        "Frameworks de tomada de decisão",
+        "Análise de cenários e probabilidades",
+        "Pensamento sistêmico aplicado",
+        "Identificando padrões e tendências",
+        "Construindo vantagem competitiva sustentável",
+        "Estratégias de diferenciação no mercado",
+        "Networking estratégico na era digital",
+        "Posicionamento pessoal e profissional",
+        "Plano de ação para implementação"
+      ]
+    },
+    {
+      title: "Módulo 6: Implementação e Resultados",
+      duration: "ferramentas e estudo",
+      lessons: 6,
+      description: "Coloque tudo em prática com um plano de implementação estruturado e métricas de acompanhamento.",
+      topics: [
+        "Criando seu plano de implementação",
+        "Definindo métricas de sucesso",
+        "Cronograma de 90 dias",
+        "Superando obstáculos comuns",
+        "Mantendo a consistência",
+        "Evoluindo continuamente"
+      ]
     }
-    setOpenItems(newOpenItems)
-  }
+  ]
 
-  const faqData = [
+  const benefits = [
     {
-      category: "Sobre o Manual NEXUS",
-      questions: [
-        {
-          question: "O que é exatamente o Manual NEXUS?",
-          answer: "O Manual NEXUS é um guia completo de alta performance que combina metodologias comprovadas de produtividade com o poder da Inteligência Artificial. São 6 módulos estruturados, com mais de 30 ferramentas práticas, 53 lições e framework para transformar sua performance pessoal e profissional na era informacional."
-        },
-        {
-          question: "Para quem é indicado o Manual NEXUS?",
-          answer: "O Manual é ideal para profissionais, empreendedores, estudantes e qualquer pessoa que deseja maximizar sua produtividade e se destacar no mercado. É especialmente valioso para quem trabalha com informação, tomada de decisões e busca vantagem competitiva através da tecnologia."
-        },
-        {
-          question: "Preciso ter conhecimento prévio em IA para usar o Manual?",
-          answer: "Não! O Manual foi desenvolvido para pessoas de todos os níveis. Começamos do básico e evoluímos gradualmente. Mesmo se você nunca usou IA antes, conseguirá acompanhar e aplicar todas as técnicas apresentadas."
-        }
-      ]
+      icon: <Zap className="w-6 h-6" />,
+      title: "Produtividade 10x",
+      description: "Aumente exponencialmente sua capacidade de entrega"
     },
     {
-      category: "Conteúdo e Formato",
-      questions: [
-        {
-          question: "Como o conteúdo está organizado?",
-          answer: "O Manual está dividido em 6 módulos progressivos: 1) Fundamentos da Era Informacional, 2) IA na Prática, 3) Produtividade Exponencial, 4) Organização de Alta Performance, 5) Estratégia e Tomada de Decisão, 6) Implementação e Resultados. Cada módulo contém lições práticas com exercícios aplicáveis."
-        },
-        {
-          question: "Em que formato recebo o Manual?",
-          answer: "O Manual NEXUS é 100% digital, otimizado para leitura em qualquer dispositivo (computador, tablet, smartphone). Você recebe acesso imediato após a compra e pode baixar o conteúdo para leitura offline."
-        },
-        {
-          question: "Quanto tempo leva para completar todo o Manual?",
-          answer: "O Manual contém leitura ativa com ferramentas que você poderá acesssar imediatamente. Recomendamos dedicar 1-2 horas por semana para absorver e aplicar o conhecimento adequadamente. Assim, você completa todo o conteúdo em 6-12 semanas, com tempo para implementar as técnicas."
-        }
-      ]
+      icon: <Brain className="w-6 h-6" />,
+      title: "Clareza Mental",
+      description: "Tome decisões mais rápidas e precisas"
     },
     {
-      category: "Acesso e Suporte",
-      questions: [
-        {
-          question: "Por quanto tempo tenho acesso ao Manual?",
-          answer: "Seu acesso é vitalício! Uma vez adquirido, você pode acessar o Manual NEXUS para sempre, incluindo futuras atualizações e melhorias que possamos fazer no conteúdo."
-        },
-        {
-          question: "Posso acessar o Manual em múltiplos dispositivos?",
-          answer: "Sim! Você pode acessar o Manual em quantos dispositivos quiser - computador, tablet, smartphone. O conteúdo é sincronizado e você pode continuar a leitura de onde parou em qualquer dispositivo."
-        },
-        {
-          question: "Existe suporte disponível se eu tiver dúvidas?",
-          answer: "Sim! Oferecemos suporte por email para esclarecer dúvidas sobre o conteúdo do Manual. Nossa equipe está preparada para ajudar você a extrair o máximo valor do NEXUS."
-        }
-      ]
+      icon: <Target className="w-6 h-6" />,
+      title: "Foco Estratégico",
+      description: "Concentre energia no que realmente importa"
     },
     {
-      category: "Resultados e Aplicação",
-      questions: [
-        {
-          question: "Quando vou começar a ver resultados?",
-          answer: "Muitos usuários relatam melhorias na produtividade já nas primeiras semanas de aplicação. Os resultados dependem da sua dedicação em implementar as técnicas, mas o Manual foi projetado para gerar impacto imediato e progressivo."
-        },
-        {
-          question: "As técnicas funcionam para qualquer área profissional?",
-          answer: "Sim! As metodologias do NEXUS são universais e se aplicam a qualquer área que envolva processamento de informação, tomada de decisões e produtividade. Temos casos de sucesso em diversas áreas: tecnologia, consultoria, educação, vendas, marketing, e muito mais."
-        },
-        {
-          question: "Preciso de ferramentas pagas para aplicar o que aprendo?",
-          answer: "A maioria das técnicas pode ser aplicada com ferramentas gratuitas. O Manual ensina a usar tanto versões gratuitas quanto pagas de ferramentas de IA, sempre priorizando opções acessíveis e com melhor custo-benefício."
-        }
-      ]
-    },
-    {
-      category: "Compra e Garantia",
-      questions: [
-        {
-          question: "Como funciona a garantia de 7 dias?",
-          answer: "Oferecemos garantia incondicional de 7 dias. Se por qualquer motivo você não ficar satisfeito com o Manual NEXUS, basta solicitar o reembolso dentro deste prazo e devolvemos 100% do seu investimento, sem perguntas."
-        },
-        {
-          question: "Quais formas de pagamento são aceitas?",
-          answer: "Aceitamos cartão de crédito (Visa, Mastercard, Elo), PIX e boleto bancário. O pagamento é processado de forma segura através da plataforma Cakto, com certificação de segurança."
-        },
-        {
-          question: "Recebo o acesso imediatamente após a compra?",
-          answer: "Sim! Para pagamentos via cartão de crédito e PIX, o acesso é liberado automaticamente após a confirmação do pagamento. Para boleto, o acesso é liberado em até 2 dias úteis após a compensação."
-        },
-        {
-          question: "Posso parcelar o pagamento?",
-          answer: "Sim! Você pode parcelar o pagamento em até 12x no cartão de crédito, sujeito à aprovação da operadora do seu cartão. O valor total é R$ 97,00."
-        }
-      ]
+      icon: <Star className="w-6 h-6" />,
+      title: "Vantagem Competitiva",
+      description: "Destaque-se no mercado com diferenciais únicos"
     }
   ]
 
@@ -131,113 +156,155 @@ function FAQ() {
 
       {/* Hero Section com a nova paleta */}
       <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center px-6 py-3 bg-[#2DD4BF]/20 border border-[#2DD4BF]/30 rounded-full text-[#5EEAD4] text-sm font-medium mb-8">
-            <HelpCircle className="w-4 h-4 mr-2" />
-            Perguntas Frequentes
+            <BookOpen className="w-4 h-4 mr-2" />
+            Conteúdo Completo do Manual
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Tire suas <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">dúvidas</span>
+            Descubra o que você vai <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">dominar</span>
           </h1>
-          
+
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
-            Encontre respostas para as principais questões sobre o Manual NEXUS
+            Um guia completo e estruturado para transformar sua performance pessoal e profissional através da Inteligência Artificial
           </p>
+
+          <div className="grid md:grid-cols-4 gap-8 mb-16">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="bg-[#14222E]/30 p-6 rounded-2xl border border-[#1C2A35]">
+                <div className="w-12 h-12 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-xl flex items-center justify-center mb-4 mx-auto text-white">
+                  {benefit.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
+                <p className="text-gray-400 text-sm">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* FAQ Section com a nova paleta */}
+      {/* Modules Section com a nova paleta */}
       <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          {faqData.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="mb-12">
-              <h2 className="text-2xl font-bold text-white mb-8 flex items-center">
-                <div className="w-8 h-8 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-lg flex items-center justify-center mr-3">
-                  <span className="text-white font-bold">{categoryIndex + 1}</span>
-                </div>
-                {category.category}
-              </h2>
-              
-              <div className="space-y-4">
-                {category.questions.map((item, questionIndex) => {
-                  const globalIndex = categoryIndex * 10 + questionIndex // Índice único global
-                  const isOpen = openItems.has(globalIndex)
-                  
-                  return (
-                    <div
-                      key={questionIndex}
-                      className="bg-[#14222E]/50 rounded-2xl border border-[#1C2A35] overflow-hidden"
-                    >
-                      <button
-                        onClick={() => toggleItem(globalIndex)}
-                        className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-[#1C2A35]/30 transition-colors"
-                      >
-                        <h3 className="text-lg font-semibold text-white pr-4">
-                          {item.question}
-                        </h3>
-                        {isOpen ? (
-                          <ChevronUp className="w-5 h-5 text-[#5EEAD4] flex-shrink-0" />
-                        ) : (
-                          <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                        )}
-                      </button>
-                      
-                      {isOpen && (
-                        <div className="px-6 pb-6">
-                          <div className="border-t border-[#1C2A35] pt-4">
-                            <p className="text-gray-300 leading-relaxed">
-                              {item.answer}
-                            </p>
-                          </div>
-                        </div>
-                      )}
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">6 Módulos Completos</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Ferramentas práticas e conteúdo estruturado, com 53 lições aplicáveis
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Module List */}
+            <div className="lg:col-span-1 space-y-4">
+              {modules.map((module, index) => (
+                <div
+                  key={index}
+                  onClick={() => setActiveModule(index)}
+                  className={`p-6 rounded-2xl border cursor-pointer transition-all duration-300 ${
+                    activeModule === index
+                      ? 'bg-gradient-to-r from-[#14222E]/50 to-[#0D3A46]/50 border-[#2DD4BF]/50'
+                      : 'bg-[#14222E]/30 border-[#1C2A35] hover:border-[#0D3A46]/50'
+                  }`}
+                >
+                  <h3 className="text-lg font-semibold text-white mb-2">{module.title}</h3>
+                  <div className="flex items-center space-x-4 text-sm text-gray-400">
+                    <div className="flex items-center">
+                      <Clock className="w-4 h-4 mr-1" />
+                      {module.duration}
                     </div>
-                  )
-                })}
+                    <div className="flex items-center">
+                      <BookOpen className="w-4 h-4 mr-1" />
+                      {module.lessons} lições
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Module Details */}
+            <div className="lg:col-span-2">
+              <div className="bg-[#14222E]/50 p-8 rounded-3xl border border-[#1C2A35]">
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {modules[activeModule].title}
+                </h3>
+                <p className="text-gray-300 text-lg mb-6">
+                  {modules[activeModule].description}
+                </p>
+                
+                <div className="flex items-center space-x-6 mb-8 text-gray-400">
+                  <div className="flex items-center">
+                    <Clock className="w-5 h-5 mr-2" />
+                    <span>{modules[activeModule].duration}</span>
+                  </div>
+                  <div className="flex items-center">
+                    <BookOpen className="w-5 h-5 mr-2" />
+                    <span>{modules[activeModule].lessons} lições</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Users className="w-5 h-5 mr-2" />
+                    <span>Acesso vitalício</span>
+                  </div>
+                </div>
+
+                <h4 className="text-xl font-semibold text-white mb-4">O que você vai aprender:</h4>
+                <div className="grid md:grid-cols-2 gap-3">
+                  {modules[activeModule].topics.map((topic, index) => (
+                    <div key={index} className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 text-[#2DD4BF] mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-300">{topic}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Contact Section com a nova paleta */}
-      <section className="py-20 px-4 bg-[#14222E]/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-[#14222E]/30 to-[#0B1016]/30 p-8 rounded-3xl border border-[#1C2A35]">
-            <MessageCircle className="w-12 h-12 text-[#5EEAD4] mx-auto mb-6" />
-            <h2 className="text-2xl font-bold text-white mb-4">
-              Não encontrou sua resposta?
-            </h2>
-            <p className="text-gray-300 mb-6">
-              Nossa equipe está pronta para esclarecer qualquer dúvida sobre o Manual NEXUS
-            </p>
-            <Button className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] hover:from-[#5EEAD4]/90 hover:to-[#2DD4BF]/90 text-[#0B1016] px-6 py-3 font-semibold rounded-xl">
-              Entrar em Contato
-            </Button>
           </div>
         </div>
       </section>
 
       {/* CTA Section com a nova paleta */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-[#14222E]/30">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Pronto para começar sua <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">transformação</span>?
+            Pronto para transformar sua <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">performance</span>?
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Junte-se a milhares de profissionais que já transformaram sua performance
+            Mais de 30 conteúdos práticos, 53 lições estruturadas e acesso vitalício
           </p>
-          
+
+          <div className="bg-gradient-to-r from-[#14222E]/30 to-[#0D3A46]/30 p-8 rounded-3xl border border-[#1C2A35] mb-8">
+            <div className="text-center mb-6">
+              <span className="text-4xl font-bold text-white">R$ 47</span>
+              <span className="text-gray-400 ml-2">pagamento único</span>
+            </div>
+            <div className="flex items-center justify-center space-x-6 text-gray-300 mb-6">
+              <div className="flex items-center">
+                <CheckCircle className="w-5 h-5 text-[#2DD4BF] mr-2" />
+                <span>6 módulos completos</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="w-5 h-5 text-[#2DD4BF] mr-2" />
+                <span>53 lições práticas</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="w-5 h-5 text-[#2DD4BF] mr-2" />
+                <span>Acesso vitalício</span>
+              </div>
+            </div>
+          </div>
+
           <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse">
               <BookOpen className="w-6 h-6 mr-3" />
               Quero o Manual NEXUS Agora
             </Button>
           </a>
-          
+
           <p className="text-gray-400 text-sm mt-4">
-            🛡️ Garantia de 7 dias - Satisfação garantida ou seu dinheiro de volta
+            🛡️ Garantia de 7 dias - Experimente o Nexus sem risco. Se em 7 dias você não perceber uma mudança fundamental na forma como você interage com a tecnologia e amplifica seus resultados, 
+            devolvemos seu investimentos - sem perguntas.
           </p>
         </div>
       </section>
@@ -245,4 +312,4 @@ function FAQ() {
   )
 }
 
-export default FAQ
+export default ProductDetails
