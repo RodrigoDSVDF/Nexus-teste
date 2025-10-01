@@ -352,7 +352,7 @@ function HomePage() {
             <Brain className="w-7 h-7 mx-6 text-cyan-400" />
             <span>ENGENHARIA DE PROMPTS</span>
             <Sparkles className="w-7 h-7 mx-6 text-emerald-400" />
-            <span>AUTOMAÇÃO INTELIGENTE</span>
+            <span>ALTA PERFORMANCE</span>
             <Target className="w-7 h-7 mx-6 text-blue-400" />
             <span>FOCO ESTRATÉGICO</span>
             <TrendingUp className="w-7 h-7 mx-6 text-cyan-400" />
