@@ -11,15 +11,13 @@ import './App.css';
 import AnimatedSection from './components/ui/AnimatedSection.jsx';
 import AnimatedFromLeft from './components/ui/AnimatedFromLeft.jsx';
 import AnimatedFromRight from './components/ui/AnimatedFromRight.jsx';
-import ScrollingBanner from './components/ui/ScrollingBanner.jsx'; // Importando a faixa de rolagem
+import ScrollingBanner from './components/ui/ScrollingBanner.jsx';
 
 // Importando as imagens existentes
 import brainNetworkImg from './assets/1000393266.jpg';
-import nexusLogoImg from './assets/Screenshot_20250918_222018_Gallery.jpg';
 import platosCaveImg from './assets/1000396070.jpg';
 import digitalToolsImg from './assets/1000395915.jpg';
 import dataAnalysisImg from './assets/1000395918.jpg';
-import newProductImg from './assets/1000396691.jpg';
 import testimonial1Img from './assets/1000396866.jpg';
 import testimonial2Img from './assets/1000396868.jpg';
 import testimonial3Img from './assets/1000396870.jpg';
@@ -27,6 +25,9 @@ import neuralNetworkImg from './assets/1000393264.jpg';
 import brainAIImg from './assets/1000393262.jpg';
 import xadrezStrategiaImg from './assets/xadrez-estrategia.jpg';
 import novaImagemLogo from './assets/1000393277.png';
+
+// Importando o vídeo do logo
+import logoVideo from './assets/logo-video.mp4'; 
 
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -111,7 +112,7 @@ function HomePage() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
-         <div className="hidden md:block absolute top-20 left-20 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="hidden md:block absolute top-20 left-20 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="hidden md:block absolute bottom-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         
         <div className="absolute inset-0 opacity-10">
@@ -126,7 +127,16 @@ function HomePage() {
             </div>
             
             <div className="mb-8">
-              <img src={nexusLogoImg} alt="NEXUS Logo" className="w-56 h-auto mx-auto mb-6" />
+              <video 
+                src={logoVideo} 
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-56 h-auto mx-auto mb-6 rounded-2xl"
+              >
+                Seu navegador não suporta o vídeo.
+              </video>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg break-words">
@@ -345,7 +355,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* INÍCIO DA FAIXA DE ROLAGEM */}
+      {/* FAIXA DE ROLAGEM */}
       <div className="py-8 bg-slate-900 border-y-2 border-blue-500/20">
         <ScrollingBanner speed={40}>
           <div className="flex items-center text-xl font-bold text-gray-300">
@@ -360,8 +370,6 @@ function HomePage() {
           </div>
         </ScrollingBanner>
       </div>
-      {/* FIM DA FAIXA DE ROLAGEM */}
-
 
       {/* SEÇÃO DO PORTFÓLIO */}
       <AnimatedSection>
