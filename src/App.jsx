@@ -11,6 +11,7 @@ import './App.css';
 import AnimatedSection from './components/ui/AnimatedSection.jsx';
 import AnimatedFromLeft from './components/ui/AnimatedFromLeft.jsx';
 import AnimatedFromRight from './components/ui/AnimatedFromRight.jsx';
+import ScrollingBanner from './components/ui/ScrollingBanner.jsx'; // Importando a faixa de rolagem
 
 // Importando as imagens existentes
 import brainNetworkImg from './assets/1000393266.jpg';
@@ -344,6 +345,24 @@ function HomePage() {
         </div>
       </section>
 
+      {/* INÍCIO DA FAIXA DE ROLAGEM */}
+      <div className="py-8 bg-slate-900 border-y-2 border-blue-500/20">
+        <ScrollingBanner speed={40}>
+          <div className="flex items-center text-xl font-bold text-gray-300">
+            <Brain className="w-7 h-7 mx-6 text-cyan-400" />
+            <span>ENGENHARIA DE PROMPTS</span>
+            <Sparkles className="w-7 h-7 mx-6 text-emerald-400" />
+            <span>AUTOMAÇÃO INTELIGENTE</span>
+            <Target className="w-7 h-7 mx-6 text-blue-400" />
+            <span>FOCO ESTRATÉGICO</span>
+            <TrendingUp className="w-7 h-7 mx-6 text-cyan-400" />
+            <span>CRESCIMENTO ACELERADO &nbsp;</span>
+          </div>
+        </ScrollingBanner>
+      </div>
+      {/* FIM DA FAIXA DE ROLAGEM */}
+
+
       {/* SEÇÃO DO PORTFÓLIO */}
       <AnimatedSection>
         <section id="portfolio" className="py-32 px-4 bg-slate-900/50">
@@ -412,7 +431,7 @@ function HomePage() {
                 </div>
               </div>
             </AnimatedSection>
-            <AnimatedFromRight delay={0.6}>
+            <AnimatedFromRight delay={0.2}>
               <div className="bg-slate-800/50 p-8 rounded-2xl border border-blue-500/20 flex flex-col items-center text-center h-full">
                  <img src={testimonial3Img} alt="Depoimento de Aluno 3" className="w-20 h-20 rounded-full border-2 border-cyan-400 mb-6" />
                 <p className="text-gray-300 italic mb-6">
