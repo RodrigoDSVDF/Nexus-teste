@@ -1,10 +1,17 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button.jsx'
-import { ArrowLeft, BookOpen, CheckCircle, Clock, Users, Star, Target, Brain, Zap } from 'lucide-react'
+import { ArrowLeft, BookOpen, CheckCircle, Clock, Users, Star, Target, Brain, Zap, ChevronDown, ChevronUp } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 function ProductDetails() {
-  const [activeModule, setActiveModule] = useState(0)
+  // Estado modificado para controlar o acordeão. 'null' significa que nenhum está aberto.
+  const [activeModule, setActiveModule] = useState(0); // Manter o primeiro aberto por padrão no desktop
+
+  const toggleModule = (index) => {
+    // Se o módulo clicado já estiver ativo, fecha-o (setando para null). Senão, abre o novo.
+    setActiveModule(prevActiveModule => (prevActiveModule === index ? null : index));
+  };
+
 
   const modules = [
     {
@@ -132,11 +139,47 @@ function ProductDetails() {
       description: "Destaque-se no mercado com diferenciais únicos"
     }
   ]
+  
+  // Componente reutilizável para os detalhes do módulo
+  const ModuleDetails = ({ module }) => (
+    <div className="bg-[#14222E]/50 p-6 md:p-8 rounded-b-2xl lg:rounded-3xl border border-[#1C2A35] lg:border-t-[#1C2A35] border-t-transparent">
+      <h3 className="text-2xl font-bold text-white mb-4">
+        {module.title}
+      </h3>
+      <p className="text-gray-300 text-lg mb-6">
+        {module.description}
+      </p>
+      
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-8 text-gray-400">
+        <div className="flex items-center">
+          <Clock className="w-5 h-5 mr-2" />
+          <span>{module.duration}</span>
+        </div>
+        <div className="flex items-center">
+          <BookOpen className="w-5 h-5 mr-2" />
+          <span>{module.lessons} lições</span>
+        </div>
+        <div className="flex items-center">
+          <Users className="w-5 h-5 mr-2" />
+          <span>Acesso vitalício</span>
+        </div>
+      </div>
+
+      <h4 className="text-xl font-semibold text-white mb-4">O que você vai aprender:</h4>
+      <div className="grid md:grid-cols-2 gap-3">
+        {module.topics.map((topic, index) => (
+          <div key={index} className="flex items-start space-x-3">
+            <CheckCircle className="w-5 h-5 text-[#2DD4BF] mt-0.5 flex-shrink-0" />
+            <span className="text-gray-300">{topic}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
 
   return (
-    // FUNDO PRINCIPAL APLICADO
     <div className="min-h-screen bg-[#0B1016] font-['Poppins',sans-serif]">
-      {/* Header com a nova paleta */}
       <header className="border-b border-[#1C2A35] bg-[#0B1016]/50 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
@@ -154,7 +197,6 @@ function ProductDetails() {
         </div>
       </header>
 
-      {/* Hero Section com a nova paleta */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center px-6 py-3 bg-[#2DD4BF]/20 border border-[#2DD4BF]/30 rounded-full text-[#5EEAD4] text-sm font-medium mb-8">
@@ -170,7 +212,8 @@ function ProductDetails() {
             Um guia completo e estruturado para transformar sua performance pessoal e profissional através da Inteligência Artificial
           </p>
 
-          <div className="grid md:grid-cols-4 gap-8 mb-16">
+          {/* Grade de benefícios ajustada para responsividade */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-16">
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-[#14222E]/30 p-6 rounded-2xl border border-[#1C2A35]">
                 <div className="w-12 h-12 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-xl flex items-center justify-center mb-4 mx-auto text-white">
@@ -184,7 +227,6 @@ function ProductDetails() {
         </div>
       </section>
 
-      {/* Modules Section com a nova paleta */}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -196,75 +238,67 @@ function ProductDetails() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Module List */}
+          {/* Layout responsivo: grid em telas grandes, empilhado em telas pequenas */}
+          <div className="lg:grid lg:grid-cols-3 lg:gap-8">
+            
+            {/* LISTA DE MÓDULOS (ACORDEÃO EM TELAS PEQUENAS) */}
             <div className="lg:col-span-1 space-y-4">
               {modules.map((module, index) => (
-                <div
-                  key={index}
-                  onClick={() => setActiveModule(index)}
-                  className={`p-6 rounded-2xl border cursor-pointer transition-all duration-300 ${
-                    activeModule === index
-                      ? 'bg-gradient-to-r from-[#14222E]/50 to-[#0D3A46]/50 border-[#2DD4BF]/50'
-                      : 'bg-[#14222E]/30 border-[#1C2A35] hover:border-[#0D3A46]/50'
-                  }`}
-                >
-                  <h3 className="text-lg font-semibold text-white mb-2">{module.title}</h3>
-                  <div className="flex items-center space-x-4 text-sm text-gray-400">
-                    <div className="flex items-center">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {module.duration}
+                <div key={index}>
+                  <button
+                    onClick={() => {
+                      // No desktop, o clique apenas troca o painel. No mobile, abre/fecha o acordeão.
+                      const isMobile = window.innerWidth < 1024;
+                      if (isMobile) {
+                        toggleModule(index);
+                      } else {
+                        setActiveModule(index);
+                      }
+                    }}
+                    className={`w-full p-6 rounded-2xl border cursor-pointer transition-all duration-300 flex justify-between items-center text-left ${
+                      activeModule === index
+                        ? 'bg-gradient-to-r from-[#14222E]/50 to-[#0D3A46]/50 border-[#2DD4BF]/50'
+                        : 'bg-[#14222E]/30 border-[#1C2A35] hover:border-[#0D3A46]/50'
+                    } ${ activeModule === index ? 'rounded-b-none lg:rounded-b-2xl' : '' }`}
+                  >
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">{module.title}</h3>
+                      <div className="flex items-center space-x-4 text-sm text-gray-400">
+                        <div className="flex items-center">
+                          <Clock className="w-4 h-4 mr-1" />
+                          {module.duration}
+                        </div>
+                        <div className="flex items-center">
+                          <BookOpen className="w-4 h-4 mr-1" />
+                          {module.lessons} lições
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-center">
-                      <BookOpen className="w-4 h-4 mr-1" />
-                      {module.lessons} lições
+                    {/* Ícone de seta visível apenas em telas pequenas (lg:hidden) */}
+                    <div className="lg:hidden ml-4">
+                        {activeModule === index ? <ChevronUp className="w-5 h-5 text-[#5EEAD4]"/> : <ChevronDown className="w-5 h-5 text-gray-400"/>}
                     </div>
-                  </div>
+                  </button>
+                  
+                  {/* DETALHES DO MÓDULO PARA O ACORDEÃO (visível apenas em telas pequenas) */}
+                  {activeModule === index && (
+                      <div className="lg:hidden">
+                          <ModuleDetails module={module} />
+                      </div>
+                  )}
                 </div>
               ))}
             </div>
 
-            {/* Module Details */}
-            <div className="lg:col-span-2">
-              <div className="bg-[#14222E]/50 p-8 rounded-3xl border border-[#1C2A35]">
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  {modules[activeModule].title}
-                </h3>
-                <p className="text-gray-300 text-lg mb-6">
-                  {modules[activeModule].description}
-                </p>
-                
-                <div className="flex items-center space-x-6 mb-8 text-gray-400">
-                  <div className="flex items-center">
-                    <Clock className="w-5 h-5 mr-2" />
-                    <span>{modules[activeModule].duration}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <BookOpen className="w-5 h-5 mr-2" />
-                    <span>{modules[activeModule].lessons} lições</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Users className="w-5 h-5 mr-2" />
-                    <span>Acesso vitalício</span>
-                  </div>
-                </div>
-
-                <h4 className="text-xl font-semibold text-white mb-4">O que você vai aprender:</h4>
-                <div className="grid md:grid-cols-2 gap-3">
-                  {modules[activeModule].topics.map((topic, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 text-[#2DD4BF] mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-300">{topic}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            {/* PAINEL DE DETALHES (visível apenas em telas grandes) */}
+            <div className="hidden lg:block lg:col-span-2">
+              {/* Garante que, mesmo que nenhum esteja ativo (null), mostre o primeiro por padrão no desktop */}
+              <ModuleDetails module={modules[activeModule ?? 0]} />
             </div>
           </div>
         </div>
       </section>
-
-      {/* CTA Section com a nova paleta */}
+      
       <section className="py-20 px-4 bg-[#14222E]/30">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -279,7 +313,7 @@ function ProductDetails() {
               <span className="text-4xl font-bold text-white">R$ 47</span>
               <span className="text-gray-400 ml-2">pagamento único</span>
             </div>
-            <div className="flex items-center justify-center space-x-6 text-gray-300 mb-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-6 space-y-2 sm:space-y-0 text-gray-300 mb-6">
               <div className="flex items-center">
                 <CheckCircle className="w-5 h-5 text-[#2DD4BF] mr-2" />
                 <span>6 módulos completos</span>
