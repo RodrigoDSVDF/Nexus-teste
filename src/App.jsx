@@ -379,7 +379,7 @@ function HomePage() {
           <div className="flex items-center text-xl font-bold text-gray-300">
             {/* ÍCONES COM NOVA COR DE ACENTO */}
             <Brain className="w-7 h-7 mx-6 text-[#5EEAD4]" />
-            <span>ORQUESTRAÇÃO COGNITIVA</span>
+            <span>ENGENHARIA DE CONTEXTO</span>
             <Sparkles className="w-7 h-7 mx-6 text-[#2DD4BF]" />
             <span>ALTA PERFORMANCE</span>
             <Target className="w-7 h-7 mx-6 text-[#5EEAD4]" />
