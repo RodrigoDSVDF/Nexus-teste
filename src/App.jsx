@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button.jsx';
-import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X, Instagram } from 'lucide-react';
+import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X, Instagram, Book, BarChart3, Bed, UserCheck } from 'lucide-react'; // Ícones adicionados
 import QuemSomos from './pages/QuemSomos.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
 import FAQ from './pages/FAQ.jsx';
@@ -28,6 +28,77 @@ import novaImagemLogo from './assets/1000393277.png';
 
 // Importando o vídeo do logo
 import logoVideo from './assets/logo-video.mp4';
+
+
+// ===================================================================
+// INÍCIO DA SEÇÃO ADICIONADA: ANÁLISE DE DESEMPENHO DE ESTUDANTES
+// ===================================================================
+
+function StudentPerformanceSection() {
+  return (
+    <AnimatedSection>
+      <section id="student-performance" className="py-32 px-4 bg-[#0B1016]">
+        <div className="max-w-6xl mx-auto">
+          {/* Título da Seção */}
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+              Decifrando o <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">Sucesso nos Exames</span>: O Que Realmente Importa?
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Uma análise de dados com 200 estudantes revelou os fatores-chave que impulsionam o desempenho acadêmico.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-5 gap-12 items-center">
+            {/* Coluna de Insights à Esquerda */}
+            <div className="lg:col-span-2 space-y-8">
+              <AnimatedFromLeft>
+                <div>
+                  <h3 className="text-2xl font-semibold text-white mb-6">Principais Insights em Números:</h3>
+                  <ul className="space-y-4 text-gray-300 text-lg">
+                    <li className="flex items-start"><CheckCircle className="w-6 h-6 text-[#2DD4BF] mr-3 mt-1 flex-shrink-0" /><span><strong className="text-white">+1.56 pontos</strong> a cada hora extra de estudo na nota final.</span></li>
+                    <li className="flex items-start"><CheckCircle className="w-6 h-6 text-[#2DD4BF] mr-3 mt-1 flex-shrink-0" /><span><strong className="text-white">84.1%</strong> da variação nas notas é explicada pelos fatores analisados.</span></li>
+                    <li className="flex items-start"><CheckCircle className="w-6 h-6 text-[#2DD4BF] mr-3 mt-1 flex-shrink-0" /><span><strong className="text-white">+0.95 pontos</strong> por cada hora adicional de sono.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-white mb-6">Os 4 Pilares do Desempenho:</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center"><Book className="w-6 h-6 text-[#5EEAD4] mr-4" /><span className="text-gray-300 text-lg"><strong>Horas de Estudo:</strong> O fator mais decisivo.</span></div>
+                    <div className="flex items-center"><BarChart3 className="w-6 h-6 text-[#5EEAD4] mr-4" /><span className="text-gray-300 text-lg"><strong>Notas Anteriores:</strong> Forte indicador de sucesso.</span></div>
+                    <div className="flex items-center"><Bed className="w-6 h-6 text-[#5EEAD4] mr-4" /><span className="text-gray-300 text-lg"><strong>Qualidade do Sono:</strong> Impacto direto e significativo.</span></div>
+                    <div className="flex items-center"><UserCheck className="w-6 h-6 text-[#5EEAD4] mr-4" /><span className="text-gray-300 text-lg"><strong>Presença nas Aulas:</strong> Consistência faz a diferença.</span></div>
+                  </div>
+                </div>
+              </AnimatedFromLeft>
+            </div>
+
+            {/* Coluna do Dashboard à Direita */}
+            <div className="lg:col-span-3">
+              <AnimatedFromRight>
+                <div className="bg-[#14222E]/50 p-4 rounded-2xl border border-[#1C2A35] shadow-2xl hover:border-[#0D3A46] transition-all duration-300">
+                  <iframe
+                    // ⚠️ SUBSTITUA PELA URL CORRETA DO SEU DASHBOARD ⚠️
+                    src="https://analise-desempenho-estudantes.streamlit.app/?embed=true"
+                    height="600"
+                    width="100%"
+                    style={{ border: 'none', borderRadius: '8px' }}
+                    title="Análise de Desempenho de Estudantes"
+                  >
+                  </iframe>
+                </div>
+              </AnimatedFromRight>
+            </div>
+          </div>
+        </div>
+      </section>
+    </AnimatedSection>
+  );
+}
+// ===================================================================
+// FIM DA SEÇÃO ADICIONADA
+// ===================================================================
+
 
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -389,6 +460,14 @@ function HomePage() {
           </div>
         </ScrollingBanner>
       </div>
+
+
+       {/* =================================================================== */}
+      {/* LOCAL ONDE O DASHBOARD FOI INSERIDO */}
+      {/* =================================================================== */}
+      <StudentPerformanceSection />
+      {/* =================================================================== */}
+
 
       {/* SEÇÃO DO PORTFÓLIO */}
       <AnimatedSection>
