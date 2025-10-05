@@ -31,7 +31,7 @@ import logoVideo from './assets/logo-video.mp4';
 
 
 // ===================================================================
-// INÍCIO DA SEÇÃO ADICIONADA: ANÁLISE DE DESEMPENHO DE ESTUDANTES
+// COMPONENTE DA ANÁLISE DE DESEMPENHO DE ESTUDANTES
 // ===================================================================
 
 function StudentPerformanceSection() {
@@ -78,8 +78,8 @@ function StudentPerformanceSection() {
               <AnimatedFromRight>
                 <div className="bg-[#14222E]/50 p-4 rounded-2xl border border-[#1C2A35] shadow-2xl hover:border-[#0D3A46] transition-all duration-300">
                   <iframe
-                    // ⚠️ SUBSTITUA PELA URL CORRETA DO SEU DASHBOARD ⚠️
-                    src="https://analise-desempenho-estudantes.streamlit.app/?embed=true"
+                    // ✅ A URL CORRETA FOI INSERIDA AQUI!
+                    src="https://estudo009.streamlit.app/?embed=true"
                     height="600"
                     width="100%"
                     style={{ border: 'none', borderRadius: '8px' }}
@@ -95,9 +95,6 @@ function StudentPerformanceSection() {
     </AnimatedSection>
   );
 }
-// ===================================================================
-// FIM DA SEÇÃO ADICIONADA
-// ===================================================================
 
 
 function HomePage() {
@@ -463,7 +460,7 @@ function HomePage() {
 
 
        {/* =================================================================== */}
-      {/* LOCAL ONDE O DASHBOARD FOI INSERIDO */}
+      {/* LOCAL ONDE O DASHBOARD DE ESTUDANTES É INSERIDO */}
       {/* =================================================================== */}
       <StudentPerformanceSection />
       {/* =================================================================== */}
