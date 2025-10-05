@@ -375,7 +375,7 @@ function HomePage() {
 
       {/* FAIXA DE ROLAGEM */}
       <div className="py-8 bg-[#0B1016] border-y-2 border-[#1C2A35]">
-        <ScrollingBanner speed={40}>
+        <ScrollingBanner speed={20}>
           <div className="flex items-center text-xl font-bold text-gray-300">
             {/* ÍCONES COM NOVA COR DE ACENTO */}
             <Brain className="w-7 h-7 mx-6 text-[#5EEAD4]" />
