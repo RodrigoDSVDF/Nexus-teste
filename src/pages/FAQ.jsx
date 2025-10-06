@@ -212,9 +212,12 @@ function FAQ() {
             <p className="text-gray-300 mb-6">
               Nossa equipe está pronta para esclarecer qualquer dúvida sobre o Manual NEXUS
             </p>
-            <Button className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] hover:from-[#5EEAD4]/90 hover:to-[#2DD4BF]/90 text-[#0B1016] px-6 py-3 font-semibold rounded-xl">
-              Entrar em Contato
-            </Button>
+            {/* ✅ BOTÃO ATUALIZADO COM O LINK */}
+            <a href="https://wa.me/5561983773112?text=Olá!%20Tudo%20bem?" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] hover:from-[#5EEAD4]/90 hover:to-[#2DD4BF]/90 text-[#0B1016] px-6 py-3 font-semibold rounded-xl">
+                Entrar em Contato
+              </Button>
+            </a>
           </div>
         </div>
       </section>
