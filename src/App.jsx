@@ -1,4 +1,4 @@
-// App.jsx (versão final com efeito máquina de escrever)
+// App.jsx (versão completa e final com animação em 2 etapas)
 
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
@@ -15,7 +15,7 @@ import AnimatedFromLeft from './components/ui/AnimatedFromLeft.jsx';
 import AnimatedFromRight from './components/ui/AnimatedFromRight.jsx';
 import ScrollingBanner from './components/ui/ScrollingBanner.jsx';
 
-// ✅ PASSO 1: Importar o novo componente Typewriter
+// Importar o componente Typewriter
 import Typewriter from './components/ui/Typewriter.jsx'; 
 
 // Importando as imagens existentes
@@ -31,7 +31,7 @@ import brainAIImg from './assets/1000393262.jpg';
 import xadrezStrategiaImg from './assets/xadrez-estrategia.jpg';
 import novaImagemLogo from './assets/1000393277.png';
 
-// ✅ NOVAS IMAGENS ADICIONADAS
+// NOVAS IMAGENS ADICIONADAS
 import servicosIAImg from './assets/servicos-ia.jpg';
 import produtividadeImg from './assets/produtividade.jpg';
 
@@ -87,7 +87,6 @@ function StudentPerformanceSection() {
               <AnimatedFromRight>
                 <div className="bg-[#14222E]/50 p-4 rounded-2xl border border-[#1C2A35] shadow-2xl hover:border-[#0D3A46] transition-all duration-300">
                   <iframe
-                    // ✅ A URL CORRETA FOI INSERIDA AQUI!
                     src="https://app-dash-pj41.onrender.com/?embed=true"
                     height="600"
                     width="100%"
@@ -109,6 +108,9 @@ function StudentPerformanceSection() {
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  // ✅ 1. Adicionar estado para controlar a animação em 2 etapas
+  const [typingStep, setTypingStep] = useState(1);
 
   useEffect(() => {
     setIsVisible(true);
@@ -118,20 +120,17 @@ function HomePage() {
     // FUNDO PRINCIPAL APLICADO
     <div className="min-h-screen bg-[#0B1016] font-['Poppins',sans-serif] overflow-x-hidden">
       {/* Navigation */}
-      {/* NAVBAR COM NOVAS CORES DE FUNDO E BORDA */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0B1016]/80 backdrop-blur-sm border-b border-[#1C2A35]">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <img src={novaImagemLogo} alt="NEXUS Logo" className="w-10 h-10 rounded-full" />
-              {/* GRADIENTE DE TEXTO COM NOVA COR DE ACENTO */}
               <span className="text-xl font-bold bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">
                 NEXUS
               </span>
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              {/* LINKS COM NOVA COR DE ACENTO */}
               <Link to="/detalhes" className="text-gray-300 hover:text-[#5EEAD4] transition-colors">
                 Detalhes do Manual
               </Link>
@@ -142,7 +141,6 @@ function HomePage() {
                 Quem Somos
               </Link>
               <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
-                {/* BOTÃO COM NOVO GRADIENTE DE ACENTO E TEXTO ESCURO */}
                 <Button size="sm" className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] hover:from-[#5EEAD4]/90 hover:to-[#2DD4BF]/90 text-[#0B1016] font-semibold">
                   Comprar Agora
                 </Button>
@@ -194,7 +192,6 @@ function HomePage() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
-        {/* BLURS DECORATIVOS COM A NOVA PALETA ESCURA */}
         <div className="hidden md:block absolute top-20 left-20 w-72 h-72 bg-[#0D3A46]/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="hidden md:block absolute bottom-20 right-20 w-96 h-96 bg-[#14222E]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         
@@ -204,7 +201,6 @@ function HomePage() {
 
         <div className={`relative z-10 text-center max-w-6xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="mb-12 mt-20">
-            {/* BADGE COM NOVA COR DE ACENTO */}
             <div className="inline-flex items-center px-6 py-3 bg-[#2DD4BF]/20 border border-[#2DD4BF]/30 rounded-full text-[#5EEAD4] text-sm font-medium mb-8">
               <Zap className="w-4 h-4 mr-2" />
               Nova Era Informacional
@@ -223,20 +219,33 @@ function HomePage() {
               </video>
             </div>
             
-            {/* ✅ PASSO 2: Aplicar o componente Typewriter nos títulos */}
+            {/* ✅ 2. Lógica da animação atualizada */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg break-words h-[80px] md:h-[90px] lg:h-[100px]">
-              <Typewriter text="Produtividade em Alto Nível" speed={60} />
+              <Typewriter 
+                text="Produtividade em Alto Nível" 
+                speed={60} 
+                onTypingComplete={() => setTimeout(() => setTypingStep(2), 300)} 
+              />
             </h1>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent drop-shadow-lg mb-4 h-[50px] md:h-[60px] lg:h-[70px]">
-               <Typewriter text="Guia de Performance" speed={70} />
+               {typingStep >= 2 && (
+                 <Typewriter 
+                   text="Guia de Performance" 
+                   speed={70} 
+                 />
+               )}
             </h2>
             
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold drop-shadow-lg h-[40px] md:h-[50px] lg:h-[60px]">
-              <span className="text-white">com </span>
-              <span className="text-[#5EEAD4] drop-shadow-[0_0_8px_#2DD4BF]">
-                 <Typewriter text="Inteligência Artificial" speed={80} />
-              </span>
+              {typingStep >= 2 && (
+                <>
+                  <span className="text-white">com </span>
+                  <span className="text-[#5EEAD4] drop-shadow-[0_0_8px_#2DD4BF]">
+                     <Typewriter text="Inteligência Artificial" speed={80} />
+                  </span>
+                </>
+              )}
             </h3>
 
             <div className="mt-8 text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto font-light flex flex-col items-center text-center space-y-2">
