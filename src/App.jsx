@@ -1,7 +1,9 @@
+// App.jsx (versão final com efeito máquina de escrever)
+
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button.jsx';
-import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X, Instagram, Book, BarChart3, Bed, UserCheck } from 'lucide-react'; // Ícones adicionados
+import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X, Instagram, Book, BarChart3, Bed, UserCheck } from 'lucide-react';
 import QuemSomos from './pages/QuemSomos.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
 import FAQ from './pages/FAQ.jsx';
@@ -12,6 +14,9 @@ import AnimatedSection from './components/ui/AnimatedSection.jsx';
 import AnimatedFromLeft from './components/ui/AnimatedFromLeft.jsx';
 import AnimatedFromRight from './components/ui/AnimatedFromRight.jsx';
 import ScrollingBanner from './components/ui/ScrollingBanner.jsx';
+
+// ✅ PASSO 1: Importar o novo componente Typewriter
+import Typewriter from './components/ui/Typewriter.jsx'; 
 
 // Importando as imagens existentes
 import brainNetworkImg from './assets/1000393266.jpg';
@@ -27,9 +32,8 @@ import xadrezStrategiaImg from './assets/xadrez-estrategia.jpg';
 import novaImagemLogo from './assets/1000393277.png';
 
 // ✅ NOVAS IMAGENS ADICIONADAS
-import servicosIAImg from './assets/servicos-ia.jpg'; // Certifique-se que o nome do arquivo está correto
-import produtividadeImg from './assets/produtividade.jpg'; // Certifique-se que o nome do arquivo está correto
-
+import servicosIAImg from './assets/servicos-ia.jpg';
+import produtividadeImg from './assets/produtividade.jpg';
 
 // Importando o vídeo do logo
 import logoVideo from './assets/logo-video.mp4';
@@ -218,21 +222,20 @@ function HomePage() {
                 Seu navegador não suporta o vídeo.
               </video>
             </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg break-words">
-              Produtividade em Alto Nível
+            
+            {/* ✅ PASSO 2: Aplicar o componente Typewriter nos títulos */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg break-words h-[80px] md:h-[90px] lg:h-[100px]">
+              <Typewriter text="Produtividade em Alto Nível" speed={60} />
             </h1>
 
-            {/* TÍTULO COM NOVO GRADIENTE DE ACENTO */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent drop-shadow-lg mb-4">
-              Guia de Performance 
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent drop-shadow-lg mb-4 h-[50px] md:h-[60px] lg:h-[70px]">
+               <Typewriter text="Guia de Performance" speed={70} />
             </h2>
             
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold drop-shadow-lg">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold drop-shadow-lg h-[40px] md:h-[50px] lg:h-[60px]">
               <span className="text-white">com </span>
-              {/* DESTAQUE COM NOVA COR DE ACENTO E BRILHO */}
               <span className="text-[#5EEAD4] drop-shadow-[0_0_8px_#2DD4BF]">
-                Inteligência Artificial 
+                 <Typewriter text="Inteligência Artificial" speed={80} />
               </span>
             </h3>
 
@@ -245,7 +248,6 @@ function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
-                {/* BOTÃO PRINCIPAL COM NOVO GRADIENTE E SOMBRA */}
                 <Button size="md" className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] hover:from-[#5EEAD4]/90 hover:to-[#2DD4BF]/90 text-[#0B1016] px-4 py-2 text-sm font-bold rounded-xl shadow-2xl hover:shadow-[#2DD4BF]/30 transition-all duration-300 transform hover:scale-105 border-2 border-[#5EEAD4]/50">
                   <BookOpen className="w-5 h-5 mr-2" />
                   Quero meu Manual de Alta Performance
@@ -254,7 +256,6 @@ function HomePage() {
               </a>
               
               <Link to="/detalhes">
-                {/* BOTÃO SECUNDÁRIO COM NOVAS CORES */}
                 <Button variant="outline" size="lg" className="border-[#2DD4BF]/50 text-[#5EEAD4] hover:bg-[#2DD4BF]/10 hover:text-[#5EEAD4] px-6 py-4 text-lg font-semibold rounded-xl">
                   <LayoutList className="w-5 h-5 mr-2" />
                   Ver Conteúdo Completo
@@ -269,14 +270,12 @@ function HomePage() {
       <section className="py-32 px-4 relative">
         <div className="absolute inset-0">
           <img src={platosCaveImg} alt="Caverna de Platão - Era Digital" className="w-full h-full object-cover" />
-          {/* OVERLAY COM NOVO GRADIENTE DE FUNDO */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#0B1016]/85 to-[#14222E]/85"></div>
         </div>
         <div className="max-w-6xl mx-auto relative z-10">
           <AnimatedSection>
             <div className="text-center mb-20">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-                {/* TEXTO EM DESTAQUE COM NOVO GRADIENTE */}
                 Por que o <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">Nexus</span> é diferente?
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -288,7 +287,6 @@ function HomePage() {
             <AnimatedFromLeft>
               <div className="space-y-8">
                 <div className="flex items-start space-x-6">
-                  {/* ÍCONES COM NOVO GRADIENTE SUTIL */}
                   <div className="w-14 h-14 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-full flex items-center justify-center flex-shrink-0">
                     <Brain className="w-7 h-7 text-white" />
                   </div>
@@ -314,10 +312,8 @@ function HomePage() {
             </AnimatedFromLeft>
             <AnimatedFromRight delay={0.4}>
               <div className="relative">
-                {/* CARD COM NOVAS CORES DE FUNDO E BORDA */}
                 <div className="bg-[#14222E]/90 p-8 rounded-3xl border border-[#1C2A35] backdrop-blur-sm shadow-2xl">
                   <p className="text-lg text-gray-200 leading-relaxed">
-                    {/* TEXTOS EM DESTAQUE COM NOVA COR */}
                     O Nexus foi criado exatamente para isso: ser um <strong className="text-[#2DD4BF]">guia prático</strong> que alia alta performance pessoal e profissional com o poder da Inteligência Artificial, ajudando você a se posicionar no <strong className="text-[#5EEAD4]">centro dessa revolução</strong>.
                   </p>
                 </div>
@@ -342,7 +338,6 @@ function HomePage() {
           </AnimatedSection>
           <div className="grid md:grid-cols-3 gap-12 mb-16">
             <AnimatedSection delay={0.2}>
-              {/* CARD COM NOVAS CORES E BORDAS */}
               <div className="group bg-gradient-to-br from-[#14222E]/30 to-[#0B1016]/30 p-8 rounded-3xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden h-full">
                   <div className="absolute inset-0 opacity-20">
                     <img src={digitalToolsImg} alt="Ferramentas Digitais" className="w-full h-full object-cover" />
@@ -389,7 +384,6 @@ function HomePage() {
       </section>
 
       {/* Benefícios */}
-      {/* SEÇÃO COM FUNDO INTERMEDIÁRIO */}
       <section className="py-32 px-4 bg-[#14222E]/30">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
@@ -399,7 +393,6 @@ function HomePage() {
               </h2>
             </div>
           </AnimatedSection>
-          {/* ✅ CÓDIGO ATUALIZADO AQUI */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             <AnimatedSection delay={0.2}>
               <div className="group bg-gradient-to-br from-[#14222E]/30 to-[#0B1016]/30 p-10 rounded-3xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden h-full">
@@ -430,7 +423,6 @@ function HomePage() {
               </div>
             </AnimatedSection>
 
-            {/* INÍCIO DO NOVO TRECHO DE CÓDIGO */}
             <AnimatedSection delay={0.4}>
               <div className="group bg-gradient-to-br from-[#14222E] to-[#1C2A35] p-10 rounded-3xl border border-[#0D3A46]/30 hover:border-[#0D3A46]/60 transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden h-full">
                 <div className="absolute inset-0 opacity-10">
@@ -460,7 +452,6 @@ function HomePage() {
                 </div>
               </div>
             </AnimatedSection>
-            {/* FIM DO NOVO TRECHO DE CÓDIGO */}
             
             <AnimatedSection delay={0.6}>
               <div className="group bg-gradient-to-br from-[#14222E]/30 to-[#0D3A46]/30 p-10 rounded-3xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 hover:transform hover:scale-105 relative overflow-hidden h-full">
@@ -484,7 +475,6 @@ function HomePage() {
       <div className="py-8 bg-[#0B1016] border-y-2 border-[#1C2A35]">
         <ScrollingBanner speed={10}>
           <div className="flex items-center text-xl font-bold text-gray-300">
-            {/* ÍCONES COM NOVA COR DE ACENTO */}
             <Brain className="w-7 h-7 mx-6 text-[#5EEAD4]" />
             <span>ENGENHARIA DE CONTEXTO</span>
             <Sparkles className="w-7 h-7 mx-6 text-[#2DD4BF]" />
@@ -509,7 +499,6 @@ function HomePage() {
       <AnimatedSection>
         <section id="portfolio" className="py-32 px-4 bg-[#0B1016]/50">
            <div className="max-w-6xl mx-auto text-center">
-            {/* BADGE COM NOVA COR */}
             <div className="inline-flex items-center px-6 py-3 bg-[#0D3A46]/20 border border-[#0D3A46]/30 rounded-full text-[#5EEAD4] text-sm font-medium mb-8">
               <Sparkles className="w-4 h-4 mr-2" />
               Resultados Comprovados
@@ -551,7 +540,6 @@ function HomePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <AnimatedFromLeft delay={0.2}>
-              {/* CARD DE DEPOIMENTO COM NOVAS CORES */}
               <div className="bg-[#14222E]/50 p-8 rounded-2xl border border-[#1C2A35] flex flex-col items-center text-center h-full">
                 <img src={testimonial1Img} alt="Depoimento de Aluno 1" className="w-20 h-20 rounded-full border-2 border-[#2DD4BF] mb-6" />
                 <p className="text-gray-300 italic mb-6">
@@ -604,7 +592,6 @@ function HomePage() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
-                {/* BOTÃO FINAL CTA COM NOVO GRADIENTE DE URGÊNCIA */}
                 <Button size="lg" className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white px-8 py-4 text-lg font-bold rounded-xl shadow-2xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse">
                   <BookOpen className="w-6 h-6 mr-3" />
                   Quero o Manual NEXUS Agora
@@ -621,7 +608,6 @@ function HomePage() {
 
       {/* Footer */}
       <AnimatedSection>
-        {/* FOOTER COM NOVAS CORES DE BORDA E FUNDO */}
         <footer className="border-t border-[#1C2A35] bg-[#0B1016]/50 py-12 px-4">
            <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-3 gap-8">
