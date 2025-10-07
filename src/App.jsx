@@ -84,7 +84,7 @@ function StudentPerformanceSection() {
                 <div className="bg-[#14222E]/50 p-4 rounded-2xl border border-[#1C2A35] shadow-2xl hover:border-[#0D3A46] transition-all duration-300">
                   <iframe
                     // ✅ A URL CORRETA FOI INSERIDA AQUI!
-                    src="https://estudo009.streamlit.app/?embed=true"
+                    src="https://app-dash-pj41.onrender.com/?embed=true"
                     height="600"
                     width="100%"
                     style={{ border: 'none', borderRadius: '8px' }}
