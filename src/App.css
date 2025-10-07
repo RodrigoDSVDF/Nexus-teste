@@ -209,4 +209,16 @@
     will-change: transform, opacity;
   }
 }
+/* =============================================== */
+/* Animação do Cursor para Efeito Máquina de Escrever */
+/* =============================================== */
 
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s step-start infinite;
+}
