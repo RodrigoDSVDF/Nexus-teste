@@ -6,7 +6,7 @@ function Dashboard() {
   return (
     <div className="dashboard-component">
       <iframe
-        src="https://estudo009.streamlit.app/?embed=true"
+        src="https://app-dash-pj41.onrender.com/?embed=true"
         height="700"
         width="100%"
         style={{ border: 'none' }}
