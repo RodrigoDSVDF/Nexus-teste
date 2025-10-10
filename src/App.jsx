@@ -259,7 +259,7 @@ function HomePage() {
                 Por que o <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">Nexus</span> é diferente?
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Acesso À IA tornou-se um recurso comum. A habilidade de comandá-la é o novo e raro monopólio do talento.
+                Acesso à IA tornou-se um recurso comum. A habilidade de comandá-la é o novo e raro monopólio do talento.
               </p>
             </div>
           </AnimatedSection>
