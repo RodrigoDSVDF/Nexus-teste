@@ -114,7 +114,7 @@ function HomePage() {
       // 2. Cria uma função para "ouvir" a rolagem da página
       const scrollListener = () => {
         // Se o usuário rolou mais de 400 pixels e o chat ainda não está visível...
-        if (window.scrollY > 900 && !isChatVisible) {
+        if (window.scrollY > 1500 && !isChatVisible) {
           window.tidioChatApi.show(); // Mostra o chat
           isChatVisible = true; // Marca como visível para não executar de novo
           window.removeEventListener('scroll', scrollListener); // Remove o "ouvinte" para otimizar a performance
