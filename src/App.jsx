@@ -1,6 +1,6 @@
-// App.jsx (versão completa e final com a lógica correta)
+// App.jsx (versão completa e final com a lógica do chat)
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; // Adicionei React aqui para usar React.useEffect
 import { Routes, Route, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button.jsx';
 import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X, Instagram, Book, BarChart3, Bed, UserCheck } from 'lucide-react';
@@ -100,6 +100,43 @@ function HomePage() {
     setIsVisible(true);
   }, []);
 
+  // ===================================================================
+  // CÓDIGO DO TIDIO ADICIONADO AQUI 
+  // ===================================================================
+  useEffect(() => {
+    // Esta função será chamada quando a API do Tidio estiver pronta
+    const handleTidioReady = () => {
+      // 1. Esconde o chat assim que ele carregar para que ele não apareça no início
+      window.tidioChatApi.hide();
+
+      let isChatVisible = false;
+
+      // 2. Cria uma função para "ouvir" a rolagem da página
+      const scrollListener = () => {
+        // Se o usuário rolou mais de 400 pixels e o chat ainda não está visível...
+        if (window.scrollY > 400 && !isChatVisible) {
+          window.tidioChatApi.show(); // Mostra o chat
+          isChatVisible = true; // Marca como visível para não executar de novo
+          window.removeEventListener('scroll', scrollListener); // Remove o "ouvinte" para otimizar a performance
+        }
+      };
+
+      // 3. Adiciona o "ouvinte" de rolagem na janela do navegador
+      window.addEventListener('scroll', scrollListener);
+    };
+
+    // O Tidio emite um evento 'tidioChat-ready' quando sua API está pronta.
+    // Precisamos "ouvir" esse evento para começar a interagir.
+    document.addEventListener('tidioChat-ready', handleTidioReady);
+
+    // Função de limpeza: remove o listener se o componente for "desmontado"
+    // Isso evita erros e vazamentos de memória.
+    return () => {
+      document.removeEventListener('tidioChat-ready', handleTidioReady);
+    };
+
+  }, []); // O array vazio [] garante que este useEffect rode apenas uma vez quando a página carrega.
+  
   return (
     <div className="min-h-screen bg-[#0B1016] font-['Poppins',sans-serif] overflow-x-hidden">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0B1016]/80 backdrop-blur-sm border-b border-[#1C2A35]">
@@ -193,7 +230,7 @@ function HomePage() {
                 Seu navegador não suporta o vídeo.
               </video>
             </div>
-            
+           
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg break-words h-[80px] md:h-[90px] lg:h-[100px]">
               <Typewriter 
                 text="Produtividade em Alto Nível" 
@@ -216,7 +253,7 @@ function HomePage() {
                 <>
                   <span className="text-white">com </span>
                   <span className="text-[#5EEAD4] drop-shadow-[0_0_8px_#2DD4BF]">
-                     <Typewriter text="Inteligência Artificial" speed={80} />
+                      <Typewriter text="Inteligência Artificial" speed={80} />
                   </span>
                 </>
               )}
