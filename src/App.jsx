@@ -29,7 +29,6 @@ import novaImagemLogo from './assets/1000393277.png';
 import servicosIAImg from './assets/servicos-ia.jpg';
 import produtividadeImg from './assets/produtividade.jpg';
 import logoVideo from './assets/logo-video.mp4';
-import softwareInterface from './assets/software-interface.jpg';
 
 // ===================================================================
 // COMPONENTE DA ANÁLISE DE DESEMPENHO DE ESTUDANTES
@@ -212,38 +211,73 @@ function NexusSystemSection() {
             </AnimatedSection>
           </div>
 
-          {/* Demonstração do Software */}
+          {/* Demonstração do Software - VERSÃO CORRIGIDA */}
           <AnimatedSection>
             <div className="bg-[#0B1016] rounded-2xl border border-[#1C2A35] p-8">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold text-white mb-4">Veja o Software Nexus AI em Ação</h3>
                 <p className="text-gray-300 text-lg">Interface intuitiva que reúne o poder de múltiplas IAs especializadas</p>
               </div>
+              
+              {/* Container visual do software */}
               <div className="bg-gradient-to-r from-[#14222E] to-[#0D3A46] p-1 rounded-xl">
-                <div className="bg-[#0B1016] rounded-xl p-4 border border-[#1C2A35]">
-                  <img 
-                    src={softwareInterface} 
-                    alt="Interface do Software Nexus AI" 
-                    className="w-full h-auto rounded-lg border border-[#2DD4BF]/20"
-                  />
+                <div className="bg-[#0B1016] rounded-xl p-8 border border-[#1C2A35] min-h-[400px] flex flex-col justify-center">
+                  {/* Interface simulada do software */}
+                  <div className="grid grid-cols-4 gap-4 mb-8">
+                    <div className="bg-[#14222E] p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
+                      <Brain className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
+                      <p className="text-white text-sm font-semibold">IA de Análise</p>
+                    </div>
+                    <div className="bg-[#14222E] p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
+                      <TrendingUp className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
+                      <p className="text-white text-sm font-semibold">IA de Produtividade</p>
+                    </div>
+                    <div className="bg-[#14222E] p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
+                      <Target className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
+                      <p className="text-white text-sm font-semibold">IA Estratégica</p>
+                    </div>
+                    <div className="bg-[#14222E] p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
+                      <Zap className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
+                      <p className="text-white text-sm font-semibold">IA de Automação</p>
+                    </div>
+                  </div>
+                  
+                  {/* Área de preview */}
+                  <div className="bg-[#14222E] rounded-lg p-6 border border-[#1C2A35]">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex space-x-2">
+                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      </div>
+                      <div className="text-[#5EEAD4] text-sm">nexus-ai-dashboard</div>
+                    </div>
+                    <div className="bg-[#0B1016] p-4 rounded border border-[#1C2A35]">
+                      <p className="text-gray-400 text-center">
+                        🚀 <strong>Interface do Software Nexus AI</strong><br/>
+                        <span className="text-sm">Dashboard integrado com múltiplas inteligências artificiais</span>
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="grid md:grid-cols-4 gap-4 mt-6 text-center">
+              
+              <div className="grid md:grid-cols-4 gap-4 mt-8 text-center">
                 <div className="bg-[#14222E]/50 p-4 rounded-lg border border-[#1C2A35]">
                   <Brain className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
-                  <p className="text-white font-semibold">IA de Análise</p>
+                  <p className="text-white font-semibold text-sm">Análise Inteligente</p>
                 </div>
                 <div className="bg-[#14222E]/50 p-4 rounded-lg border border-[#1C2A35]">
                   <TrendingUp className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
-                  <p className="text-white font-semibold">IA de Produtividade</p>
+                  <p className="text-white font-semibold text-sm">Otimização de Processos</p>
                 </div>
                 <div className="bg-[#14222E]/50 p-4 rounded-lg border border-[#1C2A35]">
                   <Target className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
-                  <p className="text-white font-semibold">IA Estratégica</p>
+                  <p className="text-white font-semibold text-sm">Tomada de Decisão</p>
                 </div>
                 <div className="bg-[#14222E]/50 p-4 rounded-lg border border-[#1C2A35]">
                   <Zap className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
-                  <p className="text-white font-semibold">IA de Automação</p>
+                  <p className="text-white font-semibold text-sm">Automação Avançada</p>
                 </div>
               </div>
             </div>
@@ -332,7 +366,7 @@ function HomePage() {
         </div>
       </nav>
 
-      {/* HERO SECTION COMPLETAMENTE REFORMULADA */}
+      {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
         <div className="hidden md:block absolute top-20 left-20 w-72 h-72 bg-[#0D3A46]/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="hidden md:block absolute bottom-20 right-20 w-96 h-96 bg-[#14222E]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -488,10 +522,10 @@ function HomePage() {
         </ScrollingBanner>
       </div>
 
-      {/* SEÇÃO DE ANÁLISE DE DADOS (EXISTENTE) */}
+      {/* SEÇÃO DE ANÁLISE DE DADOS */}
       <StudentPerformanceSection />
 
-      {/* SEÇÃO DE DEPOIMENTOS (EXISTENTE) */}
+      {/* SEÇÃO DE DEPOIMENTOS */}
       <section id="depoimentos" className="py-32 px-4">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
