@@ -90,7 +90,7 @@ function StudentPerformanceSection() {
 }
 
 // ===================================================================
-// COMPONENTE DO SISTEMA NEXUS
+// COMPONENTE DO SISTEMA NEXUS - VERSÃO CORRIGIDA PARA MOBILE
 // ===================================================================
 function NexusSystemSection() {
   return (
@@ -211,74 +211,122 @@ function NexusSystemSection() {
             </AnimatedSection>
           </div>
 
-          {/* Demonstração do Software - VERSÃO CORRIGIDA */}
+          {/* SEÇÃO "VEJA O SOFTWARE NEXUS EM AÇÃO" - VERSÃO CORRIGIDA PARA MOBILE */}
           <AnimatedSection>
-            <div className="bg-[#0B1016] rounded-2xl border border-[#1C2A35] p-8">
+            <div className="bg-[#0B1016] rounded-2xl border border-[#1C2A35] p-6 md:p-8">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold text-white mb-4">Veja o Software Nexus AI em Ação</h3>
                 <p className="text-gray-300 text-lg">Interface intuitiva que reúne o poder de múltiplas IAs especializadas</p>
               </div>
               
-              {/* Container visual do software */}
-              <div className="bg-gradient-to-r from-[#14222E] to-[#0D3A46] p-1 rounded-xl">
-                <div className="bg-[#0B1016] rounded-xl p-8 border border-[#1C2A35] min-h-[400px] flex flex-col justify-center">
+              {/* Container visual do software - Dashboard que você gostou */}
+              <div className="bg-gradient-to-r from-[#14222E] to-[#0D3A46] p-1 rounded-xl mb-12">
+                <div className="bg-[#0B1016] rounded-xl p-6 md:p-8 border border-[#1C2A35] min-h-[300px] flex flex-col justify-center">
                   {/* Interface simulada do software */}
-                  <div className="grid grid-cols-4 gap-4 mb-8">
-                    <div className="bg-[#14222E] p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
-                      <Brain className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
-                      <p className="text-white text-sm font-semibold">IA de Análise</p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6">
+                    <div className="bg-[#14222E] p-3 md:p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
+                      <Brain className="w-6 h-6 md:w-8 md:h-8 text-[#5EEAD4] mx-auto mb-2" />
+                      <p className="text-white text-xs md:text-sm font-semibold">IA de Análise</p>
                     </div>
-                    <div className="bg-[#14222E] p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
-                      <TrendingUp className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
-                      <p className="text-white text-sm font-semibold">IA de Produtividade</p>
+                    <div className="bg-[#14222E] p-3 md:p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
+                      <TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-[#5EEAD4] mx-auto mb-2" />
+                      <p className="text-white text-xs md:text-sm font-semibold">IA de Produtividade</p>
                     </div>
-                    <div className="bg-[#14222E] p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
-                      <Target className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
-                      <p className="text-white text-sm font-semibold">IA Estratégica</p>
+                    <div className="bg-[#14222E] p-3 md:p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
+                      <Target className="w-6 h-6 md:w-8 md:h-8 text-[#5EEAD4] mx-auto mb-2" />
+                      <p className="text-white text-xs md:text-sm font-semibold">IA Estratégica</p>
                     </div>
-                    <div className="bg-[#14222E] p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
-                      <Zap className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
-                      <p className="text-white text-sm font-semibold">IA de Automação</p>
+                    <div className="bg-[#14222E] p-3 md:p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
+                      <Zap className="w-6 h-6 md:w-8 md:h-8 text-[#5EEAD4] mx-auto mb-2" />
+                      <p className="text-white text-xs md:text-sm font-semibold">IA de Automação</p>
                     </div>
                   </div>
                   
-                  {/* Área de preview */}
-                  <div className="bg-[#14222E] rounded-lg p-6 border border-[#1C2A35]">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex space-x-2">
-                        <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                        <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  {/* Área de preview do Dashboard */}
+                  <div className="bg-[#14222E] rounded-lg p-4 md:p-6 border border-[#1C2A35]">
+                    <div className="flex items-center justify-between mb-3 md:mb-4">
+                      <div className="flex space-x-1 md:space-x-2">
+                        <div className="w-2 h-2 md:w-3 md:h-3 bg-red-500 rounded-full"></div>
+                        <div className="w-2 h-2 md:w-3 md:h-3 bg-yellow-500 rounded-full"></div>
+                        <div className="w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full"></div>
                       </div>
-                      <div className="text-[#5EEAD4] text-sm">nexus-ai-dashboard</div>
+                      <div className="text-[#5EEAD4] text-xs md:text-sm">nexus-ai-dashboard</div>
                     </div>
-                    <div className="bg-[#0B1016] p-4 rounded border border-[#1C2A35]">
-                      <p className="text-gray-400 text-center">
+                    <div className="bg-[#0B1016] p-3 md:p-4 rounded border border-[#1C2A35]">
+                      <p className="text-gray-400 text-center text-sm md:text-base">
                         🚀 <strong>Interface do Software Nexus AI</strong><br/>
-                        <span className="text-sm">Dashboard integrado com múltiplas inteligências artificiais</span>
+                        <span className="text-xs md:text-sm">Dashboard integrado com múltiplas inteligências artificiais</span>
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-              
-              <div className="grid md:grid-cols-4 gap-4 mt-8 text-center">
-                <div className="bg-[#14222E]/50 p-4 rounded-lg border border-[#1C2A35]">
-                  <Brain className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
-                  <p className="text-white font-semibold text-sm">Análise Inteligente</p>
-                </div>
-                <div className="bg-[#14222E]/50 p-4 rounded-lg border border-[#1C2A35]">
-                  <TrendingUp className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
-                  <p className="text-white font-semibold text-sm">Otimização de Processos</p>
-                </div>
-                <div className="bg-[#14222E]/50 p-4 rounded-lg border border-[#1C2A35]">
-                  <Target className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
-                  <p className="text-white font-semibold text-sm">Tomada de Decisão</p>
-                </div>
-                <div className="bg-[#14222E]/50 p-4 rounded-lg border border-[#1C2A35]">
-                  <Zap className="w-8 h-8 text-[#5EEAD4] mx-auto mb-2" />
-                  <p className="text-white font-semibold text-sm">Automação Avançada</p>
-                </div>
+
+              {/* SEÇÃO DE FERRAMENTAS - ESTILO DO PRIMEIRO MODELO (CORRIGIDA PARA MOBILE) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                {/* IA de Análise */}
+                <AnimatedSection delay={0.2}>
+                  <div className="group bg-gradient-to-br from-[#14222E]/30 to-[#0B1016]/30 p-6 rounded-2xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 relative overflow-hidden h-full">
+                    <div className="absolute inset-0 opacity-10">
+                      <img src={brainAIImg} alt="IA de Análise" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="relative z-10 text-center">
+                      <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
+                        <Brain className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                      </div>
+                      <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Análise Inteligente</h3>
+                      <p className="text-gray-300 text-sm md:text-base">IA especializada em análise de dados e insights</p>
+                    </div>
+                  </div>
+                </AnimatedSection>
+
+                {/* IA de Produtividade */}
+                <AnimatedSection delay={0.3}>
+                  <div className="group bg-gradient-to-br from-[#0D3A46]/30 to-[#14222E]/30 p-6 rounded-2xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 relative overflow-hidden h-full">
+                    <div className="absolute inset-0 opacity-10">
+                      <img src={dataAnalysisImg} alt="IA de Produtividade" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="relative z-10 text-center">
+                      <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-[#0D3A46] to-[#14222E] rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
+                        <TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                      </div>
+                      <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Otimização de Processos</h3>
+                      <p className="text-gray-300 text-sm md:text-base">Automatiza e otimiza fluxos de trabalho</p>
+                    </div>
+                  </div>
+                </AnimatedSection>
+
+                {/* IA Estratégica */}
+                <AnimatedSection delay={0.4}>
+                  <div className="group bg-gradient-to-br from-[#14222E]/30 to-[#0D3A46]/30 p-6 rounded-2xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 relative overflow-hidden h-full">
+                    <div className="absolute inset-0 opacity-10">
+                      <img src={xadrezStrategiaImg} alt="IA Estratégica" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="relative z-10 text-center">
+                      <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
+                        <Target className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                      </div>
+                      <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Tomada de Decisão</h3>
+                      <p className="text-gray-300 text-sm md:text-base">IA para decisões estratégicas e planejamento</p>
+                    </div>
+                  </div>
+                </AnimatedSection>
+
+                {/* IA de Automação */}
+                <AnimatedSection delay={0.5}>
+                  <div className="group bg-gradient-to-br from-[#0D3A46]/30 to-[#14222E]/30 p-6 rounded-2xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 relative overflow-hidden h-full">
+                    <div className="absolute inset-0 opacity-10">
+                      <img src={servicosIAImg} alt="IA de Automação" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="relative z-10 text-center">
+                      <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-[#0D3A46] to-[#14222E] rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
+                        <Zap className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                      </div>
+                      <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Automação Avançada</h3>
+                      <p className="text-gray-300 text-sm md:text-base">Automatiza tarefas complexas e repetitivas</p>
+                    </div>
+                  </div>
+                </AnimatedSection>
               </div>
             </div>
           </AnimatedSection>
@@ -287,6 +335,8 @@ function NexusSystemSection() {
     </AnimatedSection>
   );
 }
+
+// O RESTANTE DO CÓDIGO PERMANECE EXATAMENTE IGUAL...
 
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
