@@ -36,30 +36,30 @@ import logoVideo from './assets/logo-video.mp4';
 function StudentPerformanceSection() {
   return (
     <AnimatedSection>
-      <section id="student-performance" className="py-32 px-4 bg-[#0B1016]">
+      <section id="student-performance" className="py-20 px-4 bg-[#0B1016]">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Decifrando o <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">Sucesso nos Exames</span>: O Que Realmente Importa?
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Uma análise de dados com 200 estudantes revelou os fatores-chave que impulsionam o desempenho acadêmico.
             </p>
           </div>
-          <div className="grid lg:grid-cols-5 gap-12 items-center">
-            <div className="lg:col-span-2 space-y-8">
+          <div className="grid lg:grid-cols-5 gap-8 items-center">
+            <div className="lg:col-span-2 space-y-6">
               <AnimatedFromLeft>
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-6">Principais Insights em Números:</h3>
-                  <ul className="space-y-4 text-gray-300 text-lg">
+                  <h3 className="text-2xl font-semibold text-white mb-4">Principais Insights em Números:</h3>
+                  <ul className="space-y-3 text-gray-300 text-lg">
                     <li className="flex items-start"><CheckCircle className="w-6 h-6 text-[#2DD4BF] mr-3 mt-1 flex-shrink-0" /><span><strong className="text-white">+1.56 pontos</strong> a cada hora extra de estudo na nota final.</span></li>
                     <li className="flex items-start"><CheckCircle className="w-6 h-6 text-[#2DD4BF] mr-3 mt-1 flex-shrink-0" /><span><strong className="text-white">84.1%</strong> da variação nas notas é explicada pelos fatores analisados.</span></li>
                     <li className="flex items-start"><CheckCircle className="w-6 h-6 text-[#2DD4BF] mr-3 mt-1 flex-shrink-0" /><span><strong className="text-white">+0.95 pontos</strong> por cada hora adicional de sono.</span></li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-6">Os 4 Pilares do Desempenho:</h3>
-                  <div className="space-y-4">
+                  <h3 className="text-2xl font-semibold text-white mb-4">Os 4 Pilares do Desempenho:</h3>
+                  <div className="space-y-3">
                     <div className="flex items-center"><Book className="w-6 h-6 text-[#5EEAD4] mr-4" /><span className="text-gray-300 text-lg"><strong>Horas de Estudo:</strong> O fator mais decisivo.</span></div>
                     <div className="flex items-center"><BarChart3 className="w-6 h-6 text-[#5EEAD4] mr-4" /><span className="text-gray-300 text-lg"><strong>Notas Anteriores:</strong> Forte indicador de sucesso.</span></div>
                     <div className="flex items-center"><Bed className="w-6 h-6 text-[#5EEAD4] mr-4" /><span className="text-gray-300 text-lg"><strong>Qualidade do Sono:</strong> Impacto direto e significativo.</span></div>
@@ -95,14 +95,14 @@ function StudentPerformanceSection() {
 function NexusSystemSection() {
   return (
     <AnimatedSection>
-      <section className="py-32 px-4 bg-gradient-to-br from-[#0B1016] to-[#14222E]">
+      <section className="py-20 px-4 bg-gradient-to-br from-[#0B1016] to-[#14222E]">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-6 py-3 bg-[#2DD4BF]/20 border border-[#2DD4BF]/30 rounded-full text-[#5EEAD4] text-sm font-medium mb-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-6 py-3 bg-[#2DD4BF]/20 border border-[#2DD4BF]/30 rounded-full text-[#5EEAD4] text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4 mr-2" />
               Sistema Completo
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Mais que um Manual: Um <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">Sistema Completo</span> de Performance
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -110,17 +110,17 @@ function NexusSystemSection() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid lg:grid-cols-3 gap-6 mb-12">
             {/* PDF */}
             <AnimatedSection delay={0.2}>
-              <div className="group bg-gradient-to-br from-[#14222E] to-[#0D3A46] p-8 rounded-2xl border border-[#2DD4BF]/20 hover:border-[#2DD4BF] transition-all duration-300 h-full flex flex-col">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                    <BookOpen className="w-8 h-8 text-[#5EEAD4]" />
+              <div className="group bg-gradient-to-br from-[#14222E] to-[#0D3A46] p-6 rounded-2xl border border-[#2DD4BF]/20 hover:border-[#2DD4BF] transition-all duration-300 h-full flex flex-col">
+                <div className="flex items-center mb-4">
+                  <div className="w-14 h-14 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                    <BookOpen className="w-7 h-7 text-[#5EEAD4]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Manual Premium</h3>
+                  <h3 className="text-xl font-bold text-white">Manual Premium</h3>
                 </div>
-                <ul className="text-gray-200 space-y-4 mb-6 flex-grow">
+                <ul className="text-gray-200 space-y-3 mb-4 flex-grow">
                   <li className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-[#2DD4BF] mr-3 mt-1 flex-shrink-0" />
                     <span><strong>47 técnicas comprovadas</strong> de produtividade com IA</span>
@@ -138,7 +138,7 @@ function NexusSystemSection() {
                     <span><strong>Metodologia Second Brain</strong> aplicada</span>
                   </li>
                 </ul>
-                <div className="bg-[#0B1016]/50 p-4 rounded-xl border border-[#1C2A35]">
+                <div className="bg-[#0B1016]/50 p-3 rounded-xl border border-[#1C2A35]">
                   <p className="text-[#5EEAD4] text-sm font-semibold">📚 PDF + Atualizações Vitalícias</p>
                 </div>
               </div>
@@ -146,14 +146,14 @@ function NexusSystemSection() {
 
             {/* Vídeos */}
             <AnimatedSection delay={0.4}>
-              <div className="group bg-gradient-to-br from-[#0D3A46] to-[#14222E] p-8 rounded-2xl border border-[#2DD4BF]/20 hover:border-[#2DD4BF] transition-all duration-300 h-full flex flex-col">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#0D3A46] to-[#14222E] rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                    <Play className="w-8 h-8 text-[#5EEAD4]" />
+              <div className="group bg-gradient-to-br from-[#0D3A46] to-[#14222E] p-6 rounded-2xl border border-[#2DD4BF]/20 hover:border-[#2DD4BF] transition-all duration-300 h-full flex flex-col">
+                <div className="flex items-center mb-4">
+                  <div className="w-14 h-14 bg-gradient-to-r from-[#0D3A46] to-[#14222E] rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                    <Play className="w-7 h-7 text-[#5EEAD4]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Vídeos Exclusivos</h3>
+                  <h3 className="text-xl font-bold text-white">Vídeos Exclusivos</h3>
                 </div>
-                <ul className="text-gray-200 space-y-4 mb-6 flex-grow">
+                <ul className="text-gray-200 space-y-3 mb-4 flex-grow">
                   <li className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-[#2DD4BF] mr-3 mt-1 flex-shrink-0" />
                     <span><strong>Demonstrações práticas</strong> de cada técnica</span>
@@ -171,7 +171,7 @@ function NexusSystemSection() {
                     <span><strong>Dicas avançadas</strong> não encontradas no PDF</span>
                   </li>
                 </ul>
-                <div className="bg-[#0B1016]/50 p-4 rounded-xl border border-[#1C2A35]">
+                <div className="bg-[#0B1016]/50 p-3 rounded-xl border border-[#1C2A35]">
                   <p className="text-[#5EEAD4] text-sm font-semibold">🎬 Acesso Imediato + Novos Vídeos Mensais</p>
                 </div>
               </div>
@@ -179,14 +179,14 @@ function NexusSystemSection() {
 
             {/* Software */}
             <AnimatedSection delay={0.6}>
-              <div className="group bg-gradient-to-br from-[#14222E] to-[#0D3A46] p-8 rounded-2xl border border-[#2DD4BF]/20 hover:border-[#2DD4BF] transition-all duration-300 h-full flex flex-col">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                    <Code className="w-8 h-8 text-[#5EEAD4]" />
+              <div className="group bg-gradient-to-br from-[#14222E] to-[#0D3A46] p-6 rounded-2xl border border-[#2DD4BF]/20 hover:border-[#2DD4BF] transition-all duration-300 h-full flex flex-col">
+                <div className="flex items-center mb-4">
+                  <div className="w-14 h-14 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                    <Code className="w-7 h-7 text-[#5EEAD4]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Software Nexus AI</h3>
+                  <h3 className="text-xl font-bold text-white">Software Nexus AI</h3>
                 </div>
-                <ul className="text-gray-200 space-y-4 mb-6 flex-grow">
+                <ul className="text-gray-200 space-y-3 mb-4 flex-grow">
                   <li className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-[#2DD4BF] mr-3 mt-1 flex-shrink-0" />
                     <span><strong>Múltiplas IAs integradas</strong> em uma plataforma</span>
@@ -204,7 +204,7 @@ function NexusSystemSection() {
                     <span><strong>Gestão centralizada</strong> de todos os projetos</span>
                   </li>
                 </ul>
-                <div className="bg-[#0B1016]/50 p-4 rounded-xl border border-[#1C2A35]">
+                <div className="bg-[#0B1016]/50 p-3 rounded-xl border border-[#1C2A35]">
                   <p className="text-[#5EEAD4] text-sm font-semibold">🚀 Acesso Premium ao Software</p>
                 </div>
               </div>
@@ -213,49 +213,49 @@ function NexusSystemSection() {
 
           {/* SEÇÃO "VEJA O SOFTWARE NEXUS EM AÇÃO" - VERSÃO CORRIGIDA PARA MOBILE */}
           <AnimatedSection>
-            <div className="bg-[#0B1016] rounded-2xl border border-[#1C2A35] p-6 md:p-8">
-              <div className="text-center mb-8">
+            <div className="bg-[#0B1016] rounded-2xl border border-[#1C2A35] p-6">
+              <div className="text-center mb-6">
                 <h3 className="text-3xl font-bold text-white mb-4">Veja o Software Nexus AI em Ação</h3>
                 <p className="text-gray-300 text-lg">Interface intuitiva que reúne o poder de múltiplas IAs especializadas</p>
               </div>
               
               {/* Container visual do software - Dashboard que você gostou */}
-              <div className="bg-gradient-to-r from-[#14222E] to-[#0D3A46] p-1 rounded-xl mb-12">
-                <div className="bg-[#0B1016] rounded-xl p-6 md:p-8 border border-[#1C2A35] min-h-[300px] flex flex-col justify-center">
+              <div className="bg-gradient-to-r from-[#14222E] to-[#0D3A46] p-1 rounded-xl mb-8">
+                <div className="bg-[#0B1016] rounded-xl p-6 border border-[#1C2A35] min-h-[300px] flex flex-col justify-center">
                   {/* Interface simulada do software */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6">
-                    <div className="bg-[#14222E] p-3 md:p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
-                      <Brain className="w-6 h-6 md:w-8 md:h-8 text-[#5EEAD4] mx-auto mb-2" />
-                      <p className="text-white text-xs md:text-sm font-semibold">IA de Análise</p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                    <div className="bg-[#14222E] p-3 rounded-lg border border-[#2DD4BF]/20 text-center">
+                      <Brain className="w-6 h-6 text-[#5EEAD4] mx-auto mb-2" />
+                      <p className="text-white text-xs font-semibold">IA de Análise</p>
                     </div>
-                    <div className="bg-[#14222E] p-3 md:p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
-                      <TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-[#5EEAD4] mx-auto mb-2" />
-                      <p className="text-white text-xs md:text-sm font-semibold">IA de Produtividade</p>
+                    <div className="bg-[#14222E] p-3 rounded-lg border border-[#2DD4BF]/20 text-center">
+                      <TrendingUp className="w-6 h-6 text-[#5EEAD4] mx-auto mb-2" />
+                      <p className="text-white text-xs font-semibold">IA de Produtividade</p>
                     </div>
-                    <div className="bg-[#14222E] p-3 md:p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
-                      <Target className="w-6 h-6 md:w-8 md:h-8 text-[#5EEAD4] mx-auto mb-2" />
-                      <p className="text-white text-xs md:text-sm font-semibold">IA Estratégica</p>
+                    <div className="bg-[#14222E] p-3 rounded-lg border border-[#2DD4BF]/20 text-center">
+                      <Target className="w-6 h-6 text-[#5EEAD4] mx-auto mb-2" />
+                      <p className="text-white text-xs font-semibold">IA Estratégica</p>
                     </div>
-                    <div className="bg-[#14222E] p-3 md:p-4 rounded-lg border border-[#2DD4BF]/20 text-center">
-                      <Zap className="w-6 h-6 md:w-8 md:h-8 text-[#5EEAD4] mx-auto mb-2" />
-                      <p className="text-white text-xs md:text-sm font-semibold">IA de Automação</p>
+                    <div className="bg-[#14222E] p-3 rounded-lg border border-[#2DD4BF]/20 text-center">
+                      <Zap className="w-6 h-6 text-[#5EEAD4] mx-auto mb-2" />
+                      <p className="text-white text-xs font-semibold">IA de Automação</p>
                     </div>
                   </div>
                   
                   {/* Área de preview do Dashboard */}
-                  <div className="bg-[#14222E] rounded-lg p-4 md:p-6 border border-[#1C2A35]">
-                    <div className="flex items-center justify-between mb-3 md:mb-4">
-                      <div className="flex space-x-1 md:space-x-2">
-                        <div className="w-2 h-2 md:w-3 md:h-3 bg-red-500 rounded-full"></div>
-                        <div className="w-2 h-2 md:w-3 md:h-3 bg-yellow-500 rounded-full"></div>
-                        <div className="w-2 h-2 md:w-3 md:h-3 bg-green-500 rounded-full"></div>
+                  <div className="bg-[#14222E] rounded-lg p-4 border border-[#1C2A35]">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex space-x-1">
+                        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                        <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                       </div>
-                      <div className="text-[#5EEAD4] text-xs md:text-sm">nexus-ai-dashboard</div>
+                      <div className="text-[#5EEAD4] text-xs">nexus-ai-dashboard</div>
                     </div>
-                    <div className="bg-[#0B1016] p-3 md:p-4 rounded border border-[#1C2A35]">
-                      <p className="text-gray-400 text-center text-sm md:text-base">
+                    <div className="bg-[#0B1016] p-3 rounded border border-[#1C2A35]">
+                      <p className="text-gray-400 text-center text-sm">
                         🚀 <strong>Interface do Software Nexus AI</strong><br/>
-                        <span className="text-xs md:text-sm">Dashboard integrado com múltiplas inteligências artificiais</span>
+                        <span className="text-xs">Dashboard integrado com múltiplas inteligências artificiais</span>
                       </p>
                     </div>
                   </div>
@@ -263,67 +263,67 @@ function NexusSystemSection() {
               </div>
 
               {/* SEÇÃO DE FERRAMENTAS - ESTILO DO PRIMEIRO MODELO (CORRIGIDA PARA MOBILE) */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {/* IA de Análise */}
                 <AnimatedSection delay={0.2}>
-                  <div className="group bg-gradient-to-br from-[#14222E]/30 to-[#0B1016]/30 p-6 rounded-2xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 relative overflow-hidden h-full">
+                  <div className="group bg-gradient-to-br from-[#14222E]/30 to-[#0B1016]/30 p-4 rounded-2xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 relative overflow-hidden h-full">
                     <div className="absolute inset-0 opacity-10">
                       <img src={brainAIImg} alt="IA de Análise" className="w-full h-full object-cover" />
                     </div>
                     <div className="relative z-10 text-center">
-                      <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
-                        <Brain className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                      <div className="w-12 h-12 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-2xl flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                        <Brain className="w-6 h-6 text-white" />
                       </div>
-                      <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Análise Inteligente</h3>
-                      <p className="text-gray-300 text-sm md:text-base">IA especializada em análise de dados e insights</p>
+                      <h3 className="text-lg font-semibold text-white mb-2">Análise Inteligente</h3>
+                      <p className="text-gray-300 text-sm">IA especializada em análise de dados e insights</p>
                     </div>
                   </div>
                 </AnimatedSection>
 
                 {/* IA de Produtividade */}
                 <AnimatedSection delay={0.3}>
-                  <div className="group bg-gradient-to-br from-[#0D3A46]/30 to-[#14222E]/30 p-6 rounded-2xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 relative overflow-hidden h-full">
+                  <div className="group bg-gradient-to-br from-[#0D3A46]/30 to-[#14222E]/30 p-4 rounded-2xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 relative overflow-hidden h-full">
                     <div className="absolute inset-0 opacity-10">
                       <img src={dataAnalysisImg} alt="IA de Produtividade" className="w-full h-full object-cover" />
                     </div>
                     <div className="relative z-10 text-center">
-                      <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-[#0D3A46] to-[#14222E] rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
-                        <TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                      <div className="w-12 h-12 bg-gradient-to-r from-[#0D3A46] to-[#14222E] rounded-2xl flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                        <TrendingUp className="w-6 h-6 text-white" />
                       </div>
-                      <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Otimização de Processos</h3>
-                      <p className="text-gray-300 text-sm md:text-base">Automatiza e otimiza fluxos de trabalho</p>
+                      <h3 className="text-lg font-semibold text-white mb-2">Otimização de Processos</h3>
+                      <p className="text-gray-300 text-sm">Automatiza e otimiza fluxos de trabalho</p>
                     </div>
                   </div>
                 </AnimatedSection>
 
                 {/* IA Estratégica */}
                 <AnimatedSection delay={0.4}>
-                  <div className="group bg-gradient-to-br from-[#14222E]/30 to-[#0D3A46]/30 p-6 rounded-2xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 relative overflow-hidden h-full">
+                  <div className="group bg-gradient-to-br from-[#14222E]/30 to-[#0D3A46]/30 p-4 rounded-2xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 relative overflow-hidden h-full">
                     <div className="absolute inset-0 opacity-10">
                       <img src={xadrezStrategiaImg} alt="IA Estratégica" className="w-full h-full object-cover" />
                     </div>
                     <div className="relative z-10 text-center">
-                      <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
-                        <Target className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                      <div className="w-12 h-12 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-2xl flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                        <Target className="w-6 h-6 text-white" />
                       </div>
-                      <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Tomada de Decisão</h3>
-                      <p className="text-gray-300 text-sm md:text-base">IA para decisões estratégicas e planejamento</p>
+                      <h3 className="text-lg font-semibold text-white mb-2">Tomada de Decisão</h3>
+                      <p className="text-gray-300 text-sm">IA para decisões estratégicas e planejamento</p>
                     </div>
                   </div>
                 </AnimatedSection>
 
                 {/* IA de Automação */}
                 <AnimatedSection delay={0.5}>
-                  <div className="group bg-gradient-to-br from-[#0D3A46]/30 to-[#14222E]/30 p-6 rounded-2xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 relative overflow-hidden h-full">
+                  <div className="group bg-gradient-to-br from-[#0D3A46]/30 to-[#14222E]/30 p-4 rounded-2xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 relative overflow-hidden h-full">
                     <div className="absolute inset-0 opacity-10">
                       <img src={servicosIAImg} alt="IA de Automação" className="w-full h-full object-cover" />
                     </div>
                     <div className="relative z-10 text-center">
-                      <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-[#0D3A46] to-[#14222E] rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300">
-                        <Zap className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                      <div className="w-12 h-12 bg-gradient-to-r from-[#0D3A46] to-[#14222E] rounded-2xl flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                        <Zap className="w-6 h-6 text-white" />
                       </div>
-                      <h3 className="text-lg md:text-xl font-semibold text-white mb-2">Automação Avançada</h3>
-                      <p className="text-gray-300 text-sm md:text-base">Automatiza tarefas complexas e repetitivas</p>
+                      <h3 className="text-lg font-semibold text-white mb-2">Automação Avançada</h3>
+                      <p className="text-gray-300 text-sm">Automatiza tarefas complexas e repetitivas</p>
                     </div>
                   </div>
                 </AnimatedSection>
@@ -335,8 +335,6 @@ function NexusSystemSection() {
     </AnimatedSection>
   );
 }
-
-// O RESTANTE DO CÓDIGO PERMANECE EXATAMENTE IGUAL...
 
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -350,7 +348,7 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-[#0B1016] font-['Poppins',sans-serif] overflow-x-hidden">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0B1016]/80 backdrop-blur-sm border-b border-[#1C2A35]">
-        <div className="max-w-6xl mx-auto px-4 py-4">
+        <div className="max-w-6xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <img src={novaImagemLogo} alt="NEXUS Logo" className="w-10 h-10 rounded-full" />
@@ -417,7 +415,7 @@ function HomePage() {
       </nav>
 
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center px-4 py-16 overflow-hidden">
         <div className="hidden md:block absolute top-20 left-20 w-72 h-72 bg-[#0D3A46]/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="hidden md:block absolute bottom-20 right-20 w-96 h-96 bg-[#14222E]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute inset-0 opacity-10">
@@ -425,26 +423,26 @@ function HomePage() {
         </div>
         
         <div className={`relative z-10 text-center max-w-6xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="mb-12 mt-20">
-            <div className="inline-flex items-center px-6 py-3 bg-[#2DD4BF]/20 border border-[#2DD4BF]/30 rounded-full text-[#5EEAD4] text-sm font-medium mb-8">
+          <div className="mb-8 mt-16">
+            <div className="inline-flex items-center px-6 py-3 bg-[#2DD4BF]/20 border border-[#2DD4BF]/30 rounded-full text-[#5EEAD4] text-sm font-medium mb-6">
               <Zap className="w-4 h-4 mr-2" />
               Sistema Completo de Alta Performance
             </div>
             
-            <div className="mb-8">
+            <div className="mb-6">
               <video 
                 src={logoVideo} 
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-56 h-auto mx-auto mb-6 rounded-2xl"
+                className="w-56 h-auto mx-auto mb-4 rounded-2xl"
               >
                 Seu navegador não suporta o vídeo.
               </video>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-lg">
               <Typewriter 
                 text="Sistema Nexus: Domine a IA" 
                 speed={60} 
@@ -461,14 +459,14 @@ function HomePage() {
               )}
             </h2>
             
-            <div className="mt-8 text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto space-y-4">
+            <div className="mt-6 text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto space-y-3">
               <p>🚀 <strong>Economize 10+ horas por semana</strong> com automações inteligentes</p>
               <p>🎯 <strong>47 técnicas comprovadas</strong> de produtividade com IA</p>
               <p>💡 <strong>Software exclusivo</strong> com múltiplas IAs integradas</p>
-              <p className="text-[#5EEAD4] font-semibold text-2xl mt-6">Tudo isso por menos de R$ 2,00 por dia!</p>
+              <p className="text-[#5EEAD4] font-semibold text-2xl mt-4">Tudo isso por menos de R$ 2,00 por dia!</p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
               <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white px-8 py-6 text-lg font-bold rounded-2xl shadow-2xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse">
                   <Rocket className="w-6 h-6 mr-3" />
@@ -485,7 +483,7 @@ function HomePage() {
             </div>
 
             {/* Garantias */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-2xl mx-auto">
               <div className="flex items-center justify-center text-gray-300 bg-[#14222E]/30 p-3 rounded-lg border border-[#1C2A35]">
                 <Shield className="w-5 h-5 text-[#5EEAD4] mr-2" />
                 <span className="text-sm">Garantia de 7 Dias</span>
@@ -508,10 +506,10 @@ function HomePage() {
 
       {/* SEÇÃO DE RESULTADOS ESPERADOS */}
       <AnimatedSection>
-        <section className="py-32 px-4 bg-[#14222E]/30">
+        <section className="py-20 px-4 bg-[#14222E]/30">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Resultados <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">Concretos</span> em 30 Dias
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -519,7 +517,7 @@ function HomePage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <AnimatedSection delay={0.2}>
                 <div className="text-center p-6 bg-gradient-to-br from-[#14222E] to-[#0D3A46] rounded-2xl border border-[#2DD4BF]/20">
                   <div className="text-4xl font-bold text-[#5EEAD4] mb-2">10h+</div>
@@ -557,7 +555,7 @@ function HomePage() {
       </AnimatedSection>
 
       {/* BANNER SCROLLING */}
-      <div className="py-8 bg-[#0B1016] border-y-2 border-[#1C2A35]">
+      <div className="py-6 bg-[#0B1016] border-y-2 border-[#1C2A35]">
         <ScrollingBanner speed={10}>
           <div className="flex items-center text-xl font-bold text-gray-300">
             <Brain className="w-7 h-7 mx-6 text-[#5EEAD4]" />
@@ -576,11 +574,11 @@ function HomePage() {
       <StudentPerformanceSection />
 
       {/* SEÇÃO DE DEPOIMENTOS */}
-      <section id="depoimentos" className="py-32 px-4">
+      <section id="depoimentos" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
-            <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Quem Já <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">Usa o Sistema</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -588,11 +586,11 @@ function HomePage() {
               </p>
             </div>
           </AnimatedSection>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatedFromLeft delay={0.2}>
-              <div className="bg-[#14222E]/50 p-8 rounded-2xl border border-[#1C2A35] flex flex-col items-center text-center h-full">
-                <img src={testimonial1Img} alt="Depoimento de Aluno 1" className="w-20 h-20 rounded-full border-2 border-[#2DD4BF] mb-6" />
-                <p className="text-gray-300 italic mb-6">
+              <div className="bg-[#14222E]/50 p-6 rounded-2xl border border-[#1C2A35] flex flex-col items-center text-center h-full">
+                <img src={testimonial1Img} alt="Depoimento de Aluno 1" className="w-20 h-20 rounded-full border-2 border-[#2DD4BF] mb-4" />
+                <p className="text-gray-300 italic mb-4">
                   "O Software Nexus mudou completamente minha forma de trabalhar. As automações me economizam pelo menos 3 horas por dia!"
                 </p>
                 <div className="mt-auto">
@@ -602,9 +600,9 @@ function HomePage() {
               </div>
             </AnimatedFromLeft>
             <AnimatedSection delay={0.4}>
-              <div className="bg-[#14222E]/50 p-8 rounded-2xl border border-[#1C2A35] flex flex-col items-center text-center h-full">
-                <img src={testimonial2Img} alt="Depoimento de Aluno 2" className="w-20 h-20 rounded-full border-2 border-[#2DD4BF] mb-6" />
-                <p className="text-gray-300 italic mb-6">
+              <div className="bg-[#14222E]/50 p-6 rounded-2xl border border-[#1C2A35] flex flex-col items-center text-center h-full">
+                <img src={testimonial2Img} alt="Depoimento de Aluno 2" className="w-20 h-20 rounded-full border-2 border-[#2DD4BF] mb-4" />
+                <p className="text-gray-300 italic mb-4">
                   "Os vídeos são incríveis! Ver as técnicas em ação fez toda a diferença. O PDF sozinho já valeria, mas com os vídeos é sensacional."
                 </p>
                 <div className="mt-auto">
@@ -614,9 +612,9 @@ function HomePage() {
               </div>
             </AnimatedSection>
             <AnimatedFromRight delay={0.2}>
-              <div className="bg-[#14222E]/50 p-8 rounded-2xl border border-[#1C2A35] flex flex-col items-center text-center h-full">
-                 <img src={testimonial3Img} alt="Depoimento de Aluno 3" className="w-20 h-20 rounded-full border-2 border-[#2DD4BF] mb-6" />
-                <p className="text-gray-300 italic mb-6">
+              <div className="bg-[#14222E]/50 p-6 rounded-2xl border border-[#1C2A35] flex flex-col items-center text-center h-full">
+                 <img src={testimonial3Img} alt="Depoimento de Aluno 3" className="w-20 h-20 rounded-full border-2 border-[#2DD4BF] mb-4" />
+                <p className="text-gray-300 italic mb-4">
                   "Ter acesso ao software com múltiplas IAs é um diferencial absurdo. É como ter uma equipe de especialistas 24h por dia."
                 </p>
                 <div className="mt-auto">
@@ -629,71 +627,71 @@ function HomePage() {
         </div>
       </section>
 
-    {/* SEÇÃO FINAL DE VENDA - BOTÃO CORRIGIDO PARA MOBILE */}
-<AnimatedSection>
-  <section className="py-32 px-4 bg-gradient-to-br from-[#0D3A46] to-[#14222E]">
-    <div className="max-w-4xl mx-auto text-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-        🚀 <span className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent">Oferta Especial</span> por Tempo Limitado
-      </h2>
-      
-      <div className="bg-[#0B1016] p-8 rounded-2xl mb-8 border border-[#F59E0B]/50">
-        <div className="grid md:grid-cols-3 gap-6 mb-6">
-          <div className="text-center p-4">
-            <BookOpen className="w-12 h-12 text-[#5EEAD4] mx-auto mb-3" />
-            <h4 className="text-white font-bold">Manual Premium</h4>
-            <p className="text-gray-300 text-sm">47 técnicas + atualizações</p>
-          </div>
-          <div className="text-center p-4">
-            <Play className="w-12 h-12 text-[#5EEAD4] mx-auto mb-3" />
-            <h4 className="text-white font-bold">Vídeos Exclusivos</h4>
-            <p className="text-gray-300 text-sm">Tutoriais práticos</p>
-          </div>
-          <div className="text-center p-4">
-            <Code className="w-12 h-12 text-[#5EEAD4] mx-auto mb-3" />
-            <h4 className="text-white font-bold">Software Nexus AI</h4>
-            <p className="text-gray-300 text-sm">4 IAs integradas</p>
-          </div>
-        </div>
+      {/* SEÇÃO FINAL DE VENDA */}
+      <AnimatedSection>
+        <section className="py-20 px-4 bg-gradient-to-br from-[#0D3A46] to-[#14222E]">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              🚀 <span className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent">Oferta Especial</span> por Tempo Limitado
+            </h2>
+            
+            <div className="bg-[#0B1016] p-6 rounded-2xl mb-6 border border-[#F59E0B]/50">
+              <div className="grid md:grid-cols-3 gap-4 mb-4">
+                <div className="text-center p-4">
+                  <BookOpen className="w-10 h-10 text-[#5EEAD4] mx-auto mb-2" />
+                  <h4 className="text-white font-bold text-sm">Manual Premium</h4>
+                  <p className="text-gray-300 text-xs">47 técnicas + atualizações</p>
+                </div>
+                <div className="text-center p-4">
+                  <Play className="w-10 h-10 text-[#5EEAD4] mx-auto mb-2" />
+                  <h4 className="text-white font-bold text-sm">Vídeos Exclusivos</h4>
+                  <p className="text-gray-300 text-xs">Tutoriais práticos</p>
+                </div>
+                <div className="text-center p-4">
+                  <Code className="w-10 h-10 text-[#5EEAD4] mx-auto mb-2" />
+                  <h4 className="text-white font-bold text-sm">Software Nexus AI</h4>
+                  <p className="text-gray-300 text-xs">4 IAs integradas</p>
+                </div>
+              </div>
 
-        <div className="bg-[#14222E] p-6 rounded-xl border border-[#2DD4BF]/30">
-          <p className="text-gray-300 text-lg mb-2">Valor Total: <span className="line-through text-red-400">R$ 497,00</span></p>
-          <p className="text-4xl font-bold text-white mb-2">Por apenas R$ 47,00</p>
-          <p className="text-[#5EEAD4] text-lg">Ou 12x de R$ 4,90</p>
-          <p className="text-gray-400 text-sm mt-2">Menos de R$ 2,00 por dia!</p>
-        </div>
-      </div>
+              <div className="bg-[#14222E] p-4 rounded-xl border border-[#2DD4BF]/30">
+                <p className="text-gray-300 text-base mb-2">Valor Total: <span className="line-through text-red-400">R$ 497,00</span></p>
+                <p className="text-3xl font-bold text-white mb-2">Por apenas R$ 47,00</p>
+                <p className="text-[#5EEAD4] text-base">Ou 12x de R$ 4,90</p>
+                <p className="text-gray-400 text-sm mt-2">Menos de R$ 2,00 por dia!</p>
+              </div>
+            </div>
 
-      {/* BOTÃO CORRIGIDO PARA MOBILE */}
-      <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
-        <Button size="lg" className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white px-6 md:px-12 py-4 md:py-6 text-base md:text-xl font-bold rounded-2xl shadow-2xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse w-full max-w-md mx-auto">
-          <Rocket className="w-5 h-5 md:w-7 md:h-7 mr-2 md:mr-3" />
-          QUERO O SISTEMA COMPLETO AGORA!
-        </Button>
-      </a>
+            <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white px-6 md:px-12 py-4 md:py-6 text-base md:text-xl font-bold rounded-2xl shadow-2xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse w-full max-w-md mx-auto">
+                <Rocket className="w-5 h-5 md:w-7 md:h-7 mr-2 md:mr-3" />
+                QUERO O SISTEMA COMPLETO AGORA!
+              </Button>
+            </a>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 max-w-2xl mx-auto">
-        <div className="flex items-center justify-center text-gray-300">
-          <Shield className="w-5 h-5 text-[#5EEAD4] mr-2" />
-          <span className="text-sm">7 dias de garantia</span>
-        </div>
-        <div className="flex items-center justify-center text-gray-300">
-          <Download className="w-5 h-5 text-[#5EEAD4] mr-2" />
-          <span className="text-sm">Acesso imediato</span>
-        </div>
-        <div className="flex items-center justify-center text-gray-300">
-          <Users className="w-5 h-5 text-[#5EEAD4] mr-2" />
-          <span className="text-sm">Suporte dedicado</span>
-        </div>
-      </div>
-    </div>
-  </section>
-</AnimatedSection>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6 max-w-2xl mx-auto">
+              <div className="flex items-center justify-center text-gray-300">
+                <Shield className="w-4 h-4 text-[#5EEAD4] mr-2" />
+                <span className="text-xs">7 dias de garantia</span>
+              </div>
+              <div className="flex items-center justify-center text-gray-300">
+                <Download className="w-4 h-4 text-[#5EEAD4] mr-2" />
+                <span className="text-xs">Acesso imediato</span>
+              </div>
+              <div className="flex items-center justify-center text-gray-300">
+                <Users className="w-4 h-4 text-[#5EEAD4] mr-2" />
+                <span className="text-xs">Suporte dedicado</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
       {/* FOOTER */}
       <AnimatedSection>
-        <footer className="border-t border-[#1C2A35] bg-[#0B1016]/50 py-12 px-4">
+        <footer className="border-t border-[#1C2A35] bg-[#0B1016]/50 py-8 px-4">
            <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-6">
               <div>
                 <div className="flex items-center space-x-3 mb-4">
                   <img src={novaImagemLogo} alt="NEXUS Logo" className="w-10 h-10 rounded-full" />
@@ -730,7 +728,7 @@ function HomePage() {
                 </a>
               </div>
             </div>
-            <div className="border-t border-[#1C2A35] mt-8 pt-8 text-center">
+            <div className="border-t border-[#1C2A35] mt-6 pt-6 text-center">
               <p className="text-gray-400 text-sm">
                 © 2025 NEXUS. Todos os direitos reservados.
               </p>
