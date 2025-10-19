@@ -629,66 +629,66 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SEÇÃO FINAL DE VENDA */}
-      <AnimatedSection>
-        <section className="py-32 px-4 bg-gradient-to-br from-[#0D3A46] to-[#14222E]">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              🚀 <span className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent">Oferta Especial</span> por Tempo Limitado
-            </h2>
-            
-            <div className="bg-[#0B1016] p-8 rounded-2xl mb-8 border border-[#F59E0B]/50">
-              <div className="grid md:grid-cols-3 gap-6 mb-6">
-                <div className="text-center p-4">
-                  <BookOpen className="w-12 h-12 text-[#5EEAD4] mx-auto mb-3" />
-                  <h4 className="text-white font-bold">Manual Premium</h4>
-                  <p className="text-gray-300 text-sm">47 técnicas + atualizações</p>
-                </div>
-                <div className="text-center p-4">
-                  <Play className="w-12 h-12 text-[#5EEAD4] mx-auto mb-3" />
-                  <h4 className="text-white font-bold">Vídeos Exclusivos</h4>
-                  <p className="text-gray-300 text-sm">Tutoriais práticos</p>
-                </div>
-                <div className="text-center p-4">
-                  <Code className="w-12 h-12 text-[#5EEAD4] mx-auto mb-3" />
-                  <h4 className="text-white font-bold">Software Nexus AI</h4>
-                  <p className="text-gray-300 text-sm">4 IAs integradas</p>
-                </div>
-              </div>
-
-              <div className="bg-[#14222E] p-6 rounded-xl border border-[#2DD4BF]/30">
-                <p className="text-gray-300 text-lg mb-2">Valor Total: <span className="line-through text-red-400">R$ 497,00</span></p>
-                <p className="text-4xl font-bold text-white mb-2">Por apenas R$ 47,00</p>
-                <p className="text-[#5EEAD4] text-lg">Ou 12x de R$ 4,90</p>
-                <p className="text-gray-400 text-sm mt-2">Menos de R$ 2,00 por dia!</p>
-              </div>
-            </div>
-
-            <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white px-12 py-6 text-xl font-bold rounded-2xl shadow-2xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse">
-                <Rocket className="w-7 h-7 mr-3" />
-                QUERO O SISTEMA COMPLETO AGORA!
-              </Button>
-            </a>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 max-w-2xl mx-auto">
-              <div className="flex items-center text-gray-300">
-                <Shield className="w-5 h-5 text-[#5EEAD4] mr-2" />
-                <span className="text-sm">7 dias de garantia</span>
-              </div>
-              <div className="flex items-center text-gray-300">
-                <Download className="w-5 h-5 text-[#5EEAD4] mr-2" />
-                <span className="text-sm">Acesso imediato</span>
-              </div>
-              <div className="flex items-center text-gray-300">
-                <Users className="w-5 h-5 text-[#5EEAD4] mr-2" />
-                <span className="text-sm">Suporte dedicado</span>
-              </div>
-            </div>
+    {/* SEÇÃO FINAL DE VENDA - BOTÃO CORRIGIDO PARA MOBILE */}
+<AnimatedSection>
+  <section className="py-32 px-4 bg-gradient-to-br from-[#0D3A46] to-[#14222E]">
+    <div className="max-w-4xl mx-auto text-center">
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+        🚀 <span className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent">Oferta Especial</span> por Tempo Limitado
+      </h2>
+      
+      <div className="bg-[#0B1016] p-8 rounded-2xl mb-8 border border-[#F59E0B]/50">
+        <div className="grid md:grid-cols-3 gap-6 mb-6">
+          <div className="text-center p-4">
+            <BookOpen className="w-12 h-12 text-[#5EEAD4] mx-auto mb-3" />
+            <h4 className="text-white font-bold">Manual Premium</h4>
+            <p className="text-gray-300 text-sm">47 técnicas + atualizações</p>
           </div>
-        </section>
-      </AnimatedSection>
+          <div className="text-center p-4">
+            <Play className="w-12 h-12 text-[#5EEAD4] mx-auto mb-3" />
+            <h4 className="text-white font-bold">Vídeos Exclusivos</h4>
+            <p className="text-gray-300 text-sm">Tutoriais práticos</p>
+          </div>
+          <div className="text-center p-4">
+            <Code className="w-12 h-12 text-[#5EEAD4] mx-auto mb-3" />
+            <h4 className="text-white font-bold">Software Nexus AI</h4>
+            <p className="text-gray-300 text-sm">4 IAs integradas</p>
+          </div>
+        </div>
 
+        <div className="bg-[#14222E] p-6 rounded-xl border border-[#2DD4BF]/30">
+          <p className="text-gray-300 text-lg mb-2">Valor Total: <span className="line-through text-red-400">R$ 497,00</span></p>
+          <p className="text-4xl font-bold text-white mb-2">Por apenas R$ 47,00</p>
+          <p className="text-[#5EEAD4] text-lg">Ou 12x de R$ 4,90</p>
+          <p className="text-gray-400 text-sm mt-2">Menos de R$ 2,00 por dia!</p>
+        </div>
+      </div>
+
+      {/* BOTÃO CORRIGIDO PARA MOBILE */}
+      <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
+        <Button size="lg" className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white px-6 md:px-12 py-4 md:py-6 text-base md:text-xl font-bold rounded-2xl shadow-2xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse w-full max-w-md mx-auto">
+          <Rocket className="w-5 h-5 md:w-7 md:h-7 mr-2 md:mr-3" />
+          QUERO O SISTEMA COMPLETO AGORA!
+        </Button>
+      </a>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 max-w-2xl mx-auto">
+        <div className="flex items-center justify-center text-gray-300">
+          <Shield className="w-5 h-5 text-[#5EEAD4] mr-2" />
+          <span className="text-sm">7 dias de garantia</span>
+        </div>
+        <div className="flex items-center justify-center text-gray-300">
+          <Download className="w-5 h-5 text-[#5EEAD4] mr-2" />
+          <span className="text-sm">Acesso imediato</span>
+        </div>
+        <div className="flex items-center justify-center text-gray-300">
+          <Users className="w-5 h-5 text-[#5EEAD4] mr-2" />
+          <span className="text-sm">Suporte dedicado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</AnimatedSection>
       {/* FOOTER */}
       <AnimatedSection>
         <footer className="border-t border-[#1C2A35] bg-[#0B1016]/50 py-12 px-4">
