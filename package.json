@@ -3,11 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://seuusuario.github.io/nexus-landing", // ADICIONE ESTA LINHA
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build", // ADICIONE ESTE SCRIPT
+    "deploy": "gh-pages -d dist" // ADICIONE ESTE SCRIPT
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -68,6 +71,7 @@
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
+    "gh-pages": "^6.1.1", // ADICIONE ESTA LINHA
     "globals": "^16.0.0",
     "tw-animate-css": "^1.2.9",
     "vite": "^6.3.5"
