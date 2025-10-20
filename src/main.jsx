@@ -1,14 +1,13 @@
-// O CÓDIGO DEVE FICAR ASSIM (CORRETO)
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom' // MUDE BrowserRouter para HashRouter
 import App from './App.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter> {/* <--- REMOVA O BASENAME DAQUI */}
+    <HashRouter> {/* MUDE BrowserRouter para HashRouter */}
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
 )
