@@ -90,7 +90,7 @@ function StudentPerformanceSection() {
 }
 
 // ===================================================================
-// COMPONENTE DO SISTEMA NEXUS - VERSÃO CORRIGIDA PARA MOBILE
+// COMPONENTE DO SISTEMA NEXUS
 // ===================================================================
 function NexusSystemSection() {
   return (
@@ -211,7 +211,7 @@ function NexusSystemSection() {
             </AnimatedSection>
           </div>
 
-          {/* SEÇÃO "VEJA O SOFTWARE NEXUS EM AÇÃO" - VERSÃO CORRIGIDA PARA MOBILE */}
+          {/* SEÇÃO "VEJA O SOFTWARE NEXUS EM AÇÃO" */}
           <AnimatedSection>
             <div className="bg-[#0B1016] rounded-2xl border border-[#1C2A35] p-6">
               <div className="text-center mb-6">
@@ -219,7 +219,7 @@ function NexusSystemSection() {
                 <p className="text-gray-300 text-lg">Interface intuitiva que reúne o poder de múltiplas IAs especializadas</p>
               </div>
               
-              {/* Container visual do software - Dashboard que você gostou */}
+              {/* Container visual do software */}
               <div className="bg-gradient-to-r from-[#14222E] to-[#0D3A46] p-1 rounded-xl mb-8">
                 <div className="bg-[#0B1016] rounded-xl p-6 border border-[#1C2A35] min-h-[300px] flex flex-col justify-center">
                   {/* Interface simulada do software */}
@@ -262,7 +262,7 @@ function NexusSystemSection() {
                 </div>
               </div>
 
-              {/* SEÇÃO DE FERRAMENTAS - ESTILO DO PRIMEIRO MODELO (CORRIGIDA PARA MOBILE) */}
+              {/* SEÇÃO DE FERRAMENTAS */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {/* IA de Análise */}
                 <AnimatedSection delay={0.2}>
@@ -336,6 +336,9 @@ function NexusSystemSection() {
   );
 }
 
+// ===================================================================
+// COMPONENTE HOMEPAGE - COM NARRATIVA "ARSENAL" (R$ 19,90)
+// ===================================================================
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -414,7 +417,10 @@ function HomePage() {
         </div>
       </nav>
 
-      {/* HERO SECTION */}
+      {/* ===============================================================
+      HERO SECTION - NARRATIVA "ARSENAL"
+      ===============================================================
+      */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-16 overflow-hidden">
         <div className="hidden md:block absolute top-20 left-20 w-72 h-72 bg-[#0D3A46]/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="hidden md:block absolute bottom-20 right-20 w-96 h-96 bg-[#14222E]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -424,9 +430,11 @@ function HomePage() {
         
         <div className={`relative z-10 text-center max-w-6xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="mb-8 mt-16">
-            <div className="inline-flex items-center px-6 py-3 bg-[#2DD4BF]/20 border border-[#2DD4BF]/30 rounded-full text-[#5EEAD4] text-sm font-medium mb-6">
-              <Zap className="w-4 h-4 mr-2" />
-              Sistema Completo de Alta Performance
+            
+            {/* TAGLINE AJUSTADA: Foco em "Arsenal" */}
+            <div className="inline-flex items-center px-6 py-3 bg-[#F59E0B]/20 border border-[#F59E0B]/30 rounded-full text-[#F59E0B] text-sm font-medium mb-6">
+              <Shield className="w-4 h-4 mr-2" />
+              NÃO COMPRE OUTRO CURSO DE IA
             </div>
             
             <div className="mb-6">
@@ -459,30 +467,47 @@ function HomePage() {
               )}
             </h2>
             
+            {/* ===============================================================
+            A JUSTIFICATIVA DA OFERTA (O "PORQUÊ") - VERSÃO ARSENAL
+            ===============================================================
+            */}
             <div className="mt-6 text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto space-y-3">
-              <p>🚀 <strong>Economize 10+ horas por semana</strong> com automações inteligentes</p>
-              <p>🎯 <strong>47 técnicas comprovadas</strong> de produtividade com IA</p>
-              <p>💡 <strong>Software exclusivo</strong> com múltiplas IAs integradas</p>
-              <p className="text-[#5EEAD4] font-semibold text-2xl mt-4">Tudo isso por menos de R$ 2,00 por dia!</p>
+              <p className="text-lg text-gray-400">
+                O mercado está cheio de 'cursos completos' de R$ 2.000 que só entregam teoria. Você assiste 50 aulas e... nada muda.
+              </p>
+              <p className="text-lg text-gray-300 font-semibold">
+                Você não precisa de mais teoria. Você precisa de um <span className="text-white">ARSENAL DE IMPLEMENTAÇÃO</span>.
+              </p>
+              <p className="text-lg text-gray-400">
+                Estamos validando o **Sistema Nexus (PDF + Vídeos + Software)**. Antes do lançamento oficial de <span className="line-through">R$ 497</span>, abrimos 200 vagas de validação.
+              </p>
+              <p className="text-gray-400 text-base">
+                O seu papel? Usar o arsenal. O nosso? Te entregar tudo por uma taxa simbólica de:
+              </p>
+              <p className="text-5xl font-bold text-white bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent py-2">
+                APENAS R$ 19,90
+              </p>
+              <p className="text-gray-400 text-base">(Pagamento Único. Acesso vitalício ao "curso completo" que é mais que um curso: é um sistema.)</p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+              {/* BOTÃO CTA AJUSTADO */}
               <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white px-8 py-6 text-lg font-bold rounded-2xl shadow-2xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse">
                   <Rocket className="w-6 h-6 mr-3" />
-                  QUERO O SISTEMA COMPLETO
+                  QUERO O ARSENAL COMPLETO AGORA
                   <ArrowRight className="w-6 h-6 ml-3" />
                 </Button>
               </a>
               <Link to="/detalhes">
                 <Button variant="outline" size="lg" className="border-[#2DD4BF]/50 text-[#5EEAD4] hover:bg-[#2DD4BF]/10 hover:text-[#5EEAD4] px-6 py-4 text-lg font-semibold rounded-xl">
                   <LayoutList className="w-5 h-5 mr-2" />
-                  Ver Conteúdo Completo
+                  Ver o Sistema Completo
                 </Button>
               </Link>
             </div>
 
-            {/* Garantias */}
+            {/* GARANTIAS AJUSTADAS */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-2xl mx-auto">
               <div className="flex items-center justify-center text-gray-300 bg-[#14222E]/30 p-3 rounded-lg border border-[#1C2A35]">
                 <Shield className="w-5 h-5 text-[#5EEAD4] mr-2" />
@@ -494,12 +519,17 @@ function HomePage() {
               </div>
               <div className="flex items-center justify-center text-gray-300 bg-[#14222E]/30 p-3 rounded-lg border border-[#1C2A35]">
                 <Clock className="w-5 h-5 text-[#5EEAD4] mr-2" />
-                <span className="text-sm">Atualizações Vitalícias</span>
+                <span className="text-sm">Acesso Vitalício (Arsenal Completo)</span>
               </div>
             </div>
           </div>
         </div>
       </section>
+      {/* ===============================================================
+      FIM DA HERO SECTION AJUSTADA
+      ===============================================================
+      */}
+
 
       {/* SEÇÃO DO SISTEMA COMPLETO */}
       <NexusSystemSection />
@@ -627,65 +657,88 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SEÇÃO FINAL DE VENDA */}
+      {/* ===============================================================
+      SEÇÃO FINAL DE VENDA - NARRATIVA "ARSENAL" (O FECHAMENTO)
+      ===============================================================
+      */}
       <AnimatedSection>
         <section className="py-20 px-4 bg-gradient-to-br from-[#0D3A46] to-[#14222E]">
           <div className="max-w-4xl mx-auto text-center">
+            
+            {/* HEADLINE AJUSTADA */}
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              🚀 <span className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent">Oferta Especial</span> por Tempo Limitado
+              A Diferença Entre <span className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent">Teoria e Resultados</span>
             </h2>
             
+            {/* TEXTO DE REFORÇO DA NARRATIVA */}
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+              Um 'curso completo' comum te dá horas de vídeos. O <strong>Arsenal Nexus</strong> te dá 47 técnicas prontas, vídeos que vão direto ao ponto e um software para <i>aplicar tudo hoje</i>.
+              <br/><br/>
+              Não é sobre 'aprender IA'. É sobre <strong>usar</strong> IA para economizar 10h por semana.
+              <br/><br/>
+              Hoje, você não compra um curso. Você adquire um arsenal. As 200 vagas de validação com preço simbólico estão fechando. Depois disso, o valor oficial será R$ 497,00.
+            </p>
+
             <div className="bg-[#0B1016] p-6 rounded-2xl mb-6 border border-[#F59E0B]/50">
+              {/* O QUE VOCÊ LEVA (Stack de Valor) */}
               <div className="grid md:grid-cols-3 gap-4 mb-4">
                 <div className="text-center p-4">
                   <BookOpen className="w-10 h-10 text-[#5EEAD4] mx-auto mb-2" />
-                  <h4 className="text-white font-bold text-sm">Manual Premium</h4>
-                  <p className="text-gray-300 text-xs">47 técnicas + atualizações</p>
+                  <h4 className="text-white font-bold text-sm">O Método (Manual PDF)</h4>
+                  <p className="text-gray-300 text-xs">Valor: R$ 97,00</p>
                 </div>
                 <div className="text-center p-4">
                   <Play className="w-10 h-10 text-[#5EEAD4] mx-auto mb-2" />
-                  <h4 className="text-white font-bold text-sm">Vídeos Exclusivos</h4>
-                  <p className="text-gray-300 text-xs">Tutoriais práticos</p>
+                  <h4 className="text-white font-bold text-sm">A Prática (Vídeos)</h4>
+                  <p className="text-gray-300 text-xs">Valor: R$ 197,00</p>
                 </div>
                 <div className="text-center p-4">
                   <Code className="w-10 h-10 text-[#5EEAD4] mx-auto mb-2" />
-                  <h4 className="text-white font-bold text-sm">Software Nexus AI</h4>
-                  <p className="text-gray-300 text-xs">4 IAs integradas</p>
+                  <h4 className="text-white font-bold text-sm">A Ferramenta (Software)</h4>
+                  <p className="text-gray-300 text-xs">Valor: R$ 203,00</p>
                 </div>
               </div>
 
+              {/* O PREÇO (A ÂNCORA E A OFERTA) */}
               <div className="bg-[#14222E] p-4 rounded-xl border border-[#2DD4BF]/30">
-                <p className="text-gray-300 text-base mb-2">Valor Total: <span className="line-through text-red-400">R$ 497,00</span></p>
-                <p className="text-3xl font-bold text-white mb-2">Por apenas R$ 47,00</p>
-                <p className="text-[#5EEAD4] text-base">Ou 12x de R$ 4,90</p>
-                <p className="text-gray-400 text-sm mt-2">Menos de R$ 2,00 por dia!</p>
+                <p className="text-gray-300 text-lg mb-2">Valor Total do Arsenal: <span className="line-through text-red-400">R$ 497,00</span></p>
+                <p className="text-xl font-bold text-white mb-2">Taxa de Validação (HOJE):</p>
+                <p className="text-5xl font-bold text-[#5EEAD4] mb-2">Pagamento Único de R$ 19,90</p>
+                <p className="text-gray-400 text-sm mt-2">(Você leva o "Curso Completo", o Software e as Atualizações Vitalícias)</p>
               </div>
             </div>
 
+            {/* BOTÃO CTA FINAL AJUSTADO */}
             <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white px-6 md:px-12 py-4 md:py-6 text-base md:text-xl font-bold rounded-2xl shadow-2xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse w-full max-w-md mx-auto">
                 <Rocket className="w-5 h-5 md:w-7 md:h-7 mr-2 md:mr-3" />
-                QUERO O SISTEMA COMPLETO AGORA!
+                GARANTIR MEU ARSENAL POR R$ 19,90
               </Button>
             </a>
 
+            {/* GARANTIAS FINAIS AJUSTADAS */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6 max-w-2xl mx-auto">
               <div className="flex items-center justify-center text-gray-300">
                 <Shield className="w-4 h-4 text-[#5EEAD4] mr-2" />
-                <span className="text-xs">7 dias de garantia</span>
+                <span className="text-xs">7 dias de garantia total</span>
               </div>
               <div className="flex items-center justify-center text-gray-300">
                 <Download className="w-4 h-4 text-[#5EEAD4] mr-2" />
-                <span className="text-xs">Acesso imediato</span>
+                <span className="text-xs">Acesso imediato e vitalício</span>
               </div>
               <div className="flex items-center justify-center text-gray-300">
                 <Users className="w-4 h-4 text-[#5EEAD4] mr-2" />
-                <span className="text-xs">Suporte dedicado</span>
+                <span className="text-xs">Suporte (Grupo de Validação)</span>
               </div>
             </div>
           </div>
         </section>
       </AnimatedSection>
+      {/* ===============================================================
+      FIM DA SEÇÃO FINAL DE VENDA
+      ===============================================================
+      */}
+
 
       {/* FOOTER */}
       <AnimatedSection>
