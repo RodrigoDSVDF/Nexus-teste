@@ -113,7 +113,7 @@ function NexusSystemSection() {
           <div className="grid lg:grid-cols-3 gap-6 mb-12">
             {/* PDF */}
             <AnimatedSection delay={0.2}>
-              <div className="group bg-gradient-to-br from-[#14222E] to-[#0D3A46] p-6 rounded-2xl border border-[#2DD4BF]/20 hover:border-[#2DD4BF] transition-all duration-300 h-full flex flex-col">
+              <div className="group bg-gradient-to-br from-[#1422E] to-[#0D3A46] p-6 rounded-2xl border border-[#2DD4BF]/20 hover:border-[#2DD4BF] transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center mb-4">
                   <div className="w-14 h-14 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                     <BookOpen className="w-7 h-7 text-[#5EEAD4]" />
@@ -300,7 +300,7 @@ function NexusSystemSection() {
                 <AnimatedSection delay={0.4}>
                   <div className="group bg-gradient-to-br from-[#14222E]/30 to-[#0D3A46]/30 p-4 rounded-2xl border border-[#1C2A35] hover:border-[#0D3A46] transition-all duration-300 relative overflow-hidden h-full">
                     <div className="absolute inset-0 opacity-10">
-                      <img src={xadrezStrategiaImg} alt="IA EstratégICA" className="w-full h-full object-cover" />
+                      <img src={xadrezStrategiaImg} alt="IA Estratégica" className="w-full h-full object-cover" />
                     </div>
                     <div className="relative z-10 text-center">
                       <div className="w-12 h-12 bg-gradient-to-r from-[#14222E] to-[#0D3A46] rounded-2xl flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
@@ -337,7 +337,7 @@ function NexusSystemSection() {
 }
 
 // ===================================================================
-// COMPONENTE HOMEPAGE - NARRATIVA "ARSENAL" (R$ 47) E AJUSTE MOBILE
+// COMPONENTE HOMEPAGE - CORRIGIDO PARA MOBILE
 // ===================================================================
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -418,7 +418,7 @@ function HomePage() {
       </nav>
 
       {/* ===============================================================
-      HERO SECTION - NARRATIVA "ARSENAL" (R$ 47) E AJUSTE MOBILE
+      HERO SECTION - CORREÇÃO DE TEXTO E BOTÕES
       ===============================================================
       */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-16 overflow-hidden">
@@ -467,37 +467,50 @@ function HomePage() {
             </h2>
             
             {/* ===============================================================
-            BLOCO DE TEXTO DA JUSTIFICATIVA (AJUSTADO PARA MOBILE)
+            BLOCO DE TEXTO DA JUSTIFICATIVA (CORRIGIDO)
+            text-lg md:text-xl -> text-base md:text-lg
             ===============================================================
             */}
-            <div className="mt-6 text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto space-y-4">
+            <div className="mt-6 text-base md:text-lg text-gray-200 mb-8 max-w-3xl mx-auto space-y-4">
               <p className="text-gray-300">
                 O mercado está cheio de 'cursos completos' de R$ 2.000 que só entregam teoria. Você assiste 50 aulas e... nada muda.
               </p>
-              <p className="text-xl md:text-2xl text-white font-semibold">
+              {/* text-xl md:text-2xl -> text-lg md:text-2xl */}
+              <p className="text-lg md:text-2xl text-white font-semibold">
                 Você não precisa de mais teoria. Você precisa de um <span className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent">ARSENAL DE IMPLEMENTAÇÃO</span>.
               </p>
               <p className="text-gray-300">
                 Para nossos **primeiros 100 Fundadores**, estamos liberando o arsenal completo (avaliado em R$ 497) pelo preço especial de lançamento.
               </p>
               
-              {/* --- PREÇO AJUSTADO PARA R$ 47 --- */}
               <p className="text-5xl font-bold text-white bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent py-2">
                 12x de R$ 4,90
               </p>
               <p className="text-gray-200 text-2xl font-semibold">ou R$ 47,00 à vista</p>
             </div>
 
+            {/* ===============================================================
+            BOTÕES (CORRIGIDOS)
+            Adicionado w-full sm:w-auto nos links e w-full nos botões
+            ===============================================================
+            */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-              <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white px-8 py-6 text-lg font-bold rounded-2xl shadow-2xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse">
+              <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white px-8 py-6 text-lg font-bold rounded-2xl shadow-2xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse w-full"
+                >
                   <Rocket className="w-6 h-6 mr-3" />
                   QUERO O ARSENAL COMPLETO AGORA
                   <ArrowRight className="w-6 h-6 ml-3" />
                 </Button>
               </a>
-              <Link to="/detalhes">
-                <Button variant="outline" size="lg" className="border-[#2DD4BF]/50 text-[#5EEAD4] hover:bg-[#2DD4BF]/10 hover:text-[#5EEAD4] px-6 py-4 text-lg font-semibold rounded-xl">
+              <Link to="/detalhes" className="w-full sm:w-auto">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-[#2DD4BF]/50 text-[#5EEAD4] hover:bg-[#2DD4BF]/10 hover:text-[#5EEAD4] px-6 py-4 text-lg font-semibold rounded-xl w-full"
+                >
                   <LayoutList className="w-5 h-5 mr-2" />
                   Ver o Sistema Completo
                 </Button>
@@ -692,7 +705,6 @@ function HomePage() {
                 </div>
               </div>
 
-              {/* --- PREÇO AJUSTADO PARA R$ 47 --- */}
               <div className="bg-[#14222E] p-4 rounded-xl border border-[#2DD4BF]/30">
                 <p className="text-gray-300 text-lg mb-2">Valor Total do Arsenal: <span className="line-through text-red-400">R$ 497,00</span></p>
                 <p className="text-xl font-bold text-white mb-2">Preço de Lançamento (HOJE):</p>
@@ -702,7 +714,6 @@ function HomePage() {
               </div>
             </div>
 
-            {/* --- BOTÃO CTA AJUSTADO --- */}
             <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white px-6 md:px-12 py-4 md:py-6 text-base md:text-xl font-bold rounded-2xl shadow-2xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse w-full max-w-md mx-auto">
                 <Rocket className="w-5 h-5 md:w-7 md:h-7 mr-2 md:mr-3" />
@@ -710,7 +721,6 @@ function HomePage() {
               </Button>
             </a>
 
-            {/* --- GARANTIAS AJUSTADAS --- */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6 max-w-2xl mx-auto">
               <div className="flex items-center justify-center text-gray-300">
                 <Shield className="w-4 h-4 text-[#5EEAD4] mr-2" />
