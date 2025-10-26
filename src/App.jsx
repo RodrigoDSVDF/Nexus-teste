@@ -337,7 +337,7 @@ function NexusSystemSection() {
 }
 
 // ===================================================================
-// COMPONENTE HOMEPAGE - CORRIGIDO PARA MOBILE
+// COMPONENTE HOMEPAGE - CORRIGIDO PARA MOBILE (FONTES E BOTÕES)
 // ===================================================================
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -418,7 +418,7 @@ function HomePage() {
       </nav>
 
       {/* ===============================================================
-      HERO SECTION - CORREÇÃO DE TEXTO E BOTÕES
+      HERO SECTION - CORREÇÃO DE FONTES E BOTÕES
       ===============================================================
       */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-16 overflow-hidden">
@@ -467,38 +467,42 @@ function HomePage() {
             </h2>
             
             {/* ===============================================================
-            BLOCO DE TEXTO DA JUSTIFICATIVA (CORRIGIDO)
-            text-lg md:text-xl -> text-base md:text-lg
+            BLOCO DE TEXTO DA JUSTIFICATIVA (CORRIGIDO PARA MOBILE)
             ===============================================================
             */}
-            <div className="mt-6 text-base md:text-lg text-gray-200 mb-8 max-w-3xl mx-auto space-y-4">
+            {/* Base: text-sm, Medium: sm:text-base, Large: md:text-lg */}
+            <div className="mt-6 text-sm sm:text-base md:text-lg text-gray-200 mb-8 max-w-3xl mx-auto space-y-4">
               <p className="text-gray-300">
                 O mercado está cheio de 'cursos completos' de R$ 2.000 que só entregam teoria. Você assiste 50 aulas e... nada muda.
               </p>
-              {/* text-xl md:text-2xl -> text-lg md:text-2xl */}
-              <p className="text-lg md:text-2xl text-white font-semibold">
+              {/* Destaque: text-base, Medium: sm:text-lg, Large: md:text-2xl */}
+              <p className="text-base sm:text-lg md:text-2xl text-white font-semibold">
                 Você não precisa de mais teoria. Você precisa de um <span className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent">ARSENAL DE IMPLEMENTAÇÃO</span>.
               </p>
               <p className="text-gray-300">
                 Para nossos **primeiros 100 Fundadores**, estamos liberando o arsenal completo (avaliado em R$ 497) pelo preço especial de lançamento.
               </p>
               
-              <p className="text-5xl font-bold text-white bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent py-2">
+              {/* Preço: text-4xl, Medium: sm:text-5xl */}
+              <p className="text-4xl sm:text-5xl font-bold text-white bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent py-2">
                 12x de R$ 4,90
               </p>
-              <p className="text-gray-200 text-2xl font-semibold">ou R$ 47,00 à vista</p>
+              {/* Preço 2: text-xl, Medium: sm:text-2xl */}
+              <p className="text-gray-200 text-xl sm:text-2xl font-semibold">ou R$ 47,00 à vista</p>
             </div>
 
             {/* ===============================================================
             BOTÕES (CORRIGIDOS)
-            Adicionado w-full sm:w-auto nos links e w-full nos botões
+            - Removido px-8 e px-6 explícitos.
+            - size="lg" agora controla o padding horizontal.
+            - py-6 e py-4 (seus) controlam o padding vertical.
             ===============================================================
             */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
               <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white px-8 py-6 text-lg font-bold rounded-2xl shadow-2xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse w-full"
+                  className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white py-6 text-lg font-bold rounded-2xl shadow-2xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse w-full"
                 >
                   <Rocket className="w-6 h-6 mr-3" />
                   QUERO O ARSENAL COMPLETO AGORA
@@ -509,7 +513,7 @@ function HomePage() {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="border-[#2DD4BF]/50 text-[#5EEAD4] hover:bg-[#2DD4BF]/10 hover:text-[#5EEAD4] px-6 py-4 text-lg font-semibold rounded-xl w-full"
+                  className="border-[#2DD4BF]/50 text-[#5EEAD4] hover:bg-[#2DD4BF]/10 hover:text-[#5EEAD4] py-4 text-lg font-semibold rounded-xl w-full"
                 >
                   <LayoutList className="w-5 h-5 mr-2" />
                   Ver o Sistema Completo
