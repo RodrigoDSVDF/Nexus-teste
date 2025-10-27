@@ -555,7 +555,7 @@ function NexusSystemSection() {
 }
 
 // ===================================================================
-// COMPONENTE HOMEPAGE - ATUALIZADO COM LOGO VIDEO
+// COMPONENTE HOMEPAGE - OTIMIZADO COM TYPEWRITER PERFEITO
 // ===================================================================
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -636,8 +636,13 @@ function HomePage() {
         </div>
       </nav>
 
-      {/* HERO SECTION COM LOGO VIDEO */}
+      {/* HERO SECTION COM IMAGEM DE FUNDO CORRETA */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 overflow-hidden">
+        {/* Background Image - MESMA DO CÓDIGO ANTERIOR */}
+        <div className="absolute inset-0 opacity-10">
+          <img src={brainNetworkImg} alt="Neural Network Background" className="w-full h-full object-cover" />
+        </div>
+        
         {/* Logo Video Background */}
         <div className="absolute inset-0 z-0">
           <video
@@ -682,7 +687,7 @@ function HomePage() {
               </div>
             </div>
             
-            {/* Títulos */}
+            {/* Títulos com Typewriter Otimizado */}
             <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight drop-shadow-lg px-2">
               <Typewriter 
                 text="Sistema Nexus: Domine a IA" 
