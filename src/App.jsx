@@ -16,18 +16,14 @@ import Typewriter from './components/ui/Typewriter.jsx';
 
 // Imagens
 import brainNetworkImg from './assets/1000393266.jpg';
-import platosCaveImg from './assets/1000396070.jpg';
-import digitalToolsImg from './assets/1000395915.jpg';
-import dataAnalysisImg from './assets/1000395918.jpg';
 import testimonial1Img from './assets/1000396866.jpg';
 import testimonial2Img from './assets/1000396868.jpg';
 import testimonial3Img from './assets/1000396870.jpg';
-import neuralNetworkImg from './assets/1000393264.jpg';
 import brainAIImg from './assets/1000393262.jpg';
 import xadrezStrategiaImg from './assets/xadrez-estrategia.jpg';
 import novaImagemLogo from './assets/1000393277.png';
+import dataAnalysisImg from './assets/1000395918.jpg';
 import servicosIAImg from './assets/servicos-ia.jpg';
-import produtividadeImg from './assets/produtividade.jpg';
 
 // ===================================================================
 // COMPONENTE DO VÍDEO DE APRESENTAÇÃO
@@ -559,7 +555,7 @@ function NexusSystemSection() {
 }
 
 // ===================================================================
-// COMPONENTE HOMEPAGE - COM VÍDEO DE APRESENTAÇÃO
+// COMPONENTE HOMEPAGE - COMPLETO E RESPONSIVO
 // ===================================================================
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -572,6 +568,7 @@ function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#0B1016] font-['Poppins',sans-serif] overflow-x-hidden">
+      {/* NAVBAR */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0B1016]/80 backdrop-blur-sm border-b border-[#1C2A35]">
         <div className="max-w-6xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
@@ -639,9 +636,7 @@ function HomePage() {
         </div>
       </nav>
 
-      {/* ===============================================================
-      HERO SECTION
-      =============================================================== */}
+      {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 overflow-hidden">
         <div className="hidden md:block absolute top-20 left-20 w-72 h-72 bg-[#0D3A46]/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="hidden md:block absolute bottom-20 right-20 w-96 h-96 bg-[#14222E]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -658,7 +653,24 @@ function HomePage() {
               NÃO COMPRE OUTRO CURSO DE IA
             </div>
             
-            {/* Títulos - Ajustados para não extrapolar */}
+            {/* Logo */}
+            <div className="mb-4 sm:mb-6">
+              <div className="w-40 h-40 sm:w-56 sm:h-56 mx-auto mb-2 sm:mb-4 rounded-2xl bg-gradient-to-br from-[#5EEAD4] to-[#2DD4BF] p-1">
+                <div className="w-full h-full bg-[#0B1016] rounded-2xl flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="flex items-center justify-center space-x-2 mb-2">
+                      <img src={novaImagemLogo} alt="NEXUS Logo" className="w-12 h-12 sm:w-16 sm:h-16 rounded-full" />
+                    </div>
+                    <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">
+                      NEXUS
+                    </span>
+                    <p className="text-xs sm:text-sm text-gray-400 mt-1">Sistema de IA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Títulos */}
             <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight drop-shadow-lg px-2">
               <Typewriter 
                 text="Sistema Nexus: Domine a IA" 
@@ -676,9 +688,7 @@ function HomePage() {
               )}
             </h2>
             
-            {/* ===============================================================
-            BLOCO DE TEXTO - AJUSTADO PARA MOBILE
-            =============================================================== */}
+            {/* Texto Principal */}
             <div className="mt-4 sm:mt-6 text-sm sm:text-base text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto space-y-3 sm:space-y-4 px-2 sm:px-0">
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
                 O mercado está cheio de 'cursos completos' de R$ 2.000 que só entregam teoria. Você assiste 50 aulas e... nada muda.
@@ -700,9 +710,7 @@ function HomePage() {
               <p className="text-gray-200 text-lg sm:text-xl md:text-2xl font-semibold">ou R$ 47,00 à vista</p>
             </div>
 
-            {/* ===============================================================
-            BOTÕES - MANTIDOS RESPONSIVOS
-            =============================================================== */}
+            {/* Botões */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-4 sm:mb-6 px-2 sm:px-0">
               {/* Botão Principal */}
               <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
@@ -752,16 +760,16 @@ function HomePage() {
         </div>
       </section>
 
-      {/* VÍDEO DE APRESENTAÇÃO - NOVA SEÇÃO ADICIONADA */}
+      {/* VÍDEO DE APRESENTAÇÃO */}
       <VideoApresentacao />
 
-      {/* NOVA SEÇÃO: TRANSFORMAÇÃO COM IA */}
+      {/* TRANSFORMAÇÃO COM IA */}
       <IATransformationSection />
 
-      {/* SEÇÃO DO SISTEMA COMPLETO */}
+      {/* SISTEMA NEXUS */}
       <NexusSystemSection />
 
-      {/* SEÇÃO DE RESULTADOS ESPERADOS */}
+      {/* RESULTADOS ESPERADOS */}
       <AnimatedSection>
         <section className="py-16 sm:py-20 px-4 bg-[#14222E]/30">
           <div className="max-w-6xl mx-auto">
@@ -827,10 +835,10 @@ function HomePage() {
         </ScrollingBanner>
       </div>
 
-      {/* SEÇÃO DE ANÁLISE DE DADOS */}
+      {/* ANÁLISE DE DADOS */}
       <StudentPerformanceSection />
 
-      {/* SEÇÃO DE DEPOIMENTOS */}
+      {/* DEPOIMENTOS */}
       <section id="depoimentos" className="py-16 sm:py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
@@ -884,9 +892,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ===============================================================
-      SEÇÃO FINAL DE VENDA - AJUSTADA
-      =============================================================== */}
+      {/* SEÇÃO FINAL DE VENDA */}
       <AnimatedSection>
         <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-[#0D3A46] to-[#14222E]">
           <div className="max-w-4xl mx-auto text-center">
