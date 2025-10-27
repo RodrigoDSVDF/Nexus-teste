@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button.jsx';
 import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X, Instagram, Book, BarChart3, Bed, UserCheck, Play, Code, Download, Shield, Clock, Users, Lightbulb, Cpu, BarChart, Workflow } from 'lucide-react';
@@ -26,29 +26,50 @@ import servicosIAImg from './assets/servicos-ia.jpg';
 import logoVideo from './assets/logo-video.mp4';
 
 // ===================================================================
-// COMPONENTE TYPEWRITER OTIMIZADO PARA MOBILE
+// COMPONENTE TYPEWRITER OTIMIZADO - VERSÃO MELHORADA
 // ===================================================================
 function Typewriter({ text, speed = 60, onTypingComplete, className = "" }) {
   const [displayedText, setDisplayedText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    if (currentIndex < text.length) {
-      const timeoutId = setTimeout(() => {
-        setDisplayedText(prev => prev + text[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
-      }, speed);
+    // Garante que o texto reinicie se a prop 'text' mudar
+    setDisplayedText('');
 
-      return () => clearTimeout(timeoutId);
-    } else {
-      onTypingComplete?.();
-    }
-  }, [currentIndex, text, speed, onTypingComplete]);
+    let i = 0;
+    const intervalId = setInterval(() => {
+      if (i < text.length) {
+        // Atualiza o estado apenas uma vez por caractere
+        // Usamos a forma funcional (prev) para garantir que estamos
+        // pegando o estado mais recente, sem depender de closures.
+        setDisplayedText(prev => prev + text.charAt(i));
+        i++;
+      } else {
+        // Limpa o intervalo quando o texto termina
+        clearInterval(intervalId);
+        if (onTypingComplete) {
+          onTypingComplete();
+        }
+      }
+    }, speed);
+
+    // Função de Limpeza (Cleanup)
+    // Isso é ESSENCIAL. Se o componente for desmontado (mudar de página),
+    // o intervalo é limpo, evitando vazamentos de memória e bugs.
+    return () => {
+      clearInterval(intervalId);
+    };
+
+    // O efeito agora só roda novamente se o texto, a velocidade ou
+    // a função de callback mudarem. Ele não roda mais a cada caractere.
+  }, [text, speed, onTypingComplete]);
 
   return (
     <span className={className}>
       {displayedText}
-      <span className="animate-pulse">|</span>
+      {/* Otimização bônus: só mostra o cursor se o texto não estiver completo */}
+      {displayedText.length < text.length && (
+        <span className="animate-pulse">|</span>
+      )}
     </span>
   );
 }
@@ -576,6 +597,20 @@ function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [typingStep, setTypingStep] = useState(1);
 
+  // Otimização: useMemo para imagens
+  const images = useMemo(() => ({
+    brainNetworkImg,
+    testimonial1Img,
+    testimonial2Img,
+    testimonial3Img,
+    brainAIImg,
+    xadrezStrategiaImg,
+    novaImagemLogo,
+    dataAnalysisImg,
+    servicosIAImg,
+    logoVideo
+  }), []);
+
   useEffect(() => {
     setIsVisible(true);
   }, []);
@@ -587,7 +622,12 @@ function HomePage() {
         <div className="max-w-6xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <img src={novaImagemLogo} alt="NEXUS Logo" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" />
+              <img 
+                src={images.novaImagemLogo} 
+                alt="NEXUS Logo" 
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" 
+                loading="lazy"
+              />
               <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">
                 NEXUS
               </span>
@@ -611,6 +651,7 @@ function HomePage() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden text-white"
+              aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -653,7 +694,12 @@ function HomePage() {
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img src={brainNetworkImg} alt="Neural Network Background" className="w-full h-full object-cover" />
+          <img 
+            src={images.brainNetworkImg} 
+            alt="Neural Network Background" 
+            className="w-full h-full object-cover" 
+            loading="lazy"
+          />
         </div>
         
         <div className="hidden md:block absolute top-20 left-20 w-72 h-72 bg-[#1A4A5A]/20 rounded-full blur-3xl animate-pulse"></div>
@@ -675,8 +721,9 @@ function HomePage() {
                   loop
                   playsInline
                   className="w-full h-full object-cover"
+                  preload="metadata"
                 >
-                  <source src={logoVideo} type="video/mp4" />
+                  <source src={images.logoVideo} type="video/mp4" />
                   Seu navegador não suporta o elemento de vídeo.
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A222E]/20 to-transparent"></div>
@@ -853,7 +900,12 @@ function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <AnimatedFromLeft delay={0.2}>
               <div className="bg-[#2A3A4E]/60 p-4 sm:p-6 rounded-2xl border border-[#3A4A5E] flex flex-col items-center text-center h-full">
-                <img src={testimonial1Img} alt="Depoimento de Aluno 1" className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[#3DE4CF] mb-3 sm:mb-4" />
+                <img 
+                  src={images.testimonial1Img} 
+                  alt="Depoimento de Aluno 1" 
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[#3DE4CF] mb-3 sm:mb-4" 
+                  loading="lazy"
+                />
                 <p className="text-gray-200 italic mb-3 sm:mb-4 text-sm sm:text-base">
                   "O Software Nexus mudou completamente minha forma de trabalhar. As automações me economizam pelo menos 3 horas por dia!"
                 </p>
@@ -865,7 +917,12 @@ function HomePage() {
             </AnimatedFromLeft>
             <AnimatedSection delay={0.4}>
               <div className="bg-[#2A3A4E]/60 p-4 sm:p-6 rounded-2xl border border-[#3A4A5E] flex flex-col items-center text-center h-full">
-                <img src={testimonial2Img} alt="Depoimento de Aluno 2" className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[#3DE4CF] mb-3 sm:mb-4" />
+                <img 
+                  src={images.testimonial2Img} 
+                  alt="Depoimento de Aluno 2" 
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[#3DE4CF] mb-3 sm:mb-4" 
+                  loading="lazy"
+                />
                 <p className="text-gray-200 italic mb-3 sm:mb-4 text-sm sm:text-base">
                   "Os vídeos são incríveis! Ver as técnicas em ação fez toda a diferença. O PDF sozinho já valeria, mas com os vídeos é sensacional."
                 </p>
@@ -877,7 +934,12 @@ function HomePage() {
             </AnimatedSection>
             <AnimatedFromRight delay={0.2}>
               <div className="bg-[#2A3A4E]/60 p-4 sm:p-6 rounded-2xl border border-[#3A4A5E] flex flex-col items-center text-center h-full">
-                 <img src={testimonial3Img} alt="Depoimento de Aluno 3" className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[#3DE4CF] mb-3 sm:mb-4" />
+                 <img 
+                  src={images.testimonial3Img} 
+                  alt="Depoimento de Aluno 3" 
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[#3DE4CF] mb-3 sm:mb-4" 
+                  loading="lazy"
+                />
                 <p className="text-gray-200 italic mb-3 sm:mb-4 text-sm sm:text-base">
                   "Ter acesso ao software com múltiplas IAs é um diferencial absurdo. É como ter uma equipe de especialistas 24h por dia."
                 </p>
@@ -966,7 +1028,12 @@ function HomePage() {
             <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
               <div>
                 <div className="flex items-center space-x-3 mb-3 sm:mb-4">
-                  <img src={novaImagemLogo} alt="NEXUS Logo" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" />
+                  <img 
+                    src={images.novaImagemLogo} 
+                    alt="NEXUS Logo" 
+                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" 
+                    loading="lazy"
+                  />
                   <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">
                     NEXUS
                   </span>
