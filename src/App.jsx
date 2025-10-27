@@ -12,7 +12,6 @@ import AnimatedSection from './components/ui/AnimatedSection.jsx';
 import AnimatedFromLeft from './components/ui/AnimatedFromLeft.jsx';
 import AnimatedFromRight from './components/ui/AnimatedFromRight.jsx';
 import ScrollingBanner from './components/ui/ScrollingBanner.jsx';
-import Typewriter from './components/ui/Typewriter.jsx'; 
 
 // Imagens e vídeo
 import brainNetworkImg from './assets/1000393266.jpg';
@@ -27,7 +26,35 @@ import servicosIAImg from './assets/servicos-ia.jpg';
 import logoVideo from './assets/logo-video.mp4';
 
 // ===================================================================
-// COMPONENTE DO VÍDEO DE APRESENTAÇÃO - ATUALIZADO SEM MUTE
+// COMPONENTE TYPEWRITER OTIMIZADO PARA MOBILE
+// ===================================================================
+function Typewriter({ text, speed = 60, onTypingComplete, className = "" }) {
+  const [displayedText, setDisplayedText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeoutId = setTimeout(() => {
+        setDisplayedText(prev => prev + text[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, speed);
+
+      return () => clearTimeout(timeoutId);
+    } else {
+      onTypingComplete?.();
+    }
+  }, [currentIndex, text, speed, onTypingComplete]);
+
+  return (
+    <span className={className}>
+      {displayedText}
+      <span className="animate-pulse">|</span>
+    </span>
+  );
+}
+
+// ===================================================================
+// COMPONENTE DO VÍDEO DE APRESENTAÇÃO
 // ===================================================================
 function VideoApresentacao() {
   return (
@@ -47,7 +74,6 @@ function VideoApresentacao() {
             </p>
           </div>
 
-          {/* Container do Vídeo do YouTube - ATUALIZADO SEM MUTE */}
           <div className="bg-[#1A222E] rounded-2xl border border-[#2A3A4E] p-2 sm:p-4 shadow-2xl">
             <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
               <iframe
@@ -199,7 +225,6 @@ function IATransformationSection() {
             </AnimatedFromRight>
           </div>
 
-          {/* Estatísticas Impactantes */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <AnimatedSection delay={0.2}>
               <div className="text-center p-4 sm:p-6 bg-gradient-to-br from-[#2A3A4E] to-[#1A4A5A] rounded-2xl border border-[#3DE4CF]/30">
@@ -342,7 +367,6 @@ function NexusSystemSection() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
-            {/* PDF */}
             <AnimatedSection delay={0.2}>
               <div className="group bg-gradient-to-br from-[#2A3A4E] to-[#1A4A5A] p-4 sm:p-6 rounded-2xl border border-[#3DE4CF]/30 hover:border-[#3DE4CF] transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center mb-3 sm:mb-4">
@@ -371,7 +395,6 @@ function NexusSystemSection() {
               </div>
             </AnimatedSection>
 
-            {/* Vídeos */}
             <AnimatedSection delay={0.4}>
               <div className="group bg-gradient-to-br from-[#1A4A5A] to-[#2A3A4E] p-4 sm:p-6 rounded-2xl border border-[#3DE4CF]/30 hover:border-[#3DE4CF] transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center mb-3 sm:mb-4">
@@ -400,7 +423,6 @@ function NexusSystemSection() {
               </div>
             </AnimatedSection>
 
-            {/* Software */}
             <AnimatedSection delay={0.6}>
               <div className="group bg-gradient-to-br from-[#2A3A4E] to-[#1A4A5A] p-4 sm:p-6 rounded-2xl border border-[#3DE4CF]/30 hover:border-[#3DE4CF] transition-all duration-300 h-full flex flex-col">
                 <div className="flex items-center mb-3 sm:mb-4">
@@ -430,7 +452,6 @@ function NexusSystemSection() {
             </AnimatedSection>
           </div>
 
-          {/* SEÇÃO "VEJA O SOFTWARE NEXUS EM AÇÃO" */}
           <AnimatedSection>
             <div className="bg-[#1A222E] rounded-2xl border border-[#2A3A4E] p-4 sm:p-6">
               <div className="text-center mb-4 sm:mb-6">
@@ -438,10 +459,8 @@ function NexusSystemSection() {
                 <p className="text-gray-200 text-sm sm:text-lg">Interface intuitiva que reúne o poder de múltiplas IAs especializadas</p>
               </div>
               
-              {/* Container visual do software */}
               <div className="bg-gradient-to-r from-[#2A3A4E] to-[#1A4A5A] p-1 rounded-xl mb-6 sm:mb-8">
                 <div className="bg-[#1A222E] rounded-xl p-4 sm:p-6 border border-[#2A3A4E] min-h-[200px] sm:min-h-[300px] flex flex-col justify-center">
-                  {/* Interface simulada do software */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 mb-3 sm:mb-4">
                     <div className="bg-[#2A3A4E] p-2 sm:p-3 rounded-lg border border-[#3DE4CF]/30 text-center">
                       <Brain className="w-4 h-4 sm:w-6 sm:h-6 text-[#6EEBD4] mx-auto mb-1 sm:mb-2" />
@@ -461,7 +480,6 @@ function NexusSystemSection() {
                     </div>
                   </div>
                   
-                  {/* Área de preview do Dashboard */}
                   <div className="bg-[#2A3A4E] rounded-lg p-3 sm:p-4 border border-[#2A3A4E]">
                     <div className="flex items-center justify-between mb-2 sm:mb-3">
                       <div className="flex space-x-1">
@@ -481,9 +499,7 @@ function NexusSystemSection() {
                 </div>
               </div>
 
-              {/* SEÇÃO DE FERRAMENTAS */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-                {/* IA de Análise */}
                 <AnimatedSection delay={0.2}>
                   <div className="group bg-gradient-to-br from-[#2A3A4E]/40 to-[#1A222E]/40 p-3 sm:p-4 rounded-2xl border border-[#2A3A4E] hover:border-[#1A4A5A] transition-all duration-300 relative overflow-hidden h-full">
                     <div className="absolute inset-0 opacity-10">
@@ -499,7 +515,6 @@ function NexusSystemSection() {
                   </div>
                 </AnimatedSection>
 
-                {/* IA de Produtividade */}
                 <AnimatedSection delay={0.3}>
                   <div className="group bg-gradient-to-br from-[#1A4A5A]/40 to-[#2A3A4E]/40 p-3 sm:p-4 rounded-2xl border border-[#2A3A4E] hover:border-[#1A4A5A] transition-all duration-300 relative overflow-hidden h-full">
                     <div className="absolute inset-0 opacity-10">
@@ -515,7 +530,6 @@ function NexusSystemSection() {
                   </div>
                 </AnimatedSection>
 
-                {/* IA Estratégica */}
                 <AnimatedSection delay={0.4}>
                   <div className="group bg-gradient-to-br from-[#2A3A4E]/40 to-[#1A4A5A]/40 p-3 sm:p-4 rounded-2xl border border-[#2A3A4E] hover:border-[#1A4A5A] transition-all duration-300 relative overflow-hidden h-full">
                     <div className="absolute inset-0 opacity-10">
@@ -531,7 +545,6 @@ function NexusSystemSection() {
                   </div>
                 </AnimatedSection>
 
-                {/* IA de Automação */}
                 <AnimatedSection delay={0.5}>
                   <div className="group bg-gradient-to-br from-[#1A4A5A]/40 to-[#2A3A4E]/40 p-3 sm:p-4 rounded-2xl border border-[#2A3A4E] hover:border-[#1A4A5A] transition-all duration-300 relative overflow-hidden h-full">
                     <div className="absolute inset-0 opacity-10">
@@ -556,7 +569,7 @@ function NexusSystemSection() {
 }
 
 // ===================================================================
-// COMPONENTE HOMEPAGE - ATUALIZADO COM VÍDEO ACIMA DO TEXTO
+// COMPONENTE HOMEPAGE - COM TYPEWRITER OTIMIZADO
 // ===================================================================
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -637,9 +650,8 @@ function HomePage() {
         </div>
       </nav>
 
-      {/* HERO SECTION COM VÍDEO ACIMA DO TEXTO */}
+      {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 overflow-hidden">
-        {/* Apenas a imagem de fundo sutil */}
         <div className="absolute inset-0 opacity-10">
           <img src={brainNetworkImg} alt="Neural Network Background" className="w-full h-full object-cover" />
         </div>
@@ -650,13 +662,11 @@ function HomePage() {
         <div className={`relative z-10 text-center max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="mb-8 mt-16">
             
-            {/* Badge */}
             <div className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-[#F59E0B]/30 border border-[#F59E0B]/40 rounded-full text-[#F59E0B] text-xs sm:text-sm font-medium mb-4 sm:mb-6">
               <Shield className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
               NÃO COMPRE OUTRO CURSO DE IA
             </div>
             
-            {/* VÍDEO DA LOGO - AGORA ACIMA DO TEXTO */}
             <div className="mb-6 sm:mb-8 flex justify-center">
               <div className="relative w-48 h-48 sm:w-64 sm:h-64 rounded-2xl overflow-hidden border-2 border-[#3DE4CF]/50 shadow-2xl">
                 <video
@@ -673,25 +683,23 @@ function HomePage() {
               </div>
             </div>
             
-            {/* Títulos com Typewriter Otimizado */}
-            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight drop-shadow-lg px-2">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight drop-shadow-lg px-2 min-h-[1.2em]">
               <Typewriter 
                 text="Sistema Nexus: Domine a IA" 
-                speed={60} 
-                onTypingComplete={() => setTimeout(() => setTypingStep(2), 300)} 
+                speed={80}
+                onTypingComplete={() => setTimeout(() => setTypingStep(2), 500)} 
               />
             </h1>
 
-            <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent drop-shadow-lg mb-3 sm:mb-4 px-2">
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent drop-shadow-lg mb-3 sm:mb-4 px-2 min-h-[1.2em]">
               {typingStep >= 2 && (
                 <Typewriter 
                   text="PDF + Vídeos + Software" 
-                  speed={70} 
+                  speed={90} 
                 />
               )}
             </h2>
             
-            {/* Texto Principal */}
             <div className="mt-4 sm:mt-6 text-sm sm:text-base text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto space-y-3 sm:space-y-4 px-2 sm:px-0">
               <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
                 O mercado está cheio de 'cursos completos' de R$ 2.000 que só entregam teoria. Você assiste 50 aulas e... nada muda.
@@ -705,7 +713,6 @@ function HomePage() {
                 Para nossos <strong>primeiros 100 Fundadores</strong>, estamos liberando o arsenal completo (avaliado em R$ 497) pelo preço especial de lançamento.
               </p>
               
-              {/* Preço */}
               <p className="text-2xl sm:text-4xl md:text-5xl font-bold text-white bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent py-2 sm:py-3">
                 12x de R$ 4,90
               </p>
@@ -713,9 +720,7 @@ function HomePage() {
               <p className="text-gray-200 text-lg sm:text-xl md:text-2xl font-semibold">ou R$ 47,00 à vista</p>
             </div>
 
-            {/* Botões */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-4 sm:mb-6 px-2 sm:px-0">
-              {/* Botão Principal */}
               <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button 
                   size="lg" 
@@ -729,7 +734,6 @@ function HomePage() {
                 </Button>
               </a>
               
-              {/* Botão Secundário */}
               <Link to="/detalhes" className="w-full sm:w-auto">
                 <Button 
                   variant="outline" 
@@ -744,7 +748,6 @@ function HomePage() {
               </Link>
             </div>
 
-            {/* Grid de Features */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-3 max-w-2xl mx-auto px-2 sm:px-0">
               <div className="flex items-center justify-center text-gray-200 bg-[#2A3A4E]/50 p-2 sm:p-3 rounded-lg border border-[#3A4A5E]">
                 <Shield className="w-4 h-4 sm:w-4 sm:h-4 text-[#6EEBD4] mr-2" />
@@ -763,16 +766,10 @@ function HomePage() {
         </div>
       </section>
 
-      {/* VÍDEO DE APRESENTAÇÃO */}
       <VideoApresentacao />
-
-      {/* TRANSFORMAÇÃO COM IA */}
       <IATransformationSection />
-
-      {/* SISTEMA NEXUS */}
       <NexusSystemSection />
 
-      {/* RESULTADOS ESPERADOS */}
       <AnimatedSection>
         <section className="py-16 sm:py-20 px-4 bg-[#2A3A4E]/40">
           <div className="max-w-6xl mx-auto">
@@ -822,7 +819,6 @@ function HomePage() {
         </section>
       </AnimatedSection>
 
-      {/* BANNER SCROLLING */}
       <div className="py-4 sm:py-6 bg-[#1A222E] border-y-2 border-[#2A3A4E]">
         <ScrollingBanner speed={10}>
           <div className="flex items-center text-base sm:text-xl font-bold text-gray-200">
@@ -838,10 +834,8 @@ function HomePage() {
         </ScrollingBanner>
       </div>
 
-      {/* ANÁLISE DE DADOS */}
       <StudentPerformanceSection />
 
-      {/* DEPOIMENTOS */}
       <section id="depoimentos" className="py-16 sm:py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection>
@@ -895,7 +889,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SEÇÃO FINAL DE VENDA */}
       <AnimatedSection>
         <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-[#1A4A5A] to-[#2A3A4E]">
           <div className="max-w-4xl mx-auto text-center">
@@ -965,7 +958,6 @@ function HomePage() {
         </section>
       </AnimatedSection>
 
-      {/* FOOTER */}
       <AnimatedSection>
         <footer className="border-t border-[#2A3A4E] bg-[#1A222E]/60 py-6 sm:py-8 px-4">
            <div className="max-w-6xl mx-auto">
