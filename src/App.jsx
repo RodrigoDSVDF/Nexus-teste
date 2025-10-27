@@ -54,7 +54,7 @@ function Typewriter({ text, speed = 60, onTypingComplete, className = "" }) {
 }
 
 // ===================================================================
-// COMPONENTE DO VÍDEO DE APRESENTAÇÃO
+// COMPONENTE DO VÍDEO DE APRESENTAÇÃO - CORRIGIDO PARA 2 MINUTOS
 // ===================================================================
 function VideoApresentacao() {
   return (
@@ -70,7 +70,7 @@ function VideoApresentacao() {
               Assista e Entenda Por Que Este é o <span className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">Sistema Mais Completo</span> de IA
             </h2>
             <p className="text-base sm:text-xl text-gray-200 max-w-3xl mx-auto">
-              Em apenas 3 minutos, descubra como o Sistema Nexus vai transformar sua produtividade
+              Em apenas 2 minutos, descubra como o Sistema Nexus vai transformar sua produtividade
             </p>
           </div>
 
@@ -90,7 +90,7 @@ function VideoApresentacao() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4">
                 <div className="flex items-center justify-center text-gray-200 bg-[#2A3A4E]/50 p-3 rounded-lg border border-[#3A4A5E]">
                   <Clock className="w-4 h-4 text-[#6EEBD4] mr-2" />
-                  <span className="text-sm">Apenas 3 minutos</span>
+                  <span className="text-sm">Apenas 2 minutos</span>
                 </div>
                 <div className="flex items-center justify-center text-gray-200 bg-[#2A3A4E]/50 p-3 rounded-lg border border-[#3A4A5E]">
                   <Brain className="w-4 h-4 text-[#6EEBD4] mr-2" />
@@ -114,7 +114,7 @@ function VideoApresentacao() {
 }
 
 // ===================================================================
-// COMPONENTE DA TRANSFORMAÇÃO COM IA
+// COMPONENTE DA TRANSFORMAÇÃO COM IA - TÍTULO ATUALIZADO
 // ===================================================================
 function IATransformationSection() {
   return (
@@ -127,9 +127,9 @@ function IATransformationSection() {
               REVOLUÇÃO DO APRENDIZADO
             </div>
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-              Pare de Apenas <span className="text-gray-300">"Estudar"</span> e Comece a{' '}
+              Pare de Apenas estudar do jeito antigo e comece a{' '}
               <span className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">
-                Dominar de Verdade
+                dominar a arte de aprender
               </span>
             </h2>
             <p className="text-base sm:text-xl text-gray-200 max-w-3xl mx-auto">
@@ -569,7 +569,7 @@ function NexusSystemSection() {
 }
 
 // ===================================================================
-// COMPONENTE HOMEPAGE - COM TYPEWRITER OTIMIZADO
+// COMPONENTE HOMEPAGE - COM TEXTO ATUALIZADO
 // ===================================================================
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -700,19 +700,21 @@ function HomePage() {
               )}
             </h2>
             
+            {/* TEXTO PRINCIPAL ATUALIZADO */}
             <div className="mt-4 sm:mt-6 text-sm sm:text-base text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto space-y-3 sm:space-y-4 px-2 sm:px-0">
               <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
-                O mercado está cheio de 'cursos completos' de R$ 2.000 que só entregam teoria. Você assiste 50 aulas e... nada muda.
+                O mercado está cheio de 'cursos completos' de valores vultosos que só entregam teoria. Você assiste 20 aulas e... nada muda.
               </p>
               
               <p className="text-base sm:text-lg md:text-xl text-white font-semibold leading-relaxed">
-                Você não precisa de mais teoria. Você precisa de um <span className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent">ARSENAL DE IMPLEMENTAÇÃO</span>.
+                Você não precisa de mais teoria. Você precisa de um Guia que é um <span className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent">ARSENAL DE IMPLEMENTAÇÃO</span>.
               </p>
               
               <p className="text-gray-200 text-sm sm:text-base leading-relaxed">
-                Para nossos <strong>primeiros 100 Fundadores</strong>, estamos liberando o arsenal completo (avaliado em R$ 497) pelo preço especial de lançamento.
+                Para nossos <strong>primeiros 100 compradores</strong>, estamos liberando o ecossistema completo (avaliado em R$ 497) pelo preço especial de lançamento.
               </p>
               
+              {/* Preço */}
               <p className="text-2xl sm:text-4xl md:text-5xl font-bold text-white bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent py-2 sm:py-3">
                 12x de R$ 4,90
               </p>
@@ -902,7 +904,7 @@ function HomePage() {
               <br/><br/>
               Não é sobre 'aprender IA'. É sobre <strong>usar</strong> IA para economizar 10h por semana.
               <br/><br/>
-              Esta é a oferta de lançamento para os <strong>100 primeiros Fundadores</strong>. Depois disso, o valor oficial será R$ 497,00.
+              Esta é a oferta de lançamento para os <strong>100 primeiros compradores</strong>. Depois disso, o valor oficial será R$ 497,00.
             </p>
 
             <div className="bg-[#1A222E] p-4 sm:p-6 rounded-2xl mb-4 sm:mb-6 border border-[#F59E0B]/50">
