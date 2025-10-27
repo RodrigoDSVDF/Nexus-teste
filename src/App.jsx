@@ -14,7 +14,7 @@ import AnimatedFromRight from './components/ui/AnimatedFromRight.jsx';
 import ScrollingBanner from './components/ui/ScrollingBanner.jsx';
 import Typewriter from './components/ui/Typewriter.jsx'; 
 
-// Imagens e vídeo
+// Imagens
 import brainNetworkImg from './assets/1000393266.jpg';
 import platosCaveImg from './assets/1000396070.jpg';
 import digitalToolsImg from './assets/1000395915.jpg';
@@ -28,7 +28,67 @@ import xadrezStrategiaImg from './assets/xadrez-estrategia.jpg';
 import novaImagemLogo from './assets/1000393277.png';
 import servicosIAImg from './assets/servicos-ia.jpg';
 import produtividadeImg from './assets/produtividade.jpg';
-import logoVideo from './assets/logo-video.mp4';
+
+// ===================================================================
+// COMPONENTE DO VÍDEO DE APRESENTAÇÃO
+// ===================================================================
+function VideoApresentacao() {
+  return (
+    <AnimatedSection>
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-[#0B1016] to-[#14222E]">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <div className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-[#F59E0B]/20 border border-[#F59E0B]/30 rounded-full text-[#F59E0B] text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+              <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              VÍDEO DE APRESENTAÇÃO
+            </div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+              Assista e Entenda Por Que Este é o <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">Sistema Mais Completo</span> de IA
+            </h2>
+            <p className="text-base sm:text-xl text-gray-300 max-w-3xl mx-auto">
+              Em apenas 3 minutos, descubra como o Sistema Nexus vai transformar sua produtividade
+            </p>
+          </div>
+
+          {/* Container do Vídeo do YouTube */}
+          <div className="bg-[#0B1016] rounded-2xl border border-[#1C2A35] p-2 sm:p-4 shadow-2xl">
+            <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
+              <iframe
+                src="https://www.youtube.com/embed/5yTAiL616Ak?si=qmqgWHJTdKY_-MmX&autoplay=1&mute=1&controls=1&modestbranding=1&rel=0"
+                title="Sistema Nexus - Apresentação"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+                loading="lazy"
+              />
+            </div>
+            
+            <div className="mt-4 sm:mt-6 text-center">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4">
+                <div className="flex items-center justify-center text-gray-300 bg-[#14222E]/30 p-3 rounded-lg border border-[#1C2A35]">
+                  <Clock className="w-4 h-4 text-[#5EEAD4] mr-2" />
+                  <span className="text-sm">Apenas 3 minutos</span>
+                </div>
+                <div className="flex items-center justify-center text-gray-300 bg-[#14222E]/30 p-3 rounded-lg border border-[#1C2A35]">
+                  <Brain className="w-4 h-4 text-[#5EEAD4] mr-2" />
+                  <span className="text-sm">Explicação Completa</span>
+                </div>
+                <div className="flex items-center justify-center text-gray-300 bg-[#14222E]/30 p-3 rounded-lg border border-[#1C2A35]">
+                  <Zap className="w-4 h-4 text-[#5EEAD4] mr-2" />
+                  <span className="text-sm">Resultados Reais</span>
+                </div>
+              </div>
+              
+              <p className="text-gray-400 text-sm sm:text-base">
+                <strong>Dica:</strong> Assista até o final para entender por que este sistema é diferente de tudo que você já viu.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </AnimatedSection>
+  );
+}
 
 // ===================================================================
 // COMPONENTE DA TRANSFORMAÇÃO COM IA
@@ -499,7 +559,7 @@ function NexusSystemSection() {
 }
 
 // ===================================================================
-// COMPONENTE HOMEPAGE - CORRIGIDO PARA NÃO EXTRAPOLAR MARGENS
+// COMPONENTE HOMEPAGE - COM VÍDEO DE APRESENTAÇÃO
 // ===================================================================
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -580,7 +640,7 @@ function HomePage() {
       </nav>
 
       {/* ===============================================================
-      HERO SECTION - CORRIGIDA PARA NÃO EXTRAPOLAR MARGENS
+      HERO SECTION
       =============================================================== */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 overflow-hidden">
         <div className="hidden md:block absolute top-20 left-20 w-72 h-72 bg-[#0D3A46]/10 rounded-full blur-3xl animate-pulse"></div>
@@ -596,20 +656,6 @@ function HomePage() {
             <div className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-[#F59E0B]/20 border border-[#F59E0B]/30 rounded-full text-[#F59E0B] text-xs sm:text-sm font-medium mb-4 sm:mb-6">
               <Shield className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
               NÃO COMPRE OUTRO CURSO DE IA
-            </div>
-            
-            {/* Logo Video */}
-            <div className="mb-4 sm:mb-6">
-              <video 
-                src={logoVideo} 
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-40 h-auto mx-auto mb-2 sm:mb-4 rounded-2xl sm:w-56"
-              >
-                Seu navegador não suporta o vídeo.
-              </video>
             </div>
             
             {/* Títulos - Ajustados para não extrapolar */}
@@ -705,6 +751,9 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* VÍDEO DE APRESENTAÇÃO - NOVA SEÇÃO ADICIONADA */}
+      <VideoApresentacao />
 
       {/* NOVA SEÇÃO: TRANSFORMAÇÃO COM IA */}
       <IATransformationSection />
