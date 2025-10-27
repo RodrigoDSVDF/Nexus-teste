@@ -14,8 +14,8 @@ import AnimatedFromRight from './components/ui/AnimatedFromRight.jsx';
 import ScrollingBanner from './components/ui/ScrollingBanner.jsx';
 import Typewriter from './components/ui/Typewriter.jsx'; 
 
-// Imagens
-import brainNetworkImg from './assets/1000393266.jpg';
+// Imagens e Vídeo
+import brainNetworkImg from './assets/1000393266.jpg'; // Mantido como fallback
 import testimonial1Img from './assets/1000396866.jpg';
 import testimonial2Img from './assets/1000396868.jpg';
 import testimonial3Img from './assets/1000396870.jpg';
@@ -24,19 +24,20 @@ import xadrezStrategiaImg from './assets/xadrez-estrategia.jpg';
 import novaImagemLogo from './assets/1000393277.png';
 import dataAnalysisImg from './assets/1000395918.jpg';
 import servicosIAImg from './assets/servicos-ia.jpg';
+import logoVideo from './assets/logo-video.mp4'; // O vídeo para o fundo
 
 // ===================================================================
-// COMPONENTE DO VÍDEO DE APRESENTAÇÃO - ATUALIZADO SEM MUTE
+// COMPONENTE DO VÍDEO DE APRESENTAÇÃO - SEÇÃO SECUNDÁRIA
 // ===================================================================
 function VideoApresentacao() {
   return (
     <AnimatedSection>
-      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-[#0B1016] to-[#14222E]">
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-[#14222E] to-[#0D3A46]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
             <div className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-[#F59E0B]/20 border border-[#F59E0B]/30 rounded-full text-[#F59E0B] text-xs sm:text-sm font-medium mb-4 sm:mb-6">
               <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              VÍDEO DE APRESENTAÇÃO
+              VEJA O ARSENAL EM AÇÃO
             </div>
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
               Assista e Entenda Por Que Este é o <span className="bg-gradient-to-r from-[#5EEAD4] to-[#2DD4BF] bg-clip-text text-transparent">Sistema Mais Completo</span> de IA
@@ -46,7 +47,7 @@ function VideoApresentacao() {
             </p>
           </div>
 
-          {/* Container do Vídeo do YouTube - ATUALIZADO SEM MUTE */}
+          {/* Container do Vídeo do YouTube */}
           <div className="bg-[#0B1016] rounded-2xl border border-[#1C2A35] p-2 sm:p-4 shadow-2xl">
             <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
               <iframe
@@ -62,20 +63,20 @@ function VideoApresentacao() {
             <div className="mt-4 sm:mt-6 text-center">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-4">
                 <div className="flex items-center justify-center text-gray-300 bg-[#14222E]/30 p-3 rounded-lg border border-[#1C2A35]">
-                  <Clock className="w-4 h-4 text-[#5EEAD4] mr-2" />
-                  <span className="text-sm">Apenas 3 minutos</span>
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#5EEAD4] mr-2" />
+                  <span className="text-xs sm:text-sm">Apenas 3 minutos</span>
                 </div>
                 <div className="flex items-center justify-center text-gray-300 bg-[#14222E]/30 p-3 rounded-lg border border-[#1C2A35]">
-                  <Brain className="w-4 h-4 text-[#5EEAD4] mr-2" />
-                  <span className="text-sm">Explicação Completa</span>
+                  <Brain className="w-4 h-4 sm:w-5 sm:h-5 text-[#5EEAD4] mr-2" />
+                  <span className="text-xs sm:text-sm">Explicação Completa</span>
                 </div>
                 <div className="flex items-center justify-center text-gray-300 bg-[#14222E]/30 p-3 rounded-lg border border-[#1C2A35]">
-                  <Zap className="w-4 h-4 text-[#5EEAD4] mr-2" />
-                  <span className="text-sm">Resultados Reais</span>
+                  <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-[#5EEAD4] mr-2" />
+                  <span className="text-xs sm:text-sm">Resultados Reais</span>
                 </div>
               </div>
               
-              <p className="text-gray-400 text-sm sm:text-base">
+              <p className="text-gray-400 text-xs sm:text-sm">
                 <strong>Dica:</strong> Assista até o final para entender por que este sistema é diferente de tudo que você já viu.
               </p>
             </div>
@@ -555,7 +556,7 @@ function NexusSystemSection() {
 }
 
 // ===================================================================
-// COMPONENTE HOMEPAGE - OTIMIZADO COM TYPEWRITER PERFEITO
+// COMPONENTE HOMEPAGE PRINCIPAL
 // ===================================================================
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -636,13 +637,8 @@ function HomePage() {
         </div>
       </nav>
 
-      {/* HERO SECTION COM IMAGEM DE FUNDO CORRETA */}
+      {/* HERO SECTION COM LOGO VIDEO DE FUNDO (CORRIGIDO) */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 overflow-hidden">
-        {/* Background Image - MESMA DO CÓDIGO ANTERIOR */}
-        <div className="absolute inset-0 opacity-10">
-          <img src={brainNetworkImg} alt="Neural Network Background" className="w-full h-full object-cover" />
-        </div>
-        
         {/* Logo Video Background */}
         <div className="absolute inset-0 z-0">
           <video
@@ -652,7 +648,7 @@ function HomePage() {
             playsInline
             className="w-full h-full object-cover opacity-20"
           >
-            <source src="/logo-video.mp4" type="video/mp4" />
+            <source src={logoVideo} type="video/mp4" />
             Seu navegador não suporta o elemento de vídeo.
           </video>
           <div className="absolute inset-0 bg-[#0B1016]/80"></div>
@@ -687,7 +683,7 @@ function HomePage() {
               </div>
             </div>
             
-            {/* Títulos com Typewriter Otimizado */}
+            {/* Títulos (Ajustado o Text-size para Mobile) */}
             <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight drop-shadow-lg px-2">
               <Typewriter 
                 text="Sistema Nexus: Domine a IA" 
@@ -705,29 +701,29 @@ function HomePage() {
               )}
             </h2>
             
-            {/* Texto Principal */}
+            {/* Texto Principal (Ajustado o Text-size para Mobile) */}
             <div className="mt-4 sm:mt-6 text-sm sm:text-base text-gray-200 mb-6 sm:mb-8 max-w-3xl mx-auto space-y-3 sm:space-y-4 px-2 sm:px-0">
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                 O mercado está cheio de 'cursos completos' de R$ 2.000 que só entregam teoria. Você assiste 50 aulas e... nada muda.
               </p>
               
-              <p className="text-base sm:text-lg md:text-xl text-white font-semibold leading-relaxed">
+              <p className="text-sm sm:text-base md:text-xl text-white font-semibold leading-relaxed">
                 Você não precisa de mais teoria. Você precisa de um <span className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent">ARSENAL DE IMPLEMENTAÇÃO</span>.
               </p>
               
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+              <p className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                 Para nossos <strong>primeiros 100 Fundadores</strong>, estamos liberando o arsenal completo (avaliado em R$ 497) pelo preço especial de lançamento.
               </p>
               
               {/* Preço */}
-              <p className="text-2xl sm:text-4xl md:text-5xl font-bold text-white bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent py-2 sm:py-3">
+              <p className="text-4xl sm:text-5xl font-bold text-white bg-gradient-to-r from-[#F59E0B] to-[#D946EF] bg-clip-text text-transparent py-2 sm:py-3">
                 12x de R$ 4,90
               </p>
               
               <p className="text-gray-200 text-lg sm:text-xl md:text-2xl font-semibold">ou R$ 47,00 à vista</p>
             </div>
 
-            {/* Botões */}
+            {/* Botões (CORRIGIDO: w-full e padding ajustado) */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-4 sm:mb-6 px-2 sm:px-0">
               {/* Botão Principal */}
               <a href="https://pay.cakto.com.br/5dUKrWD" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
@@ -736,7 +732,7 @@ function HomePage() {
                   className="bg-gradient-to-r from-[#F59E0B] to-[#D946EF] hover:from-[#F59E0B]/90 hover:to-[#D946EF]/90 text-white py-4 sm:py-5 text-sm sm:text-base font-bold rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl hover:shadow-[#D946EF]/40 transition-all duration-300 transform hover:scale-105 border-2 border-[#F59E0B]/50 animate-pulse w-full"
                 >
                   <Rocket className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
-                  <span className="whitespace-nowrap text-xs sm:text-sm">
+                  <span className="whitespace-nowrap text-sm sm:text-base">
                     QUERO O ARSENAL COMPLETO AGORA
                   </span>
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 sm:ml-3" />
@@ -847,7 +843,7 @@ function HomePage() {
             <Target className="w-5 h-5 sm:w-7 sm:h-7 mx-4 sm:mx-6 text-[#5EEAD4]" />
             <span>4 IAs INTEGRADAS</span>
             <TrendingUp className="w-5 h-5 sm:w-7 sm:h-7 mx-4 sm:mx-6 text-[#2DD4BF]" />
-            <span>RESULTADOS IMEDIATOS &nbsp;</span>
+            <span>RESULTADOS IMEDIATOS  </span>
           </div>
         </ScrollingBanner>
       </div>
@@ -948,7 +944,7 @@ function HomePage() {
               <div className="bg-[#14222E] p-3 sm:p-4 rounded-xl border border-[#2DD4BF]/30">
                 <p className="text-gray-300 text-sm sm:text-lg mb-1 sm:mb-2">Valor Total do Arsenal: <span className="line-through text-red-400">R$ 497,00</span></p>
                 <p className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Preço de Lançamento (HOJE):</p>
-                <p className="text-2xl sm:text-4xl md:text-5xl font-bold text-[#5EEAD4] mb-1 sm:mb-2">12x de R$ 4,90</p>
+                <p className="text-4xl md:text-5xl font-bold text-[#5EEAD4] mb-1 sm:mb-2">12x de R$ 4,90</p>
                 <p className="text-gray-300 text-lg sm:text-xl font-semibold mb-1 sm:mb-2">ou R$ 47,00 à vista</p>
                 <p className="text-gray-400 text-xs sm:text-sm mt-1 sm:mt-2">(Você leva o "Curso Completo", o Software e as Atualizações Vitalícias)</p>
               </div>
