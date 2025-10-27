@@ -556,7 +556,7 @@ function NexusSystemSection() {
 }
 
 // ===================================================================
-// COMPONENTE HOMEPAGE - ATUALIZADO COM CORES MAIS CLARAS
+// COMPONENTE HOMEPAGE - ATUALIZADO COM VÍDEO ACIMA DO TEXTO
 // ===================================================================
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -637,26 +637,11 @@ function HomePage() {
         </div>
       </nav>
 
-      {/* HERO SECTION COM IMAGEM DE FUNDO E VÍDEO - CORES MAIS CLARAS */}
+      {/* HERO SECTION COM VÍDEO ACIMA DO TEXTO */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 overflow-hidden">
-        {/* Background Image - MESMA DO CÓDIGO ANTERIOR */}
-        <div className="absolute inset-0 opacity-15">
+        {/* Apenas a imagem de fundo sutil */}
+        <div className="absolute inset-0 opacity-10">
           <img src={brainNetworkImg} alt="Neural Network Background" className="w-full h-full object-cover" />
-        </div>
-        
-        {/* Logo Video Background - AGORA COM A IMPORT CORRETA */}
-        <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover opacity-25"
-          >
-            <source src={logoVideo} type="video/mp4" />
-            Seu navegador não suporta o elemento de vídeo.
-          </video>
-          <div className="absolute inset-0 bg-[#1A222E]/70"></div>
         </div>
         
         <div className="hidden md:block absolute top-20 left-20 w-72 h-72 bg-[#1A4A5A]/20 rounded-full blur-3xl animate-pulse"></div>
@@ -671,20 +656,20 @@ function HomePage() {
               NÃO COMPRE OUTRO CURSO DE IA
             </div>
             
-            {/* Logo */}
-            <div className="mb-4 sm:mb-6">
-              <div className="w-40 h-40 sm:w-56 sm:h-56 mx-auto mb-2 sm:mb-4 rounded-2xl bg-gradient-to-br from-[#6EEBD4] to-[#3DE4CF] p-1">
-                <div className="w-full h-full bg-[#1A222E] rounded-2xl flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="flex items-center justify-center space-x-2 mb-2">
-                      <img src={novaImagemLogo} alt="NEXUS Logo" className="w-12 h-12 sm:w-16 sm:h-16 rounded-full" />
-                    </div>
-                    <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">
-                      NEXUS
-                    </span>
-                    <p className="text-xs sm:text-sm text-gray-300 mt-1">Sistema de IA</p>
-                  </div>
-                </div>
+            {/* VÍDEO DA LOGO - AGORA ACIMA DO TEXTO */}
+            <div className="mb-6 sm:mb-8 flex justify-center">
+              <div className="relative w-48 h-48 sm:w-64 sm:h-64 rounded-2xl overflow-hidden border-2 border-[#3DE4CF]/50 shadow-2xl">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src={logoVideo} type="video/mp4" />
+                  Seu navegador não suporta o elemento de vídeo.
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A222E]/20 to-transparent"></div>
               </div>
             </div>
             
