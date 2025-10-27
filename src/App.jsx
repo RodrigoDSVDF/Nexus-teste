@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button.jsx';
 import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X, Instagram, Book, BarChart3, Bed, UserCheck, Play, Code, Download, Shield, Clock, Users, Lightbulb, Cpu, BarChart, Workflow } from 'lucide-react';
@@ -26,56 +26,7 @@ import servicosIAImg from './assets/servicos-ia.jpg';
 import logoVideo from './assets/logo-video.mp4';
 
 // ===================================================================
-// COMPONENTE TYPEWRITER OTIMIZADO - VERSÃO MELHORADA
-// ===================================================================
-function Typewriter({ text, speed = 60, onTypingComplete, className = "" }) {
-  const [displayedText, setDisplayedText] = useState('');
-
-  useEffect(() => {
-    // Garante que o texto reinicie se a prop 'text' mudar
-    setDisplayedText('');
-
-    let i = 0;
-    const intervalId = setInterval(() => {
-      if (i < text.length) {
-        // Atualiza o estado apenas uma vez por caractere
-        // Usamos a forma funcional (prev) para garantir que estamos
-        // pegando o estado mais recente, sem depender de closures.
-        setDisplayedText(prev => prev + text.charAt(i));
-        i++;
-      } else {
-        // Limpa o intervalo quando o texto termina
-        clearInterval(intervalId);
-        if (onTypingComplete) {
-          onTypingComplete();
-        }
-      }
-    }, speed);
-
-    // Função de Limpeza (Cleanup)
-    // Isso é ESSENCIAL. Se o componente for desmontado (mudar de página),
-    // o intervalo é limpo, evitando vazamentos de memória e bugs.
-    return () => {
-      clearInterval(intervalId);
-    };
-
-    // O efeito agora só roda novamente se o texto, a velocidade ou
-    // a função de callback mudarem. Ele não roda mais a cada caractere.
-  }, [text, speed, onTypingComplete]);
-
-  return (
-    <span className={className}>
-      {displayedText}
-      {/* Otimização bônus: só mostra o cursor se o texto não estiver completo */}
-      {displayedText.length < text.length && (
-        <span className="animate-pulse">|</span>
-      )}
-    </span>
-  );
-}
-
-// ===================================================================
-// COMPONENTE DO VÍDEO DE APRESENTAÇÃO - CORRIGIDO PARA 2 MINUTOS
+// COMPONENTE DO VÍDEO DE APRESENTAÇÃO - COM NOVO LINK
 // ===================================================================
 function VideoApresentacao() {
   return (
@@ -98,7 +49,7 @@ function VideoApresentacao() {
           <div className="bg-[#1A222E] rounded-2xl border border-[#2A3A4E] p-2 sm:p-4 shadow-2xl">
             <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
               <iframe
-                src="https://www.youtube.com/embed/5yTAiL616Ak?si=qmqgWHJTdKY_-MmX&autoplay=1&controls=1&modestbranding=1&rel=0"
+                src="https://www.youtube.com/embed/F5fJ_56-wr8?si=STkrythq6S8tTISM&autoplay=1&controls=1&modestbranding=1&rel=0"
                 title="Sistema Nexus - Apresentação"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -590,26 +541,11 @@ function NexusSystemSection() {
 }
 
 // ===================================================================
-// COMPONENTE HOMEPAGE - COM TEXTO ATUALIZADO
+// COMPONENTE HOMEPAGE - SEM TYPEWRITER
 // ===================================================================
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [typingStep, setTypingStep] = useState(1);
-
-  // Otimização: useMemo para imagens
-  const images = useMemo(() => ({
-    brainNetworkImg,
-    testimonial1Img,
-    testimonial2Img,
-    testimonial3Img,
-    brainAIImg,
-    xadrezStrategiaImg,
-    novaImagemLogo,
-    dataAnalysisImg,
-    servicosIAImg,
-    logoVideo
-  }), []);
 
   useEffect(() => {
     setIsVisible(true);
@@ -622,12 +558,7 @@ function HomePage() {
         <div className="max-w-6xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <img 
-                src={images.novaImagemLogo} 
-                alt="NEXUS Logo" 
-                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" 
-                loading="lazy"
-              />
+              <img src={novaImagemLogo} alt="NEXUS Logo" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" />
               <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">
                 NEXUS
               </span>
@@ -651,7 +582,6 @@ function HomePage() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden text-white"
-              aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -694,12 +624,7 @@ function HomePage() {
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img 
-            src={images.brainNetworkImg} 
-            alt="Neural Network Background" 
-            className="w-full h-full object-cover" 
-            loading="lazy"
-          />
+          <img src={brainNetworkImg} alt="Neural Network Background" className="w-full h-full object-cover" />
         </div>
         
         <div className="hidden md:block absolute top-20 left-20 w-72 h-72 bg-[#1A4A5A]/20 rounded-full blur-3xl animate-pulse"></div>
@@ -721,30 +646,20 @@ function HomePage() {
                   loop
                   playsInline
                   className="w-full h-full object-cover"
-                  preload="metadata"
                 >
-                  <source src={images.logoVideo} type="video/mp4" />
+                  <source src={logoVideo} type="video/mp4" />
                   Seu navegador não suporta o elemento de vídeo.
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A222E]/20 to-transparent"></div>
               </div>
             </div>
             
-            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight drop-shadow-lg px-2 min-h-[1.2em]">
-              <Typewriter 
-                text="Sistema Nexus: Domine a IA" 
-                speed={80}
-                onTypingComplete={() => setTimeout(() => setTypingStep(2), 500)} 
-              />
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight drop-shadow-lg px-2">
+              Sistema Nexus: Domine a IA
             </h1>
 
-            <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent drop-shadow-lg mb-3 sm:mb-4 px-2 min-h-[1.2em]">
-              {typingStep >= 2 && (
-                <Typewriter 
-                  text="PDF + Vídeos + Software" 
-                  speed={90} 
-                />
-              )}
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent drop-shadow-lg mb-3 sm:mb-4 px-2">
+              PDF + Vídeos + Software
             </h2>
             
             {/* TEXTO PRINCIPAL ATUALIZADO */}
@@ -900,12 +815,7 @@ function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <AnimatedFromLeft delay={0.2}>
               <div className="bg-[#2A3A4E]/60 p-4 sm:p-6 rounded-2xl border border-[#3A4A5E] flex flex-col items-center text-center h-full">
-                <img 
-                  src={images.testimonial1Img} 
-                  alt="Depoimento de Aluno 1" 
-                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[#3DE4CF] mb-3 sm:mb-4" 
-                  loading="lazy"
-                />
+                <img src={testimonial1Img} alt="Depoimento de Aluno 1" className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[#3DE4CF] mb-3 sm:mb-4" />
                 <p className="text-gray-200 italic mb-3 sm:mb-4 text-sm sm:text-base">
                   "O Software Nexus mudou completamente minha forma de trabalhar. As automações me economizam pelo menos 3 horas por dia!"
                 </p>
@@ -917,12 +827,7 @@ function HomePage() {
             </AnimatedFromLeft>
             <AnimatedSection delay={0.4}>
               <div className="bg-[#2A3A4E]/60 p-4 sm:p-6 rounded-2xl border border-[#3A4A5E] flex flex-col items-center text-center h-full">
-                <img 
-                  src={images.testimonial2Img} 
-                  alt="Depoimento de Aluno 2" 
-                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[#3DE4CF] mb-3 sm:mb-4" 
-                  loading="lazy"
-                />
+                <img src={testimonial2Img} alt="Depoimento de Aluno 2" className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[#3DE4CF] mb-3 sm:mb-4" />
                 <p className="text-gray-200 italic mb-3 sm:mb-4 text-sm sm:text-base">
                   "Os vídeos são incríveis! Ver as técnicas em ação fez toda a diferença. O PDF sozinho já valeria, mas com os vídeos é sensacional."
                 </p>
@@ -934,12 +839,7 @@ function HomePage() {
             </AnimatedSection>
             <AnimatedFromRight delay={0.2}>
               <div className="bg-[#2A3A4E]/60 p-4 sm:p-6 rounded-2xl border border-[#3A4A5E] flex flex-col items-center text-center h-full">
-                 <img 
-                  src={images.testimonial3Img} 
-                  alt="Depoimento de Aluno 3" 
-                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[#3DE4CF] mb-3 sm:mb-4" 
-                  loading="lazy"
-                />
+                 <img src={testimonial3Img} alt="Depoimento de Aluno 3" className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[#3DE4CF] mb-3 sm:mb-4" />
                 <p className="text-gray-200 italic mb-3 sm:mb-4 text-sm sm:text-base">
                   "Ter acesso ao software com múltiplas IAs é um diferencial absurdo. É como ter uma equipe de especialistas 24h por dia."
                 </p>
@@ -1028,12 +928,7 @@ function HomePage() {
             <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
               <div>
                 <div className="flex items-center space-x-3 mb-3 sm:mb-4">
-                  <img 
-                    src={images.novaImagemLogo} 
-                    alt="NEXUS Logo" 
-                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" 
-                    loading="lazy"
-                  />
+                  <img src={novaImagemLogo} alt="NEXUS Logo" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" />
                   <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">
                     NEXUS
                   </span>
