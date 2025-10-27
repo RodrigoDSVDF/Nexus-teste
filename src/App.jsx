@@ -26,7 +26,7 @@ import dataAnalysisImg from './assets/1000395918.jpg';
 import servicosIAImg from './assets/servicos-ia.jpg';
 
 // ===================================================================
-// COMPONENTE DO VÍDEO DE APRESENTAÇÃO
+// COMPONENTE DO VÍDEO DE APRESENTAÇÃO - ATUALIZADO SEM MUTE
 // ===================================================================
 function VideoApresentacao() {
   return (
@@ -46,11 +46,11 @@ function VideoApresentacao() {
             </p>
           </div>
 
-          {/* Container do Vídeo do YouTube */}
+          {/* Container do Vídeo do YouTube - ATUALIZADO SEM MUTE */}
           <div className="bg-[#0B1016] rounded-2xl border border-[#1C2A35] p-2 sm:p-4 shadow-2xl">
             <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
               <iframe
-                src="https://www.youtube.com/embed/5yTAiL616Ak?si=qmqgWHJTdKY_-MmX&autoplay=1&mute=1&controls=1&modestbranding=1&rel=0"
+                src="https://www.youtube.com/embed/5yTAiL616Ak?si=qmqgWHJTdKY_-MmX&autoplay=1&controls=1&modestbranding=1&rel=0"
                 title="Sistema Nexus - Apresentação"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -555,7 +555,7 @@ function NexusSystemSection() {
 }
 
 // ===================================================================
-// COMPONENTE HOMEPAGE - COMPLETO E RESPONSIVO
+// COMPONENTE HOMEPAGE - ATUALIZADO COM LOGO VIDEO
 // ===================================================================
 function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -636,13 +636,25 @@ function HomePage() {
         </div>
       </nav>
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION COM LOGO VIDEO */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 overflow-hidden">
+        {/* Logo Video Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover opacity-20"
+          >
+            <source src="/logo-video.mp4" type="video/mp4" />
+            Seu navegador não suporta o elemento de vídeo.
+          </video>
+          <div className="absolute inset-0 bg-[#0B1016]/80"></div>
+        </div>
+        
         <div className="hidden md:block absolute top-20 left-20 w-72 h-72 bg-[#0D3A46]/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="hidden md:block absolute bottom-20 right-20 w-96 h-96 bg-[#14222E]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute inset-0 opacity-10">
-          <img src={brainNetworkImg} alt="Neural Network Background" className="w-full h-full object-cover" />
-        </div>
         
         <div className={`relative z-10 text-center max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="mb-8 mt-16">
