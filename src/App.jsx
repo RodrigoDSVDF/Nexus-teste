@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button.jsx';
-import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X, Instagram, Book, BarChart3, Bed, UserCheck, Play, Code, Download, Shield, Clock, Users, Lightbulb, Cpu, BarChart, Workflow, ShoppingCart, Star } from 'lucide-react';
+import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X, Instagram, Book, BarChart3, Bed, UserCheck, Play, Code, Download, Shield, Clock, Users, Lightbulb, Cpu, BarChart, Workflow, ShoppingCart, Star, Quote } from 'lucide-react';
 import QuemSomos from './pages/QuemSomos.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
 import FAQ from './pages/FAQ.jsx';
@@ -25,6 +25,10 @@ import dataAnalysisImg from './assets/1000395918.jpg';
 import servicosIAImg from './assets/servicos-ia.jpg';
 import produtoImg from './assets/produto.jpg';
 import logoVideo from './assets/logo-video.mp4';
+import platosCaveImg from './assets/1000396070.jpg';
+import digitalToolsImg from './assets/1000395915.jpg';
+import neuralNetworkImg from './assets/1000393264.jpg';
+import produtividadeImg from './assets/produtividade.jpg';
 
 // ===================================================================
 // COMPONENTE DO VÍDEO DE APRESENTAÇÃO - COM NOVO LINK
@@ -261,6 +265,247 @@ function ProductSection() {
   );
 }
 
+// ===================================================================
+// COMPONENTE DOS CARTÕES COM IMAGENS E INFORMAÇÕES
+// ===================================================================
+function FeaturesCardsSection() {
+  const features = [
+    {
+      image: brainAIImg,
+      title: "IA Avançada",
+      description: "Tecnologia de ponta que se adapta ao seu estilo de aprendizado",
+      icon: <Brain className="w-6 h-6 text-[#6EEBD4]" />
+    },
+    {
+      image: dataAnalysisImg,
+      title: "Análise de Dados",
+      description: "Insights profundos baseados em dados reais do seu desempenho",
+      icon: <BarChart className="w-6 h-6 text-[#6EEBD4]" />
+    },
+    {
+      image: neuralNetworkImg,
+      title: "Rede Neural",
+      description: "Sistema que evolui constantemente com suas necessidades",
+      icon: <Cpu className="w-6 h-6 text-[#6EEBD4]" />
+    },
+    {
+      image: digitalToolsImg,
+      title: "Ferramentas Digitais",
+      description: "Conjunto completo de recursos para maximizar sua produtividade",
+      icon: <Code className="w-6 h-6 text-[#6EEBD4]" />
+    },
+    {
+      image: platosCaveImg,
+      title: "Metodologia Comprovada",
+      description: "Baseado nas mais eficientes estratégias de aprendizado acelerado",
+      icon: <BookOpen className="w-6 h-6 text-[#6EEBD4]" />
+    },
+    {
+      image: produtividadeImg,
+      title: "Otimização de Tempo",
+      description: "Reduza em 70% o tempo necessário para dominar novas habilidades",
+      icon: <TrendingUp className="w-6 h-6 text-[#6EEBD4]" />
+    }
+  ];
+
+  return (
+    <AnimatedSection>
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-[#1A222E] to-[#2A3A4E]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-[#3DE4CF]/30 border border-[#3DE4CF]/40 rounded-full text-[#6EEBD4] text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+              <Zap className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              TECNOLOGIA AVANÇADA
+            </div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+              Recursos que <span className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">Transformam Resultados</span>
+            </h2>
+            <p className="text-base sm:text-xl text-gray-200 max-w-3xl mx-auto">
+              Descubra as ferramentas e tecnologias que tornam nosso sistema único no mercado
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="group bg-[#1A222E] rounded-2xl border border-[#2A3A4E] overflow-hidden hover:border-[#3DE4CF] transition-all duration-300 hover:transform hover:scale-105">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={feature.image} 
+                    alt={feature.title}
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A222E] to-transparent opacity-60"></div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    {feature.icon}
+                    <h3 className="text-xl font-bold text-white ml-3">{feature.title}</h3>
+                  </div>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </AnimatedSection>
+  );
+}
+
+// ===================================================================
+// COMPONENTE DE PROVA SOCIAL
+// ===================================================================
+function SocialProofSection() {
+  const testimonials = [
+    {
+      image: testimonial1Img,
+      name: "Carlos Silva",
+      role: "Estudante de Medicina",
+      text: "O Nexus revolucionou minha forma de estudar. Em 3 semanas, minhas notas aumentaram 47%!",
+      rating: 5
+    },
+    {
+      image: testimonial2Img,
+      name: "Mariana Costa",
+      role: "Profissional de Marketing",
+      text: "Finalmente consegui organizar meus estudos e trabalho. A IA realmente entende minhas necessidades!",
+      rating: 5
+    },
+    {
+      image: testimonial3Img,
+      name: "Ricardo Almeida",
+      role: "Concurseiro",
+      text: "Depois de 5 anos tentando, passei no concurso dos meus sonhos usando o sistema Nexus!",
+      rating: 5
+    }
+  ];
+
+  return (
+    <AnimatedSection>
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-[#1A222E] to-[#2A3A4E]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-[#F59E0B]/30 border border-[#F59E0B]/40 rounded-full text-[#F59E0B] text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+              <Users className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              RESULTADOS REAIS
+            </div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+              O Que Nossos <span className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">Alunos Dizem</span>
+            </h2>
+            <p className="text-base sm:text-xl text-gray-200 max-w-3xl mx-auto">
+              Mais de 2.347 pessoas já transformaram seus resultados com nossa metodologia
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-[#1A222E] rounded-2xl border border-[#2A3A4E] p-6 hover:border-[#3DE4CF] transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover mr-4"
+                  />
+                  <div>
+                    <h4 className="text-white font-bold">{testimonial.name}</h4>
+                    <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                  </div>
+                </div>
+                <div className="flex text-yellow-400 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-current" />
+                  ))}
+                </div>
+                <Quote className="w-8 h-8 text-[#6EEBD4] mb-3 opacity-50" />
+                <p className="text-gray-300 text-sm leading-relaxed italic">
+                  "{testimonial.text}"
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-white">2.347+</div>
+                <div className="text-gray-400 text-sm">Alunos Ativos</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-white">4.9/5</div>
+                <div className="text-gray-400 text-sm">Avaliação Média</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-white">98%</div>
+                <div className="text-gray-400 text-sm">Taxa de Aprovação</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-white">47%</div>
+                <div className="text-gray-400 text-sm">Aumento em Notas</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </AnimatedSection>
+  );
+}
+
+// ===================================================================
+// COMPONENTE DO MINI VÍDEO
+// ===================================================================
+function MiniVideoSection() {
+  return (
+    <AnimatedSection>
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-[#1A222E] to-[#2A3A4E]">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <div className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-[#3DE4CF]/30 border border-[#3DE4CF]/40 rounded-full text-[#6EEBD4] text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+              <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              DEMONSTRAÇÃO RÁPIDA
+            </div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+              Veja o Sistema <span className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">Em Ação</span>
+            </h2>
+            <p className="text-base sm:text-xl text-gray-200 max-w-3xl mx-auto">
+              Em apenas 60 segundos, entenda como a plataforma funciona na prática
+            </p>
+          </div>
+
+          <div className="bg-[#1A222E] rounded-2xl border border-[#2A3A4E] p-4 sm:p-6 shadow-2xl">
+            <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-black">
+              <video
+                controls
+                className="w-full h-full object-cover"
+                poster={servicosIAImg}
+              >
+                <source src={logoVideo} type="video/mp4" />
+                Seu navegador não suporta o elemento de vídeo.
+              </video>
+            </div>
+            
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+              <div className="flex flex-col items-center p-4 bg-[#2A3A4E]/30 rounded-lg border border-[#3A4A5E]">
+                <Zap className="w-6 h-6 text-[#6EEBD4] mb-2" />
+                <span className="text-white text-sm font-medium">Configuração em 5min</span>
+              </div>
+              <div className="flex flex-col items-center p-4 bg-[#2A3A4E]/30 rounded-lg border border-[#3A4A5E]">
+                <Brain className="w-6 h-6 text-[#6EEBD4] mb-2" />
+                <span className="text-white text-sm font-medium">IA Personalizada</span>
+              </div>
+              <div className="flex flex-col items-center p-4 bg-[#2A3A4E]/30 rounded-lg border border-[#3A4A5E]">
+                <TrendingUp className="w-6 h-6 text-[#6EEBD4] mb-2" />
+                <span className="text-white text-sm font-medium">Resultados em 7 Dias</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </AnimatedSection>
+  );
+}
+
 function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -312,6 +557,9 @@ function HomePage() {
       <main className="pt-20">
         <VideoApresentacao />
         <IATransformationSection />
+        <FeaturesCardsSection />
+        <SocialProofSection />
+        <MiniVideoSection />
         <ProductSection />
       </main>
 
