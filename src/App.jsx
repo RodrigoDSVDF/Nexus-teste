@@ -413,25 +413,25 @@ function FeaturesCardsSection() {
   const features = [
     {
       image: brainAIImg,
-      title: "IA Avançada",
+      title: "Ferramenta Estratégica",
       description: "Tecnologia de ponta que se adapta ao seu estilo de aprendizado",
       icon: <Brain className="w-6 h-6 text-[#6EEBD4]" />
     },
     {
       image: dataAnalysisImg,
       title: "Análise de Dados",
-      description: "Insights profundos baseados em dados reais do seu desempenho",
+      description: "Insights profundos baseados em dados",
       icon: <BarChart className="w-6 h-6 text-[#6EEBD4]" />
     },
     {
       image: neuralNetworkImg,
-      title: "Rede Neural",
+      title: "Ecossistema de IA",
       description: "Sistema que evolui constantemente com suas necessidades",
       icon: <Cpu className="w-6 h-6 text-[#6EEBD4]" />
     },
     {
       image: digitalToolsImg,
-      title: "Ferramentas Digitales",
+      title: "Ferramentas Digitais",
       description: "Conjunto completo de recursos para maximizar sua produtividade",
       icon: <Code className="w-6 h-6 text-[#6EEBD4]" />
     },
