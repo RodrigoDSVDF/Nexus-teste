@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button.jsx';
-import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X, Instagram, Book, BarChart3, Bed, UserCheck, Play, Code, Download, Shield, Clock, Users, Lightbulb, Cpu, BarChart, Workflow, ShoppingCart, Star, Quote } from 'lucide-react';
+import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X, Instagram, Book, BarChart3, Bed, UserCheck, Play, Code, Download, Shield, Clock, Users, Lightbulb, Cpu, BarChart, Workflow, ShoppingCart, Star, Quote, AlertTriangle } from 'lucide-react';
 import QuemSomos from './pages/QuemSomos.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
 import FAQ from './pages/FAQ.jsx';
@@ -80,6 +80,127 @@ function VideoApresentacao() {
               <p className="text-gray-300 text-sm sm:text-base">
                 <strong>Dica:</strong> Assista até o final para entender por que este sistema é diferente de tudo que você já viu.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </AnimatedSection>
+  );
+}
+
+// ===================================================================
+// NOVA SEÇÃO DE ATENÇÃO - ABAIXO DO VÍDEO
+// ===================================================================
+function AIAttentionSection() {
+  return (
+    <AnimatedSection>
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-[#1A222E] via-[#1E293B] to-[#2A3A4E] relative overflow-hidden">
+        {/* Elementos de fundo */}
+        <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-orange-500/5"></div>
+        <div className="absolute top-10 right-10 w-32 h-32 bg-red-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl"></div>
+        
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-red-500/20 border border-red-500/40 rounded-full text-red-400 text-xs sm:text-sm font-bold mb-6 animate-pulse">
+              <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              ATENÇÃO URGENTE
+            </div>
+          </div>
+
+          <div className="bg-[#1A222E]/80 backdrop-blur-sm rounded-2xl border border-red-500/30 p-6 sm:p-8 shadow-2xl">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-6 text-center leading-tight">
+              <span className="text-red-400">🚨 ATENÇÃO:</span> A IA está evoluindo mais rápido do que a sua capacidade de acompanhar
+            </h2>
+
+            <div className="space-y-6">
+              <p className="text-lg sm:text-xl text-gray-200 text-center leading-relaxed">
+                Você já sentiu que, por mais que estude, nunca consegue acompanhar o ritmo da Inteligência Artificial?
+              </p>
+
+              <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6">
+                <p className="text-white font-semibold text-center mb-4">
+                  A cada semana surge uma nova ferramenta.
+                  <br />
+                  A cada mês, uma atualização "revolucionária".
+                  <br />
+                  E você? Continua correndo atrás, tentando entender o que acabou de mudar — de novo.
+                </p>
+              </div>
+
+              {/* Lista de problemas */}
+              <div className="grid gap-4 mb-6">
+                <div className="flex items-start p-4 bg-[#2A3A4E]/50 rounded-lg border border-[#3A4A5E] hover:border-red-500/30 transition-colors">
+                  <div className="flex-shrink-0 w-6 h-6 bg-red-500/20 rounded-full flex items-center justify-center mt-1 mr-4">
+                    <span className="text-red-400 text-sm">👉</span>
+                  </div>
+                  <p className="text-gray-200 text-lg">
+                    Você passa horas aprendendo uma ferramenta... e logo ela fica obsoleta.
+                  </p>
+                </div>
+
+                <div className="flex items-start p-4 bg-[#2A3A4E]/50 rounded-lg border border-[#3A4A5E] hover:border-red-500/30 transition-colors">
+                  <div className="flex-shrink-0 w-6 h-6 bg-red-500/20 rounded-full flex items-center justify-center mt-1 mr-4">
+                    <span className="text-red-400 text-sm">👉</span>
+                  </div>
+                  <p className="text-gray-200 text-lg">
+                    O excesso de informação te deixa paralisado.
+                  </p>
+                </div>
+
+                <div className="flex items-start p-4 bg-[#2A3A4E]/50 rounded-lg border border-[#3A4A5E] hover:border-red-500/30 transition-colors">
+                  <div className="flex-shrink-0 w-6 h-6 bg-red-500/20 rounded-full flex items-center justify-center mt-1 mr-4">
+                    <span className="text-red-400 text-sm">👉</span>
+                  </div>
+                  <p className="text-gray-200 text-lg">
+                    Enquanto isso, seus concorrentes já estão usando a IA para ganhar tempo, dinheiro e destaque.
+                  </p>
+                </div>
+              </div>
+
+              {/* Transição para a solução */}
+              <div className="text-center mb-6">
+                <p className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Mas existe um <span className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">outro caminho</span>.
+                </p>
+              </div>
+
+              {/* Proposta de valor */}
+              <div className="bg-gradient-to-r from-[#6EEBD4]/10 to-[#3DE4CF]/10 border border-[#6EEBD4]/30 rounded-2xl p-6 sm:p-8">
+                <p className="text-xl sm:text-2xl text-white font-bold text-center mb-6 leading-relaxed">
+                  E se, em vez de tentar dominar cada ferramenta nova, você aprendesse os <span className="text-[#6EEBD4]">princípios fundamentais da IA</span> — aqueles que <span className="text-[#6EEBD4]">nunca mudam</span>, não importa o quanto a tecnologia evolua?
+                </p>
+
+                <div className="text-center">
+                  <div className="inline-flex items-center px-4 py-2 bg-[#6EEBD4]/20 border border-[#6EEBD4]/40 rounded-full text-[#6EEBD4] text-sm font-medium mb-4">
+                    <Sparkles className="w-4 h-4 mr-2" />
+                    SOLUÇÃO DEFINITIVA
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                    É exatamente isso que o <span className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">NEXUS</span> ensina:
+                  </h3>
+                  <p className="text-lg sm:text-xl text-gray-200 leading-relaxed">
+                    Os <span className="text-white font-semibold">pilares da alta performance com IA</span>, que vão manter você relevante, produtivo e indispensável pelos próximos <span className="text-[#F59E0B] font-bold">10 anos</span> — independentemente de qualquer atualização ou moda passageira.
+                  </p>
+                </div>
+              </div>
+
+              {/* Chamada para ação */}
+              <div className="text-center mt-8">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <button className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] hover:from-[#5ED9C6] hover:to-[#2DD4BF] text-[#1A222E] font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center space-x-3">
+                    <Zap className="w-5 h-5" />
+                    <span>QUERO DOMINAR A IA AGORA</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                  <button className="border border-[#6EEBD4] text-[#6EEBD4] hover:bg-[#6EEBD4] hover:text-[#1A222E] font-bold py-4 px-8 rounded-xl transition-all duration-300">
+                    VER DEPOIMENTOS
+                  </button>
+                </div>
+                <p className="text-gray-400 text-sm mt-4">
+                  ⚡ Comece agora e garanta sua vantagem competitiva
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -556,6 +677,7 @@ function HomePage() {
       {/* Conteúdo Principal */}
       <main className="pt-20">
         <VideoApresentacao />
+        <AIAttentionSection /> {/* NOVA SEÇÃO ADICIONADA AQUI */}
         <IATransformationSection />
         <FeaturesCardsSection />
         <SocialProofSection />
