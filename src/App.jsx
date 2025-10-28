@@ -393,8 +393,8 @@ function FeaturesCardsSection() {
   const features = [
     {
       image: brainAIImg,
-      title: "IA Avançada",
-      description: "Tecnologia de ponta que se adapta ao seu estilo de aprendizado",
+      title: "Sistema avançado de IA",
+      description: "Tecnologia de ponta que te fornece estratégia de trabalho",
       icon: <Brain className="w-6 h-6 text-[#6EEBD4]" />
     },
     {
