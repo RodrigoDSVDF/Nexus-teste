@@ -69,41 +69,56 @@ function Header({ mobileMenuOpen, setMobileMenuOpen }) {
 }
 
 // ===================================================================
-// COMPONENTE HERO SECTION
+// COMPONENTE VÍDEO DE LOGO ANIMADO (NO INÍCIO)
 // ===================================================================
-function HeroSection() {
+function VideoLogoSection() {
   return (
     <AnimatedSection>
-      <section className="pt-32 pb-16 sm:pt-40 sm:pb-24 px-4 bg-gradient-to-br from-[#0F172A] to-[#1A222E]">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-[#6EEBD4]/30 border border-[#6EEBD4]/40 rounded-full text-[#6EEBD4] text-xs sm:text-sm font-medium mb-6 sm:mb-8">
-            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-            SISTEMA DE ALTA PERFORMANCE COM IA
-          </div>
-          
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight">
-            Domine a Arte de 
-            <span className="block bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">
-              Aprender com IA
-            </span>
-          </h1>
-          
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
-            O sistema completo que une inteligência artificial avançada com técnicas comprovadas 
-            para maximizar seu aprendizado e produtividade.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] hover:from-[#5ED9C6] hover:to-[#2DD4BF] text-[#1A222E] font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
-              <Zap className="w-5 h-5 mr-2" />
-              Começar Agora
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+      <section className="pt-32 pb-16 sm:pt-40 sm:pb-20 px-4 bg-gradient-to-br from-[#0F172A] to-[#1A222E]">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-8 sm:mb-12">
+            <div className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-6 bg-gradient-to-br from-[#6EEBD4] to-[#3DE4CF] rounded-2xl shadow-2xl">
+              <video 
+                autoPlay 
+                muted 
+                loop 
+                playsInline
+                className="w-12 h-12 sm:w-16 sm:h-16"
+              >
+                <source src={logoVideo} type="video/mp4" />
+                Seu navegador não suporta o vídeo.
+              </video>
+            </div>
             
-            <Button variant="outline" className="border-[#6EEBD4] text-[#6EEBD4] hover:bg-[#6EEBD4] hover:text-[#1A222E] font-bold py-4 px-8 rounded-full text-lg transition-all duration-300">
-              <Play className="w-5 h-5 mr-2" />
-              Ver Demonstração
-            </Button>
+            <div className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-[#6EEBD4]/30 border border-[#6EEBD4]/40 rounded-full text-[#6EEBD4] text-xs sm:text-sm font-medium mb-6 sm:mb-8">
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              SISTEMA DE ALTA PERFORMANCE COM IA
+            </div>
+            
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight">
+              Domine a Arte de 
+              <span className="block bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">
+                Aprender com IA
+              </span>
+            </h1>
+            
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed">
+              O sistema completo que une inteligência artificial avançada com técnicas comprovadas 
+              para maximizar seu aprendizado e produtividade.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] hover:from-[#5ED9C6] hover:to-[#2DD4BF] text-[#1A222E] font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
+                <Zap className="w-5 h-5 mr-2" />
+                Começar Agora
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              
+              <Button variant="outline" className="border-[#6EEBD4] text-[#6EEBD4] hover:bg-[#6EEBD4] hover:text-[#1A222E] font-bold py-4 px-8 rounded-full text-lg transition-all duration-300">
+                <Play className="w-5 h-5 mr-2" />
+                Ver Demonstração
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -203,6 +218,92 @@ function ProblemSolutionSection() {
 }
 
 // ===================================================================
+// COMPONENTE METODOLOGIA AVANÇADA
+// ===================================================================
+function MethodologySection() {
+  return (
+    <AnimatedSection>
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-[#0F172A] to-[#1A222E]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-[#3DE4CF]/30 border border-[#3DE4CF]/40 rounded-full text-[#6EEBD4] text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+              <Workflow className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              METODOLOGIA CIENTÍFICA
+            </div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
+              Baseado em{' '}
+              <span className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">
+                Evidências Científicas
+              </span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                icon: Brain,
+                title: "Neuroplasticidade",
+                description: "Seu cérebro se adapta e se reorganiza com os estímulos certos"
+              },
+              {
+                icon: Zap,
+                title: "Repetição Espaçada",
+                description: "Algoritmos que otimizam o momento exato de revisão"
+              },
+              {
+                icon: Target,
+                title: "Aprendizado Ativo",
+                description: "Métodos que forçam sua mente a recuperar informações"
+              }
+            ].map((item, index) => (
+              <div key={index} className="bg-[#1A222E] border border-[#2A3A4E] rounded-2xl p-6 text-center">
+                <div className="w-16 h-16 bg-[#3DE4CF]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-8 h-8 text-[#6EEBD4]" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3">{item.title}</h3>
+                <p className="text-gray-300 text-sm">{item.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-[#1A222E] rounded-2xl border border-[#2A3A4E] p-6">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <img 
+                  src={brainNetworkImg} 
+                  alt="Rede Neural - Metodologia Científica" 
+                  className="w-full h-auto rounded-xl"
+                />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-4">Como Funciona na Prática</h3>
+                <p className="text-gray-300 mb-6">
+                  Nossa metodologia combina os princípios mais avançados da neurociência com 
+                  algoritmos de IA para criar um sistema de aprendizado personalizado.
+                </p>
+                <div className="space-y-4">
+                  {[
+                    "Análise do seu perfil de aprendizagem",
+                    "Plano de estudos personalizado em tempo real",
+                    "Revisões no momento exato para máxima retenção",
+                    "Métricas detalhadas do seu progresso"
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-[#6EEBD4] mr-3 flex-shrink-0" />
+                      <span className="text-gray-300">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </AnimatedSection>
+  );
+}
+
+// ===================================================================
 // COMPONENTE RECURSOS PRINCIPAIS
 // ===================================================================
 function FeaturesSection() {
@@ -210,32 +311,38 @@ function FeaturesSection() {
     {
       icon: Brain,
       title: "IA de Aprendizado Adaptativo",
-      description: "Sistema que se adapta ao seu estilo de aprendizado e evolui com você"
+      description: "Sistema que se adapta ao seu estilo de aprendizado e evolui com você",
+      image: brainAIImg
     },
     {
       icon: Zap,
       title: "Processamento Acelerado",
-      description: "Técnicas comprovadas para absorver informações 3x mais rápido"
+      description: "Técnicas comprovadas para absorver informações 3x mais rápido",
+      image: dataAnalysisImg
     },
     {
       icon: Target,
       title: "Foco Laser",
-      description: "Elimine distrações e mantenha concentração máxima por horas"
+      description: "Elimine distrações e mantenha concentração máxima por horas",
+      image: xadrezStrategiaImg
     },
     {
       icon: BookOpen,
       title: "Memória Expandida",
-      description: "Amplie sua capacidade de retenção com algoritmos de repetição espaçada"
+      description: "Amplie sua capacidade de retenção com algoritmos de repetição espaçada",
+      image: servicosIAImg
     },
     {
       icon: BarChart3,
       title: "Métricas em Tempo Real",
-      description: "Acompanhe seu progresso com analytics detalhados"
+      description: "Acompanhe seu progresso com analytics detalhados",
+      image: brainNetworkImg
     },
     {
       icon: Rocket,
       title: "Implementação Imediata",
-      description: "Comece a ver resultados desde o primeiro dia de uso"
+      description: "Comece a ver resultados desde o primeiro dia de uso",
+      image: testimonial1Img
     }
   ];
 
@@ -261,9 +368,17 @@ function FeaturesSection() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
-              <div key={index} className="bg-[#1A222E] border border-[#2A3A4E] rounded-2xl p-6 hover:border-[#3DE4CF]/30 transition-all duration-300">
-                <div className="w-12 h-12 bg-[#3DE4CF]/20 rounded-lg flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-[#6EEBD4]" />
+              <div key={index} className="bg-[#1A222E] border border-[#2A3A4E] rounded-2xl p-6 hover:border-[#3DE4CF]/30 transition-all duration-300 group">
+                <div className="relative overflow-hidden rounded-xl mb-4">
+                  <img 
+                    src={feature.image} 
+                    alt={feature.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A222E] to-transparent opacity-60"></div>
+                  <div className="absolute bottom-4 left-4 w-12 h-12 bg-[#3DE4CF]/20 rounded-lg flex items-center justify-center">
+                    <feature.icon className="w-6 h-6 text-[#6EEBD4]" />
+                  </div>
                 </div>
                 <h3 className="text-lg font-bold text-white mb-3">{feature.title}</h3>
                 <p className="text-gray-300 text-sm">{feature.description}</p>
@@ -457,7 +572,7 @@ function TestimonialsSection() {
                   <img 
                     src={testimonial.image} 
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full mr-4"
+                    className="w-12 h-12 rounded-full mr-4 object-cover"
                   />
                   <div>
                     <h4 className="font-bold text-white">{testimonial.name}</h4>
@@ -564,7 +679,7 @@ function ProductSection() {
 
           {/* Botão de compra */}
           <div className="mb-8">
-            <Button className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] hover:from-[#5ED9C6] hover:to-[#2DD4BF] text-[#1A222E] font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
+            <Button className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] hover:from-[#5ED9C6] hover:to-[#2DD4BF] text-[#1A222E] font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
               <Zap className="w-5 h-5 mr-2" />
               Comprar Agora - Apenas R$ 97,00
             </Button>
@@ -656,15 +771,20 @@ function HomePage() {
     <div className="min-h-screen bg-gradient-to-br from-[#0F172A] to-[#1A222E]">
       <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
       
-      <HeroSection />
+      {/* VÍDEO NO INÍCIO - AGORA CORRETAMENTE POSICIONADO */}
+      <VideoLogoSection />
       <BannerSection />
       <ProblemSolutionSection />
+      <MethodologySection />
       <FeaturesSection />
       <VideoApresentacao />
       <IATransformationSection />
       <TestimonialsSection />
       <FAQPreviewSection />
+      
+      {/* NOVA SEÇÃO DO PRODUTO COM IMAGEM E BOTÃO DE COMPRA */}
       <ProductSection />
+      
       <Footer />
     </div>
   );
