@@ -24,7 +24,7 @@ import novaImagemLogo from './assets/1000393277.png';
 import dataAnalysisImg from './assets/1000395918.jpg';
 import servicosIAImg from './assets/servicos-ia.jpg';
 import produtoImg from './assets/produto.jpg';
-import Img from './assets/Img.jpg';
+import Img from './assets/Imp.jpg';
 import logoVideo from './assets/logo-video.mp4';
 
 // ===================================================================
