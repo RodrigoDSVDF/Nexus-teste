@@ -16,7 +16,7 @@ import ScrollingBanner from './components/ui/ScrollingBanner.jsx';
 // Imagens e vídeo
 import brainNetworkImg from './assets/1000393266.jpg';
 import testimonial1Img from './assets/1000396866.jpg';
-import testimonial2Img from './assets/1000396868.jpg';
+import testimonial2Img from './assets/Imp.jpg';
 import testimonial3Img from './assets/1000396870.jpg';
 import brainAIImg from './assets/1000393262.jpg';
 import xadrezStrategiaImg from './assets/xadrez-estrategia.jpg';
