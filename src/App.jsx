@@ -18,7 +18,7 @@ import brainNetworkImg from './assets/1000393266.jpg';
 import testimonial1Img from './assets/1000396866.jpg';
 import testimonial2Img from './assets/1000396868.jpg';
 import testimonial3Img from './assets/1000396870.jpg';
-import brainAIImg from './assets/1000393262.jpg';
+import brainAIImg from './assets/xadrez-estrategia.jpg';
 import xadrezStrategiaImg from './assets/xadrez-estrategia.jpg';
 import novaImagemLogo from './assets/1000393277.png';
 import dataAnalysisImg from './assets/1000395918.jpg';
@@ -196,7 +196,7 @@ function AIAttentionSection() {
               <div className="text-center mt-8">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <a 
-                    href="https://pay.hotmart.com/SEU_LINK_DE_COMPRA_AQUI" 
+                    href="https://pay.cakto.com.br/5dUKrWD" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] hover:from-[#5ED9C6] hover:to-[#2DD4BF] text-[#1A222E] font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center space-x-3"
@@ -359,7 +359,7 @@ function ProductSection() {
                   </div>
 
                   <a 
-                    href="https://pay.hotmart.com/SEU_LINK_DE_COMPRA_AQUI" 
+                    href="https://pay.cakto.com.br/5dUKrWD" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-full bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] hover:from-[#5ED9C6] hover:to-[#2DD4BF] text-[#1A222E] font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 group"
