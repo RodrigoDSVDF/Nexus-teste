@@ -18,7 +18,7 @@ import brainNetworkImg from './assets/1000393266.jpg';
 import testimonial1Img from './assets/1000396866.jpg';
 import testimonial2Img from './assets/1000396868.jpg';
 import testimonial3Img from './assets/1000396870.jpg';
-import brainAIImg from './assets/xadrez-estrategia.jpg';
+import brainAIImg from './assets/1000393262.jpg';
 import xadrezStrategiaImg from './assets/xadrez-estrategia.jpg';
 import novaImagemLogo from './assets/1000393277.png';
 import dataAnalysisImg from './assets/1000395918.jpg';
@@ -92,6 +92,13 @@ function VideoApresentacao() {
 // NOVA SEÇÃO DE ATENÇÃO - ABAIXO DO VÍDEO
 // ===================================================================
 function AIAttentionSection() {
+  const scrollToDepoimentos = () => {
+    const element = document.getElementById('social-proof');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <AnimatedSection>
       <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-[#1A222E] via-[#1E293B] to-[#2A3A4E] relative overflow-hidden">
@@ -188,12 +195,20 @@ function AIAttentionSection() {
               {/* Chamada para ação */}
               <div className="text-center mt-8">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <button className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] hover:from-[#5ED9C6] hover:to-[#2DD4BF] text-[#1A222E] font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center space-x-3">
+                  <a 
+                    href="https://pay.hotmart.com/SEU_LINK_DE_COMPRA_AQUI" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] hover:from-[#5ED9C6] hover:to-[#2DD4BF] text-[#1A222E] font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center space-x-3"
+                  >
                     <Zap className="w-5 h-5" />
                     <span>QUERO DOMINAR A IA AGORA</span>
                     <ArrowRight className="w-5 h-5" />
-                  </button>
-                  <button className="border border-[#6EEBD4] text-[#6EEBD4] hover:bg-[#6EEBD4] hover:text-[#1A222E] font-bold py-4 px-8 rounded-xl transition-all duration-300">
+                  </a>
+                  <button 
+                    onClick={scrollToDepoimentos}
+                    className="border border-[#6EEBD4] text-[#6EEBD4] hover:bg-[#6EEBD4] hover:text-[#1A222E] font-bold py-4 px-8 rounded-xl transition-all duration-300"
+                  >
                     VER DEPOIMENTOS
                   </button>
                 </div>
@@ -343,11 +358,16 @@ function ProductSection() {
                     <span className="text-white ml-2 text-sm">4.9/5 (2.347 avaliações)</span>
                   </div>
 
-                  <button className="w-full bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] hover:from-[#5ED9C6] hover:to-[#2DD4BF] text-[#1A222E] font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 group">
+                  <a 
+                    href="https://pay.hotmart.com/SEU_LINK_DE_COMPRA_AQUI" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-full bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] hover:from-[#5ED9C6] hover:to-[#2DD4BF] text-[#1A222E] font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 group"
+                  >
                     <ShoppingCart className="w-5 h-5" />
                     <span>COMPRAR AGORA - R$ 47</span>
                     <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  </a>
 
                   <div className="text-center mt-4">
                     <div className="flex items-center justify-center text-gray-300 text-sm">
@@ -393,8 +413,8 @@ function FeaturesCardsSection() {
   const features = [
     {
       image: brainAIImg,
-      title: "Sistema avançado de IA",
-      description: "Tecnologia de ponta que te fornece estratégia de trabalho",
+      title: "IA Avançada",
+      description: "Tecnologia de ponta que se adapta ao seu estilo de aprendizado",
       icon: <Brain className="w-6 h-6 text-[#6EEBD4]" />
     },
     {
@@ -411,7 +431,7 @@ function FeaturesCardsSection() {
     },
     {
       image: digitalToolsImg,
-      title: "Ferramentas Digitais",
+      title: "Ferramentas Digitales",
       description: "Conjunto completo de recursos para maximizar sua produtividade",
       icon: <Code className="w-6 h-6 text-[#6EEBD4]" />
     },
@@ -505,7 +525,7 @@ function SocialProofSection() {
 
   return (
     <AnimatedSection>
-      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-[#1A222E] to-[#2A3A4E]">
+      <section id="social-proof" className="py-16 sm:py-20 px-4 bg-gradient-to-br from-[#1A222E] to-[#2A3A4E]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-[#F59E0B]/30 border border-[#F59E0B]/40 rounded-full text-[#F59E0B] text-xs sm:text-sm font-medium mb-4 sm:mb-6">
@@ -677,7 +697,7 @@ function HomePage() {
       {/* Conteúdo Principal */}
       <main className="pt-20">
         <VideoApresentacao />
-        <AIAttentionSection /> {/* NOVA SEÇÃO ADICIONADA AQUI */}
+        <AIAttentionSection />
         <IATransformationSection />
         <FeaturesCardsSection />
         <SocialProofSection />
