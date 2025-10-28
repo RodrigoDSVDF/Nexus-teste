@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button.jsx';
-import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X, Instagram, Book, BarChart3, Bed, UserCheck, Play, Code, Download, Shield, Clock, Users, Lightbulb, Cpu, BarChart, Workflow } from 'lucide-react';
+import { ArrowRight, Zap, Target, Globe, Key, Rocket, BookOpen, Brain, TrendingUp, CheckCircle, Sparkles, LayoutList, Menu, X, Instagram, Book, BarChart3, Bed, UserCheck, Play, Code, Download, Shield, Clock, Users, Lightbulb, Cpu, BarChart, Workflow, ShoppingCart, Star } from 'lucide-react';
 import QuemSomos from './pages/QuemSomos.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
 import FAQ from './pages/FAQ.jsx';
@@ -23,6 +23,7 @@ import xadrezStrategiaImg from './assets/xadrez-estrategia.jpg';
 import novaImagemLogo from './assets/1000393277.png';
 import dataAnalysisImg from './assets/1000395918.jpg';
 import servicosIAImg from './assets/servicos-ia.jpg';
+import produtoImg from './assets/produto.jpg';
 import logoVideo from './assets/logo-video.mp4';
 
 // ===================================================================
@@ -123,6 +124,143 @@ function IATransformationSection() {
   );
 }
 
+// ===================================================================
+// COMPONENTE DO PRODUTO EXCLUSIVO
+// ===================================================================
+function ProductSection() {
+  return (
+    <AnimatedSection>
+      <section className="py-16 sm:py-20 px-4 bg-gradient-to-br from-[#1A222E] to-[#2A3A4E]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-[#F59E0B]/30 border border-[#F59E0B]/40 rounded-full text-[#F59E0B] text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+              <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+              OFERTA EXCLUSIVA
+            </div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+              Conheça Nosso <span className="bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] bg-clip-text text-transparent">Produto Revolucionário</span>
+            </h2>
+            <p className="text-base sm:text-xl text-gray-200 max-w-3xl mx-auto">
+              Descubra a ferramenta que vai transformar sua produtividade e resultados
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <AnimatedFromLeft>
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] rounded-2xl blur-lg opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative bg-[#1A222E] rounded-2xl border border-[#2A3A4E] p-2 overflow-hidden">
+                  <img 
+                    src={produtoImg} 
+                    alt="Produto Exclusivo Nexus" 
+                    className="w-full h-auto rounded-xl object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 left-4 bg-[#F59E0B] text-white px-3 py-1 rounded-full text-sm font-bold">
+                    MAIS VENDIDO
+                  </div>
+                </div>
+              </div>
+            </AnimatedFromLeft>
+
+            <AnimatedFromRight>
+              <div className="space-y-6 sm:space-y-8">
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                    Sistema de Alta Performance Nexus Pro
+                  </h3>
+                  <p className="text-gray-300 text-base sm:text-lg mb-6">
+                    A ferramenta definitiva para quem busca excelência e resultados extraordinários. 
+                    Desenvolvido com tecnologia de ponta e estratégias comprovadas.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-center text-gray-200">
+                    <CheckCircle className="w-5 h-5 text-[#6EEBD4] mr-3 flex-shrink-0" />
+                    <span>Acesso Imediato e Vitalício</span>
+                  </div>
+                  <div className="flex items-center text-gray-200">
+                    <CheckCircle className="w-5 h-5 text-[#6EEBD4] mr-3 flex-shrink-0" />
+                    <span>Suporte Prioritário 24/7</span>
+                  </div>
+                  <div className="flex items-center text-gray-200">
+                    <CheckCircle className="w-5 h-5 text-[#6EEBD4] mr-3 flex-shrink-0" />
+                    <span>Atualizações Gratuitas para Sempre</span>
+                  </div>
+                  <div className="flex items-center text-gray-200">
+                    <CheckCircle className="w-5 h-5 text-[#6EEBD4] mr-3 flex-shrink-0" />
+                    <span>Comunidade Exclusiva de Membros</span>
+                  </div>
+                  <div className="flex items-center text-gray-200">
+                    <CheckCircle className="w-5 h-5 text-[#6EEBD4] mr-3 flex-shrink-0" />
+                    <span>Bônus Exclusivos (Limitados)</span>
+                  </div>
+                </div>
+
+                <div className="bg-[#2A3A4E]/50 border border-[#3A4A5E] rounded-2xl p-6">
+                  <div className="flex items-baseline justify-between mb-4">
+                    <div>
+                      <div className="text-gray-300 text-sm">Investimento</div>
+                      <div className="flex items-baseline space-x-2">
+                        <span className="text-3xl sm:text-4xl font-bold text-white">R$ 47</span>
+                        <span className="text-gray-400 line-through text-lg">R$ 197</span>
+                      </div>
+                    </div>
+                    <div className="bg-[#F59E0B] text-white px-3 py-1 rounded-full text-sm font-bold">
+                      -76% OFF
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center text-yellow-400 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-current" />
+                    ))}
+                    <span className="text-white ml-2 text-sm">4.9/5 (2.347 avaliações)</span>
+                  </div>
+
+                  <button className="w-full bg-gradient-to-r from-[#6EEBD4] to-[#3DE4CF] hover:from-[#5ED9C6] hover:to-[#2DD4BF] text-[#1A222E] font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center space-x-3 group">
+                    <ShoppingCart className="w-5 h-5" />
+                    <span>COMPRAR AGORA - R$ 47</span>
+                    <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
+                  </button>
+
+                  <div className="text-center mt-4">
+                    <div className="flex items-center justify-center text-gray-300 text-sm">
+                      <Shield className="w-4 h-4 mr-2 text-[#6EEBD4]" />
+                      Garantia de 7 dias ou seu dinheiro de volta
+                    </div>
+                    <p className="text-gray-400 text-xs mt-2">
+                      Últimas 23 unidades disponíveis • Oferta termina em: <span className="text-[#F59E0B]">02:15:33</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </AnimatedFromRight>
+          </div>
+
+          <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="bg-[#2A3A4E]/30 border border-[#3A4A5E] rounded-2xl p-6 text-center">
+              <Zap className="w-8 h-8 text-[#6EEBD4] mx-auto mb-4" />
+              <h4 className="text-white font-bold mb-2">Resultados Rápidos</h4>
+              <p className="text-gray-300 text-sm">Veja transformações significativas em menos de 7 dias</p>
+            </div>
+            <div className="bg-[#2A3A4E]/30 border border-[#3A4A5E] rounded-2xl p-6 text-center">
+              <Users className="w-8 h-8 text-[#6EEBD4] mx-auto mb-4" />
+              <h4 className="text-white font-bold mb-2">+2.347 Alunos</h4>
+              <p className="text-gray-300 text-sm">Comunidade ativa e resultados comprovados</p>
+            </div>
+            <div className="bg-[#2A3A4E]/30 border border-[#3A4A5E] rounded-2xl p-6 text-center">
+              <TrendingUp className="w-8 h-8 text-[#6EEBD4] mx-auto mb-4" />
+              <h4 className="text-white font-bold mb-2">95% de Aprovação</h4>
+              <p className="text-gray-300 text-sm">Avaliação máxima entre nossos usuários</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </AnimatedSection>
+  );
+}
+
 function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -174,8 +312,7 @@ function HomePage() {
       <main className="pt-20">
         <VideoApresentacao />
         <IATransformationSection />
-        
-        {/* Adicione outras seções aqui conforme necessário */}
+        <ProductSection />
       </main>
 
       {/* Footer */}
