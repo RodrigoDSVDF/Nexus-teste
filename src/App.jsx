@@ -18,7 +18,7 @@ import brainNetworkImg from './assets/1000393266.jpg';
 import testimonial1Img from './assets/1000396866.jpg';
 import testimonial2Img from './assets/1000396868.jpg';
 import testimonial3Img from './assets/1000396870.jpg';
-import brainAIImg from './assets/1000393262.jpg';
+import brainAIImg from './assets/xadrez-estrategia.jpg';
 import xadrezStrategiaImg from './assets/xadrez-estrategia.jpg';
 import novaImagemLogo from './assets/1000393277.png';
 import dataAnalysisImg from './assets/1000395918.jpg';
